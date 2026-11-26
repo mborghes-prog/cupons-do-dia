@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3JN17HCQ4"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-E3JN17HCQ4');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
@@ -201,6 +208,7 @@
    lista.push({tipo:tipo,oferta:ofertaId || null,em:new Date().toISOString()});
    while (lista.length > 500) lista.shift();
    localStorage.setItem(key, JSON.stringify(lista));
+   if (typeof gtag === 'function') gtag('event', tipo, { oferta_id: ofertaId });
   } catch {}
  }
  const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toLowerCase();
