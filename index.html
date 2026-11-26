@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/webp" href="data:image/webp;base64,UklGRrYBAABXRUJQVlA4IKoBAAAQDACdASpAAEAAPoU4lEelI6IhN/QKAKAQiWoA0t/7vjfAYBdynBV6ANsf5gPOm6HLqPN52O1UlBcMjfNHB4+5X3UBZ5kHAStZLmZDNPxoCR4h9NjGqwpSUIfVlawW1qKvXRO+/iUiwAAA/vyoECHBDoA4YoAVm2hLhJ/DI/vucH5CewC/euo9Yxt+vHyc9F9dcbUdlQ47DcktYQTKi9VXqxT/06e+Nu/yeOAxZLG7EWAMY0kygSHh/SzazBeHz3OzZLHziAITKlsi6rAbEHwU7g8mpJ1GxYd797caTWWigvKyVQrcV9XYKahIUlcifd+QP1oPJefL19+EXa2mbt3ncO+lXrOhEm44zIZjqKCWWR5NuQZ7uednGYT9WP0FU8qdQW1KemU6SFsfeYlJDdCQGs3AX8r/3/F3U6pWec39D4uaumi7CJHsSzQbCNvRAJrUWGTxVV9rr045ldQg5WbQhXjOJpkm0jT4ab4qgDEsOLhsVZLz7b0PjE9zxfvfuPd0O81504QI8g22GxCOaCz9zUeWmxRYk54oP9E8Rn/b6Tfda5SZmSgSgAA=">
+<title>Cupons do Dia</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="JUNO">
+<meta name="theme-color" content="#1b2a52">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body style="margin:0">
+<style>
+#juno-studio{font:14px/1.45 system-ui,sans-serif;color:#131c32;background:#ffffff;border-radius:18px;overflow:hidden;isolation:isolate}
+#juno-studio *{box-sizing:border-box}
+#juno-studio button,#juno-studio input{font:inherit}
+#juno-studio button{cursor:pointer}
+#juno-studio a{color:inherit}
+#juno-studio :focus-visible{outline:3px solid #a657ec;outline-offset:3px}
+#juno-studio [hidden]{display:none!important}
+#juno-studio .site{--paper:#ffffff;--card:#ffffff;--text:#131c32;--muted:#55617d;--line:#d8deeb;--soft:#eef1f8;--action:#ffdb53;--on:#131c32;--pop:#ffdb53;--round:12px;background:var(--paper);color:var(--text);padding:clamp(15px,3vw,34px)}
+#juno-studio .inside{max-width:1100px;margin:auto}
+#juno-studio .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px}
+#juno-studio .brandmark{display:block;height:52px;width:auto}
+#juno-studio .brand-lockup{display:flex;align-items:center;gap:11px}
+#juno-studio .brand-name{font-size:27px;font-weight:850;letter-spacing:.05em;color:var(--text);line-height:1}
+#juno-studio .edition,#juno-studio .source,#juno-studio .restrictions{font-size:12px;color:var(--muted)}
+#juno-studio .hero{display:grid;gap:15px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:center;background:var(--soft);padding:clamp(16px,4vw,38px);border-radius:var(--round)}
+#juno-studio .hero h1{font-size:clamp(34px,6vw,72px);line-height:.98;letter-spacing:-.065em;margin:3px 0 13px}
+#juno-studio .hero p{margin:0;color:var(--muted)}
+#juno-studio .heroaside{border-radius:var(--round);background:var(--pop);color:#251d35;padding:17px;position:relative}
+#juno-studio .heroaside strong{font-size:clamp(20px,3.4vw,38px);letter-spacing:-.045em;display:block;line-height:1.02;margin:6px 0 8px}
+#juno-studio .heroaside p{color:#3b3049}
+#juno-studio .site .hero{background:linear-gradient(120deg,#202b51,#293e72);border:1px solid #536a9d;color:#f7f8fd}
+#juno-studio .site .hero p{color:#ced5eb}
+#juno-studio .site .heroaside{color:#251d35}
+#juno-studio .site .heroaside p{color:#3b3049}
+#juno-studio .site .heroaside{border:2px dashed #715900;transform:rotate(-1.2deg)}
+#juno-studio input[type=search]{display:block;width:100%;box-sizing:border-box;margin:18px 0 8px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--round);background:var(--card);color:var(--text);min-height:46px}
+#juno-studio input::placeholder{color:var(--muted)}
+#juno-studio .filters{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 20px}
+#juno-studio .filters button,#juno-studio .secondary,#juno-studio .primary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:7px 12px;text-decoration:none;background:var(--card);color:var(--text);text-align:center}
+#juno-studio .filters button[aria-pressed=true],#juno-studio .primary{background:var(--action);color:var(--on);border-color:var(--action);font-weight:750}
+#juno-studio .heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 12px}
+#juno-studio h2{font-size:clamp(21px,3.8vw,34px);line-height:1.05;margin:0}
+#juno-studio .count{font-size:12px;color:var(--muted)}
+#juno-studio .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#juno-studio .deal{background:var(--card);border:1px solid var(--line);border-radius:var(--round);padding:15px;min-width:0;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 6px rgba(19,28,50,.08),0 4px 16px rgba(19,28,50,.05)}
+#juno-studio .deal h3{margin:0;font-size:17px}
+#juno-studio .deal p{margin:0;overflow-wrap:anywhere}
+#juno-studio .value{font-size:clamp(24px,4.6vw,43px);line-height:1.0;font-weight:850;letter-spacing:-.05em}
+#juno-studio .category{font-weight:750;font-size:12px;color:var(--muted)}
+#juno-studio .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--text)}
+#juno-studio .meta span{background:var(--soft);border-radius:5px;padding:4px 6px}
+#juno-studio .actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+#juno-studio .code{font-family:ui-monospace,monospace;font-weight:750;user-select:all}
+#juno-studio .site .deal:first-child{border-color:#e2b63b}
+#juno-studio .subscribe{border-top:1px solid var(--line);margin-top:22px;padding-top:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#juno-studio .notice{font-size:12px;color:var(--muted);margin:10px 0 0}
+#juno-studio .status{min-height:1.45em;margin:8px 0 0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+@media(max-width:570px){#juno-studio .hero,#juno-studio .cards{grid-template-columns:1fr}#juno-studio .brandmark{height:40px}#juno-studio .brand-name{font-size:22px}}
+
+#juno-studio .brand-row{display:flex;align-items:center;gap:8px;margin:3px 0 5px;min-width:0}
+#juno-studio .brand-icons{display:flex;flex:none;gap:4px}
+#juno-studio .brand-logo{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;background:#fff;border:1px solid #e8e5ec;border-radius:8px;overflow:hidden}
+#juno-studio .brand-logo img{display:block;width:25px;height:25px;object-fit:contain}
+#juno-studio .brands-panel{margin:20px 0 0;border:1px solid var(--line);border-radius:var(--round);background:var(--card);padding:10px 14px}
+#juno-studio .brands-panel summary{cursor:pointer;font-weight:750;padding:7px 0}
+#juno-studio .brand-directory{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(136px,100%),1fr));gap:8px;padding:8px 0}
+#juno-studio .brand-item{display:flex;align-items:center;gap:7px;min-height:46px;border:1px solid var(--line);border-radius:9px;padding:5px 6px;text-decoration:none;line-height:1.15;font-size:12px;overflow-wrap:anywhere}
+#juno-studio .brand-item:hover{background:var(--soft)}
+#juno-studio .primary.wa,#juno-studio .secondary.wa{display:inline-flex;gap:7px;align-items:center;background:#087846;color:#fff;border-color:#087846;font-weight:750}
+#juno-studio .primary.wa:hover,#juno-studio .secondary.wa:hover{background:#065f38;border-color:#065f38}
+#juno-studio .wa svg{flex:none;width:18px;height:18px}
+#juno-studio .category-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+#juno-studio .novo{font-size:10.5px;font-weight:800;border-radius:6px;padding:2px 7px;background:var(--pop);color:#261c31;white-space:nowrap}
+#juno-studio .quero{margin-top:16px;background:#087846;color:#fff;border-radius:var(--round);padding:16px}
+#juno-studio .quero h2{color:#fff;font-size:19px}
+#juno-studio .quero p{margin:6px 0 0;color:#e6f4ec}
+#juno-studio .quero-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:12px;background:#fff;color:#065f38;border-radius:10px;padding:12px;min-height:48px;font-weight:800;text-decoration:none;text-align:center}
+#juno-studio .quero-btn svg{flex:none;width:18px;height:18px}
+#juno-studio .mylist-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+#juno-studio .mylist-panel{border:1px solid var(--line);border-radius:var(--round);background:var(--card);padding:12px 14px;margin:0 0 16px}
+#juno-studio .mylist-panel p{margin:0}
+#juno-studio .mylist-panel ul{margin:8px 0;padding-left:18px}
+#juno-studio .mylist-panel li{margin:4px 0;overflow-wrap:anywhere}
+#juno-studio .mylist-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+#juno-studio .deal-links{display:flex;flex-direction:column;gap:6px}
+#juno-studio .deal-link{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:42px;border:1px solid var(--line);border-radius:9px;padding:7px 11px;background:var(--soft);text-decoration:none;font-weight:650;font-size:13px;line-height:1.25}
+#juno-studio .deal-link:hover{border-color:var(--action)}
+#juno-studio .deal-link .deal-link-arrow{flex:none;font-weight:850;color:#131c32}
+#juno-studio .copied-flash{background:#087846!important;color:#fff!important;border-color:#087846!important}
+#juno-studio .mast-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#juno-studio .lang-switch{display:flex;gap:4px}
+#juno-studio .lang-switch button{min-width:46px;min-height:40px;padding:4px 9px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:21px;line-height:1;opacity:.5;filter:grayscale(.25)}
+#juno-studio .lang-switch button[aria-pressed=true]{opacity:1;filter:none;background:var(--action);border-color:#c99300;box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--action)}
+</style>
+<div id="juno-studio">
+  <section class="site" data-theme="vitrine" aria-label="Cupons do Dia">
+    <div class="inside">
+      <header class="mast"><div class="brand-lockup"><img class="brandmark" src="data:image/webp;base64,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" alt="Juno" width="687" height="982"><span class="brand-name" aria-hidden="true">JUNO</span></div><div class="mast-right"><span class="edition" id="juno-edition">Quarta-feira, 25 de novembro de 2026 · Black Friday</span><div class="lang-switch" role="group" aria-label="Idioma / Idioma / Language"><button type="button" data-lang="pt" aria-pressed="true" title="Português" aria-label="Português">🇧🇷</button><button type="button" data-lang="es" aria-pressed="false" title="Español" aria-label="Español">🇪🇸</button><button type="button" data-lang="en" aria-pressed="false" title="English" aria-label="English">🇺🇸</button></div></div></header>
+      <div class="hero">
+        <div><h1 id="juno-title">Cupons em destaque</h1><p id="juno-intro">Confira o destaque da edição e explore os demais descontos.</p></div>
+        <aside class="heroaside"><span id="juno-lead">Destaque da edição</span><strong id="juno-feature">Extra 20% de desconto no eBay</strong><p id="juno-feature-detail">eBay · código CYBERFINDS20 até 01/12</p></aside>
+      </div>
+      <div class="quero">
+        <h2 id="juno-quero-title">📲 Receba os Cupons no seu WhatsApp</h2>
+        <p id="juno-quero-text">Toda segunda, quarta e sexta, a edição nova chega direto no seu WhatsApp — com os Achados Penny primeiro. É grátis.</p>
+        <a id="juno-quero" class="quero-btn" target="_blank" rel="noopener noreferrer">QUERO RECEBER OS CUPONS</a>
+      </div>
+      <label><span class="edition" id="juno-search-label">Buscar ofertas</span><input id="juno-search" type="search" autocomplete="off" placeholder="Loja, oferta, código ou SKU"></label>
+      <nav class="filters" aria-label="Categorias da edição" id="juno-filters"></nav>
+      <div class="mylist-bar">
+        <button class="secondary" id="juno-mylist-toggle" type="button" aria-expanded="false">Minha lista (0)</button>
+      </div>
+      <div class="mylist-panel" id="juno-mylist-panel" hidden>
+        <p id="juno-mylist-empty">Sua lista está vazia — toque em + Minha lista nas ofertas que quiser guardar.</p>
+        <ul id="juno-mylist-items"></ul>
+        <div class="mylist-actions">
+          <button class="secondary" id="juno-mylist-copy" type="button">Copiar minha lista</button>
+          <button class="secondary" id="juno-mylist-clear" type="button">Limpar</button>
+        </div>
+      </div>
+      <div class="heading"><h2 id="juno-section">Ofertas da edição</h2><span id="juno-count" class="count" aria-live="polite"></span></div>
+      <div class="cards" id="juno-cards"></div>
+      <p class="status" id="juno-status" role="status"></p>
+      <details class="brands-panel"><summary id="juno-brands-summary">Marcas e lojas da edição</summary><div class="brand-directory" id="juno-brands"></div></details>
+      <footer class="subscribe">
+        <a id="juno-join" class="primary wa" target="_blank" rel="noopener noreferrer">Receber no WhatsApp</a>
+        <a id="juno-share" class="secondary wa" target="_blank" rel="noopener noreferrer">Compartilhar no WhatsApp</a>
+        <button class="secondary" id="juno-copy-link" type="button">Copiar link</button>
+      </footer>
+      <p class="notice" id="juno-notice">Ofertas verificadas nas fontes oficiais e comunitárias indicadas; códigos de agregador devem ser testados no checkout. Edições às segundas, quartas e sextas.</p>
+    </div>
+  </section>
+</div>
+<script>
+(() => {
+ const root = document.getElementById('juno-studio');
+ const get = id => root.querySelector('#juno-' + id);
+ const pageUrl = 'https://cupons.watigo.app';
+ const joinUrl = 'https://wa.me/14077847055?text=QUERO%20RECEBER%20OS%20CUPONS';
+ const whatsapp = message => 'https://wa.me/?text=' + encodeURIComponent(message);
+ const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toLowerCase();
+
+ const whatsappIcon = "<svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z\"/></svg>";
+ const brands = [
+ {
+  "name": "adidas",
+  "domain": "adidas.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAALVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACttl6nAAAADnRSTlMA5RgHp1I6vtZqJPiGlr7BLP8AAACqSURBVDiN3VFLFsQgCIvQ4q96/+OOrVTrq85+JiseiZgA8KegY/vK7yZHWdPicoFb8inmC/tK4CufDS0EbFVxzGlCUEGejSCbgE0F76h0UgIyee7TX4RlHCoYozZzHjC9fGDXbuylG30+8k18MkN0hya8o7I/xUm7Fs2nrbyU6eV+fL8ThOozXlFD/dH0OzhuPksXru2F7nKM2sQEuT8ZLLcVpT7t60l+Eh+YWQ8wU4omlQAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "ALDI",
+  "domain": "aldi.us",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAb1BMVEVHcEz7kht/IEMABlb/wA4AF1v1ZR7/xQ0AH1/+uxDAIjD+/v8kequ3BDIca54PMW0ky/oRWY1mw+MxRXdJr9WWn7fj5u0ir98/0/wmmMRk3P7R1uAJQnmI5v5NY42zu81ue5xmi61+H0LxZSGGHj8zjeQmAAAACHRSTlMA////////Tmms1ygAAAE8SURBVDiNlZOLboMgFIZd6WmxMJCLKKBV277/M+5g59IJzbIvP8SYL4d7VVXn41vOVeJ8/HjDJtT3S5FTvQmnBy3weBEOz18A31k57AWQSmEGpd4I0mqlUwwUBRCjxvBRQ1kgNnAbBEYOZaHvVdco7K32JBdANZ1oPMd0Wg+QC77ha0SiIAxYvsF0vOnDaIe9ACKNkMK7zmorYCcQ23PbCwzCOc8ECCHtUgiib9IYOM1fAvC0RXYZreKJZRH09iLcwFvhrfJ+gCckmyQBsgYXTMuHJeXWJCHpa1dhZmwB5yhpGWPTlbVkt8yJuYnEmIR5YgWBTROjMQIKZs4FuGJhNkc3m5YtMRdIG42MU+tcxIaaW3ZDGEOxgTFGYoCabBWwXernrc6PO+fwj4dzv3wWuNzrvx7vj1CmXp//F8szJUo8xSumAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Amazon",
+  "domain": "amazon.com",
+  "aliases": [
+   "Amazon.com"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABe0lEQVRYhe2XMW7CMBSGP5uKibkXaKUwcAfoBQhzWaouVByAFVh7AESlVmIpM3AB0jswwNADlDkTEkmHl9AkEFFKwB34JCtxbOf/37MT6Ski+E9cs6IJ1IASkCMb1sAMGJGnp/oswwG1EX/gHs0LUMhINA0Xj4YaMNwYCMTfTywcx6OuBgxVkPZPTh95Epc8NzrY83OLAxRY0dTIgTNFTSOn3RQlTXaf2l/IaYPiAFwMXAzEDdid7BXsDrSm8OZLS2hsZ2DHpKOYOzDuwvMdLByotmPDV7HeOBCOTgqfHYPdFhOLD2mpBnaZqLZh0pX7uSNR7MOqiKhVkf6kK+taU8lEBOU/4qe+pFjZStmGhSPRWOX4muSccSAebmsio+kGotiddCNp5kLhPfzOQEgYYTG4WmXJwtz5ET6QwwycgH/2I7oYMGRgbVB/rZGKxRQzDYwMGhiZLUw0t1r1WeLROLM4eDTUK18aQA0Y4lEH3DNIu2FdCJHqGMyU599+1oDHJ9NWzAAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Bath & Body Works",
+  "domain": "bathandbodyworks.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAGFBMVEVrjMUMHXn17OVJY6lka6NHY6lHY6hNYaSj2CEDAAAANklEQVQ4jWNggANWRjhgY8AGRhXgVcAMB+wscMCOEGVAaGNhggMWhOioAmIVEAzqwZAehoUCABq5BGmGjymzAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Benihana",
+  "domain": "benihana.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABYElEQVRYhcWWr0tEQRRGjyKLYYM4xofFCQYRFcVqMVkMskUW0W4RDAYxCdoU7JoV/AsEQdQoYh4QZFiWhQcGkUXkYdgVtszcZdfrHJj0fTwOzI93BwiQZ/YKWAvlAg44B06Md5+x4mCPmYQFDoGHPLMjvQr8BTPAQUoBgKXUAjbPbFKBMhA8B/8hADCqIbAPzAKbwJfQLWsIPBnvno13F8C90B3SEOikLuRNbYFvIf9QE2hfsalIpQAaoTC4N12wkWd2GpgA5iK9uvEuuAX9CFTaS+IuFmq/A2/AbiqBR2DReOdTCcwDldh/QFugBJwCO6kEfjnOMzupIXAGLAN7RF46WjdtXUPg1nh3Y7w7Aq6F7piGQCc1IR/WFpC+oy4wLuSlUNDPU7ySZ7YMLACrQrfQENhqr25Qnwck3lMLvKYWeEkp0CAytGoLFMB2bCKKCTRpDZvSwBmiBlSNd5ex0g89k0s2nNphUAAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Best Buy",
+  "domain": "bestbuy.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABa0lEQVRYhe2Wv0sCURzAP3deipVKGmJhUkgQ2BZELVFTUASNDc01tTf2FwQ1NUUt0W4NJU0u/cBJEokwBQv6MQSVHXfla7CEK2u7dwR+xvfgfT48vjweNGniMMpvG6IwsoZiBmy1a5X0jwAhVlRKyV3actOor622Brz2FzWrfKGFq2QS//kEiu62Vf5JPUDczLRylTkkkB0FQ5UhrweI0nQHRjmFPzsEb7LctQBxN95OpZzGl01AVaocQEO/P8KXS4CQLgdQUY2wU/JagMNYAp6eXWzsBMlkvdICLO/A6maI9e0g/vYq+dQlHrf9Q2m5gXjMACAaMfG45cyF5QbmZx8ZG67QHTaRNZja94VYtyFF/IUKLqnCBgEsYURuHQtQovk99J5l9Ni1IwEASt/ZFmZkET1eciQAQOk93Ud0zvEyUPjjo2RfAIASPTnmLTTFy+CFrIiGFlGc7EI8HOCq2FtR9b7ben6TJv+CD0kuZPBfOKP6AAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Burger King",
+  "domain": "bk.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,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"
+ },
+ {
+  "name": "Casey’s",
+  "domain": "caseys.com",
+  "aliases": [
+   "Casey's"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAY1BMVEVHcEzjBwDhBQDjCADiBgDjDgjjCADlEgDiBgDxnJv96uniBgDhBgD////////zrqzhAADhBQD////+8/P//Pz62trvjYzsdnXpU1H3wMDjFhLmOznraGb0raz4ysnlLCjtfn2wazZbAAAAFHRSTlMAK/JowTxPDJr7+tnoZw2N/////jOgL0UAAAGWSURBVDiNjVPZcoMwDAyQcCatLJ+AIfz/V1aSgQSazlQPGGYXabWSL5d/R1UVdZcr1V2LrPoA32r1imt5pmR1rgDeKbcDfrsSPAyJAsBnV1RHfFyaxo3MGHwY6Ly/GBnjk0HE/gkQJmPdkxnlpo/kwTLPligOVLSIbeRaXZYIJX+EECZNCEnpEXXDKVQtRaqrCFskA1IxNK1tWIXKb3sCiJb+pwCIaPoQUss1E5JBYwxSHGBCtCuu7lwjT+/gZ80igZ5m2jyjGtWKOylhneVj3ggFmZDehhAaphhR0m+EetWYHJ4xhdH+E0FBaFfCLoEJ2WuCMEkR3cA7oXqbMcQeNc3hNfdiaxMk6CB9oAZ4azMZFTwF/SoECH5MFDGqFBdY3OQXj9b7pTe9H3ereVgQW5GntTzIjNbTuNKwOAU4WRfnHHnp3GxmN+7j5oUZYkMxbhqiEw3bwsjKpS4UiMupi33lZGlXt59oE/OwtCuD4MmiscvvtZeLA0MjS4fa0qxOF4eTrHCifJ+v3tdD4yHax9c5xR/xA1BVM2P+m02wAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Chipotle",
+  "domain": "chipotle.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAArlBMVEVHcEytIhayIhesHhKtIRatIBVqGQqVHxOwIxiyIRWsIRWyIxk5EwCsIhc8FAAzEwA/FACsIhc+FABAFAAtEgC1JBqqJBesIhdEFACrHRE4AQCmAQCpDgCqFwbmzszQk5DYvrzbrqu2SEG8W1WtoJ3s3t2uKyGyODDIf3vAZ2O8sq7WoJ64UEuIdG6AaWOilJDEdHDCbWl3YFqXhoKTgXv///9nS0XJgn737OtMIhTIlnLwAAAAF3RSTlMA6YPzz7wyJWh1p1e94dSX9AHq+32NCa9yvr4AAAJgSURBVDiNbVPXcttADGQv6rGdQEdcYe8U1WX//48FR8m2Ms6+cDi7B+zicIbxDS90neXScUPf+A9+WTaDjAPPag629YMPAFlTdAXW8lYgAA/+5R0QEkt5kygR41RIxd0n+o8NnCcHfD8gV0lWcEwSJcxfXwKbJwpFgR3Vxn1XilSiwMr8qp8yfFd4AO6G83noAu8qhrESjy4By4pkn1Qi9NarzWa19kLBmKyp3HzKB1z074Iv/cVWI4qihW9nkngGWmCxmGPWmN72zh/bNnr17VohNmVIAp5kvO6F/zg9yo9xJIUouyJWNs2XBJQ81PWjYYgvUbQ7RtuFlcYxSu4bITApO64bRHlxuVxaKkM/HsqsTCEwZhQdubvWfB5tzx9FNHl5czJGLmc0ZPpAuCJBvIvHnRzySbGyNA+usQRIGcw3WpDv8lN7nQSvLwGwHsAhQVmLu0CO+fV8au9xSSBuWkAtxKNFO57H8Xi6e1hYE+FqkwJhMjnkw/m0u36aBI2ZjqlorFPMeHc87+THpPDoYKVj+sBS2bD7oGQ0xFHRkmL9G1giGdB62uyghAD/lQTXos3zSxxtNz5tHSLolbBAlHT3plbQVQ2nQfM2qxJVwbSZIGjNOJjTdUd60Gvi04ZR/MdC8xRVxcDy3lYvL4s3j/pXvDvw+8IYBu1YLZuSJutaQWA5wHgaJ6gzPmACbzDGXo+GETKFUpWw/H5VJog+26sab7yvDpjsFRdP/NSFiT6B/j3dywTTrnyqf8ecbp2LJt1X2V4wDp/+nhCaoA1QKQAz+EFr+MHMdRx3Fjw//78PulPUD4oLTwAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "CVS Photo",
+  "domain": "cvs.com",
+  "aliases": [
+   "CVS"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACDklEQVRYheXXO2hUURAG4G/X9YXYiYXaCIoWWmgn2Ckhgm98Bm0sFAuttbNVsBAhhaQVMYKRiDFBGxGMoEkQEdEYo/iqBUk0Udfi3NV1uXfv3ryu4N8snJkz/7/nzJ0zUyiXy/JEMVf2f0FA4XGybT6O4zDKaMMlfE+JuRinsAXv0YqOrAJKuIx9NettOIafCfGW4ho2VK2N4zTOx22YdTRmDTewK8Z/PVZF9trsXYaeyKc2XhO+oDdNwAK0Y1uc2ghrsBKd/pzEctzF6jr7mvAZD5MEzI7It9cJUsHaiLQDi3AvEpWGZozgQWWhFP3OwRX1/3ktDmEMS7Aiw75zwtd3lpCEc4U7bc4QZCpwEhdLOJEDOVxAXxFHciCHAlqKmJeTAFhYxP0cBXQXcQZvcyC/hfYihoWq92YGybuwFz8qr+EAWvBpBsjvROSj/P0c92IrPk4z+W6hGqoVAP1CzR6eBvIe7BQepd+Ia0ieYQdeTyF5ZxRzpNaQ1BE9xQFTcx3d2I9vccZ6Ldkj4XF6NwnySrZ/TXJI6wn7sRlDEyC/LebOswqAl8JJDGYgvx6Rj6c5NtoVP8dBjV1Hl1BTxhoJnKUt75OeEzexR0LCTVYAPMEmvIqxdUbko1kCTmQwGRQq5ouqtatChWvo2KtRbzBJwzrhGx/CRsmzQl2U0l0SMSAMHB8mSg6F/346/gU1TW+wzpQrhQAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Dollar General",
+  "domain": "dollargeneral.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACS0lEQVRYhe2Xy2sTURTGfzNt0sSNTVIXeTYoQqsVRdwGbBHpRnBZBN3EIsWFiiDF/8CFICKii3YhIq7EotRaEx+x9YlSRaiCUkqsNdkkCzFtbHNcXMJkkqEJoSSbfHDgzHnc883MmXPvaJIhjMYYEAFsNAb/gATCSU2yxIGBBhUuR1yTLKuAvUkE8noTiwPY9SYWB6BFoEWgvdzwYwHiL6yDO7dCwAf794LDYfYVCirvyTNYTsEWJ2wPw5FB2NWzAQPJIqVydxyBjcVmQ44PIQufVc7X98i+Pdaxuo6MnkMKGXOdotRFoCgeNzL7GAn4qsfevFIjgdU08nPenHzhDJL+jszNICNRs6+tzXx9eljl37+DtLcb9u6g9VOo6AG7Xb3rUjidsK1LyfXLMP8Nns8o3/q6ERf0w9VLoOvg98KJIVhMqh7o64V8Hjo6zGtXEKgF/RGDQCkOD6jiRYxdq75WXQRCQWu7z2vov1OwtGz2h0PgcZttmzoHVlYMffw2HDholsnpypy6CKTS1vbFpKG7OiEUqL5WXQQmJq3tD6cgk1X6SBReTm0SgVxO3fXHT3DqLLx+Z/jsJaeJvzk4egyeJiC5BK/e1rC41XD486u2QdTXi3x5g7hdtcXfulFZq65X0OWBi+dhdhp290BsQs19K/i91vYiNMki5ca1NdXFpXA6wO2C7pAqqmmVOY9i8GFOfYJ+r9q0Bg/BvQeqN/ojsHNHDQQaiaafB1oEWgR0IN/E+nkdsNjZG4aEjhAFYqhf5kYhD8QQhv8D0+1agZGE4GkAAAAASUVORK5CYII="
+ },
+ {
+  "name": "eBay",
+  "domain": "ebay.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAd0lEQVQ4jWNgwA7UGRgYtjMwMHyG4u1QMaKACgMDwysGBoZMBgYGHijOhIqpEGPAOgYGhhws4vlQOYLgM9RWdCABlUMBjAwMDP+JMRUXYKJEMwMDAwPLUyMLFAFpo1ko/K/eBij8iZyi1HXBqAFUMGDgExLFBgAA+5IRVVj3iMsAAAAASUVORK5CYII="
+ },
+ {
+  "name": "Fazoli’s",
+  "domain": "fazolis.com",
+  "aliases": [
+   "Fazoli's"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAArlBMVEVHcEwAHiAKGh8UGx4bHh8CHR9eISH///8MHyAYHyFEISAAHR8IMyoATVJlIyMbHx9IISEAHiAAJSgYYT0KSzIaBRoRd0YRcUMUaT/qLynhLynqLynjLynlLinnMCmSJiTULCdwJSPCKSapJSQGcUPSIiTsKCYUXDoAlVMCfkm4KSVZGx9DVzgEjlBjQC5mSjIaZz8Egku9NCphYT2lNyssdUWJQi8AplwcPi06Mihfgs1YAAAAGXRSTlMAaFLG963zAXoW/b0+BrHew5gicvmo0ZDjLuQJ5gAAAVVJREFUOI3Nk9d2gzAMhgUBwshO17HxALNHQprVvv+L1TjQJk3S3ua/4BxZn2RZEjD8R/B4AFwFwIUXRq/yA7cBAN12PlJYLp1zCPpYWAw2eRO9vG3y+tkBu2dAuRdzc8CYqPK0brJ0VZZPlTV3oANg7AXhYVdxVkZRfUwrUWwjgXlgq+ghOEaI8W6zZvyQR81nU6/DMOEIYeGBut3gBCGScJzssyBMVtE+8VErKjQZD3ZBlUnet8coJkRkWXwCfByMZYISow5o1rHMhVdZHp+OENcAHEY7iyRERSZxl0FeMpPdEQT9kt/7EbVkc78z3FALjAP8B+DJIqf3/X6htQNkd1NQt50IDMI7VeBABzULr8Bt3T+Yehf11TBUt7UgpDR05dnJwzDFSBg69PsgEXMyMQ3GCaacDWaW5Zo6wOXCSNme4U7NUWfB2UYNz7HLvX3AP+taX+WfP0cQ+wvNAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "FragranceNet",
+  "domain": "fragrancenet.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA5ElEQVQ4jaWSvQ0CMQxGH4gBGCEbwAZAmQ7aVIwAIzDBiQmgSh2qlMAEsMGZDRiBgiDurCRCwlKkxF++Z+dnQCWcsWOgAcYAXuJK7xkpgwFMWk6BGbD1EsUZe8gVGXbMDdAC5zQmqWLjjG2Baw4wSuY1sFHayRk7B+afI9Q60BsEuCjzpAY4AiHNA7DyEp8J8olHDjAoteaMnQI3lV54iV3o9xKVeZkxA5yTVgfwfvtS9LQSwFQAPa0EeFYA918Al38Bpwqgp5UAgfwxxEsM3UQWkD5RyEh7nSh1ALBTXQjvH9uLF8wkPFgXIzUsAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Home Depot",
+  "domain": "homedepot.com",
+  "aliases": [
+   "The Home Depot"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAA/1BMVEX/ZgD////+agD/WgD/XwD/RQD/UAD/0bH/tZT/+vT/bgD/9/D/SgD/VAD/oWP//vf/UBT/zK3/1rD/IgD/6tz/waX/69b/roH//PH/vZP/nnX/sI3/SRj/pW//8+b/tY//yqH/tIj/1rr/jE//UiL/bzn/dED/wJ7/g0X/pIv/ZiD/59f/Lgb/mmv/moP/xJb/hVn/lGL/w67/XST/f0//497/lU//uaD/i2j/nV//Wj//fTb/sZz/RyD/PhT/ZkD/cl3/zr7/4sf/1M3/aDD+cyX/rXH/w7z/ckb/37z/zc//XTX/saf/j3b/gWf/+eP/Nhr/al7/2df/6+f+jD481bU4AAACtUlEQVQ4jWWT13qiUBCAGc6hqIgoTQmiFCsq1qyRCGp003aT7Jr3f5Y9BzS52LmgfPNPn2EYlvlfWMy1QBuiTFdkv4RoMilipa+32jJii5T+NkMo/0Ccbijqrc/lv1c9kiK5TL1g5QdAlVuX+hw1Ya96xRy4PE/jy0CkPTTq/bvTFSBuTRg3GgxG0g9rUyNEbfgWi+EFIPbynVAR4po1ugdRVSjRltQx5ACxl2HCe4Wf7alFVDejjKja970MIPk1zTlMJMMJ1Ai+CcOXKMBiSYbHJw8G8i7ltmdKtDLCC8q0N5hrGgI8v75AMKlXX8eeQ32oW3hMaC+LiGs6vuLCy83TL6JxPG9aoMTvWTrMOoebDlSTUQTp0aG2ANMdfe7VWdgvkwSGh3EP9vawsz1u7aZWAjgkbwWYb0UhPmFawulUrpKSLKcgdO1mTQC4V6P9yI/qDSWrAmOeqa0tnUZuTb3bN68Uv6ZrrbOG2uLSSayYkbrMctutdnwkJ7N3eNgO4JA3iuFtR+uqywpA5ZiW9Jlq1jZ7uEl0M28UwkdSHyGICyFZrQJehMkmrHRtOm4yiLn+cQAodWmUSqcbzAxSy+RPfSrRlcP2PThBhxiXOurSqQcj3b2DMITQR/l+tolutRFzIuptzYL26XaQOUaYpfmPzT3RPaQZ4Q7sqjZ1QOZ4Scoq5MT35EOgxGb5XHH01JqYx9TRekOc75oIlV6ShIT4G3x0j6MmPMreUYaGgvNlJemCW5575HWeI4496aDFfjiTLg6YQKfbZyc0SmjfhppM5uKKErqeA69QopGM9nR+UXwGWYABd112OkybEr2tJdj4AH7nfIgt/hIf0Y9iOSMMS0J4IYA/Kyyu9ig26eEUMx9igIosj4R6RPqX3wpTdiHOhlVWVi5Hs2K5hWFxX+eKT5/MP9j/Tf24ADAXAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Kohl’s",
+  "domain": "kohls.com",
+  "aliases": [
+   "Kohl's"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA0klEQVRYhe2UsRmCMBBG3/k5gI7gCBbpHYU5oIEC1nAUe7BgBDfQWovYWPmJ5MjxUZDXJpf/Ee4CicTaEYAG50M253QytBZ6BoBHqoK2BNiGFv1DE/79EZslw6MFYsOjBCzCYUIP1LiLwMkiHJRToGUsHAyaMCZ8NoHQ8NkEatx5UQGBrMHdFxP4sAu5CZXAk9des18gMxUo6R8ejpqasRFX/4KCrvf4ykpiUg8UXEuQm4XE5CbMaQ/aml8SUVOgeXCGJKLHMFbC5B2wuIlEYr28AbktP+XiWIf/AAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Kroger",
+  "domain": "kroger.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAkFBMVEUASp////8AS58AR54ARJ0ASqEARZwAM5kAOpoAS6D7/PwAQp0APpkANZgBRZ8APZq+yODHzeBZcbSwuNmtudeaqcxHZq1vgLtac7Jme7lvgrlzg72ksNLe4/EkUqWElcSQoMhDYq3v8PUAAJHp6/JSbLJ5ir82XKoAI5UAK5cAL5h/lMPQ1ubZ3erj5vN+i8FlJd2pAAABV0lEQVQ4jc2SW3OCMBCFs9ksxADlUqFgFTVV0Hrp//933W2nonbwrTM9DyRMvpw92USpfyCtSD6PiKfQolBjSjPIi3Tcg+IMAJ7HCYqn8EWMFSFtsWSiwBFC0wQTJvJkBCAuTqEDF6ExJkD+NwGLAmOGLTYHqKoXVh2k2PDYmGL2qi+EBK3nEjbDRbjg0YVngBZ/ALMEmBcC2AxWa5BIDnx0ccAewL9tAFYtb2YIth272SGqPQEse/C7k5RJYLr3XNQMgGl4oW+aTsrAtt6zySK57obYunpXOh7OVSLtr56G9pPSqWTP+rDto/eO/eFwdz2IUh42x/zkZHKw6lYa9yVcxFXuW47th8LyLKs+nyVtN3TpO4Xx4FRsab3uIxuQB5/eGvSSGyULaq2kq9Xt9fLLO6ZEiojvk+Ij5JZuCRvZ4elqm96fgrdqPbk61a/3owV5sP53+gQsgxK9ov28UwAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Macy’s",
+  "domain": "macys.com",
+  "aliases": [
+   "Macy's"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADQ0lEQVRYhe2Xa0hTYRjHnzPnnOnRxJBQSxAyyJGiQSqGIikodrMLMxCiXBglZRcqAqMIKrAPEuWNrEwtFS3xmnmhNMtKQ7zhbeg2c85t2m5n2znb2ydLU7fjTuxL/r+9z/k/z/M754X3fQ7AuhhI39UVwLQGi0myrrrpDZqfD2FSg21rorG9K0iWdtHXwRVPBIAeW+vY/AVUJRVRSKPDyYlJga01GAGYZmR8RJJg+NbrRfQOxNgVQPuqJsQklYUCAJgVcxxDQ3OsXQEMwtE4akrKAQBAJAmGnr44hBDHLgBoYIBD9vTFAkX9jpmlMyFEy/tQuwAoWzq9zIq5JXtOiSSgq6jbZhcANtdJQI6OL4khIwnkuDDRFgBs8UKRfk2MDEZfSwmkcBLIweFlcZanBzjtDgWMZeGdHFjgFBo0hKem7FgILTmI2D6bC7S1725Rwkma/H9kVswBUd+86nOWGw7sAP8C1xsXshbHsb+N8wUvYo1tHYX69s++YDKtGWSZMAD2Fh+FS8rRXLfo8NtYYKDRIgAAgKqqypNs7bpLNH8QmFVqRv1djuxXb4gOT3BO2texCt/q0pZVC1R5zx6QI2M4mNGaGrPc3Qg8NaXJ/dKZg5Z8FgEAADSNrUHqh/mZ1PB4EtIRNDqzwGlXsJoTFXHCIyOtyprdKgAAAOrowGXZhZ2Gj194VvtvdFNvyss6xt0T0UinNq1zQKcxu1KjQpyOFxmMuLb0NS0vbQBNcQnPrNH60QIg9IBIKuOfAmAmJFhp/zEud0W/sX8wQF/XTGtcswqgzinyMv2QLrvv2f5+EvzcqevO8XtHMMelg5VpVulJdPeG0QGwOpJRCnk4NSH2XFhjjo7gknxo2jGYF4/zk/rn2r7nctkOGcZPXzNNciUAACCCAHJkLBEAiuhAWJQ0np8v8uYhkTcPSXiRqp+Pn+as5NPVvuVPxx4Wi3x3IpE3D0kTjyNdZb3Fe4UeQAIfibYGIVnyabnyXnakJa9+aChAeeVmt2R7GBL7BSP1k5dpjJrrqhv4ksBIJE+/Wqlvp/cPgMrLOfP3H92ZComRz548X8MIQF1UViw/e/kAEoud15qrKq2KVOU9VzECWNd/oV/1klylR8F8PQAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Moe’s",
+  "domain": "moes.com",
+  "aliases": [
+   "Moe's"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD5UlEQVRYhe2Ub0zUdRzH398Drym4AYfpBMSli0Z6ZYu1YNO2etZm/3RkD1RaiOuPJnE11AetP7YmPvFBrNWWplxmcbY2xGyzZigSgnDiibJOx0DvBAIRTu9Ofq8e6AGSTue/tsb70Xff7ft5vX6f3/fzlcYznvHcQYAVwKL/AjwL+J2R/AhMuV/w9QBtwEMNPp7z+WMSl4E37yU4DzgJsOZMN9PqvFZldy8b2s+SVNvE1/2hmMhhwHnXwGdgEvAlQBOQUd/CQt9f1oXLQ8P9bx4Ikd3gs55sPsFwP6AMiL8jOLAY6AMoOn2WqXVeq7Knjxvl844gq/0d1ogaAeD52wGnY1nVsSrORh8LW9qwboi+NkOXQlb3xhWjt3YBU28VXhw7deDAAeobGqyuUZXc7u8A2LnzB0pL1xIIBOjp6aGsbBPr163DU7UHzp1ioPAxAKtj5KgFvDOWZ4stIjAPaJa0qTIUUUXE4vSxYypYuszYgwFJUnHxe3K7K1RR4ZbH41FycrJKSlzav3+/3G63UhwOJSUmSHF2Nb3wofoCQfNTV69SDnlVGYoYSZuBxgg8PiwAGOCTCVKjJOfLraf0rq+NXLvNJCcna2BwUPnLX5fL9b48Ho+mT09TTU2Nlix5VS5XiSKRiNrb2+VwONTZ2amkxEnavONnle+q1qdlG/VWgl1/5szVsubj5B1tk6R5E6QjwMeAsRljkLRHkk+SLk6wK05SqqRwNKqZM2dq8uTJ2rdvn+bPn69oNKJF+fn6ass2Fb29Wg+mZ2iu0ylAubm5mpGZqcSJD8iRMFFZWVmSzaZfe88rKT5Ob2SmxT78qKTdxpgrY2KMqZH0KFBaPSttQ73SjJE0eCmMzRhTXl4usLRjx/f6dvt2PfvMAiVFB9TY1KzClUWq8bYqEAwqFArJ7/cr1eFQRka6tm7ZqrnZ2aTkPG38OXOM/QrcZYwp+9cduCrymaTsHOlIoqSh+HgT7OrC4UhRamqqnI9k6cX81xTx/qEnAg0qzIyT9m5R2pRUvfTKYh08WCu/z6fcOXPU39unpQUFPJWXZ/LtNtmlg+FwePZo+M2m4YOqqirWrFrFYDTKF+d6rfB1Rm7saF4E9gxesiLXzOXQqluCXkfiYaAeoKA9SHp9i/VL34Ubwrd19TKl7qi1srM7tvUbMOO24GNEXAB1wPT6Fpa0nrLC1gi+MxxhgfekNbvxOK0jPkV3DB4jMdyNoo4uptV5req/z/NNoJuk2mbro+7+GHgvkHbzircvUgzQAmQePoaz6QRXX8ohYPk9A4+RmA0cGvX7d3Orb/1dFlkLrLjv4PGM53+VfwALqHAvWVeb0wAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Nike",
+  "domain": "nike.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADjUlEQVRYhb2XzU9jVRiHn9OWK18DFE0giojtBNKxRhPkI5DUoRAyQeymLEYTVy5c+A+QDGsWrmbjxsQYF26IG6NjZBYmmshXAQ0IqQECCiU0TCVSCJC0/bm4U1MIdIpAn+W5957nd997cu57DAUgyQE0Am8DQeAN4CWgBjDAPrAD/A78BPwIrBhjUoXMn09sJPklfSIpKulEzyYlaUPSZ5K6JLn+r/x5SQ8kbRYgvYgnkh5Karys/DVJ30tKX0Gey4ykQKHyNknz1yTOZUPSYCFvfhPyLH9KCub75o9uUJ7lV0m3zwvwQFKmCAEk6XNJVq78dUl/FUkuSfuS7gE4nmb4AHi5oFV6PdwCPpRU6pD0KvBuEeVZ7gJtDiAAeM5eTafTpFJX20mznJyckEgkODg4yB1+AXjHBfQAVu6VdDrNxMQEfr8ft9t9aWEmkyGRSLCyssLm5iZlZWW0tLTQ1NR09ta7LuDNs6Pj4+NEIhG6u7sLliaTSdbX15mbm2N+fp7Dw0P8fj89PT34fD5KS0vPe+yOC3gxd2Rra4vR0VGCwSAOh+O8hwA4Pj4mFouxuLjI1NQUs7OzxONxPB4PoVCI/v5+GhoaMMbky33LBZyq8djYGAsLC1RVVbGzs0N9fT0AqVSKeDxONBplZmaGSCTC8vIyu7u71NbWEgwGGR4eprOzk8rKysLKBhhJKcAJdhmHhoaYnJykpKSE9vZ2urq6yGQyrK2tsbS0RCwWI5lMYlkWPp+PUChEKBSiubkZl+vyf14jKQHUAmxvbzMwMMDGxgbGGDKZDJIAe2EBuN1uOjo6CIfDBINB6urqLi3NxQXEswGqq6vxer2srq7idDr/u8npdNLY2EhfXx/hcJjW1lbKy8uvJH7KkQu7jfIBVFRUMDIygmVZRKNRLMvC4/EQCATo7e3F6/WeCnYNrBhJHwMPsathxzo6Ym9vD5fLRU1NDZZlXTzF1fjUSLoDPAKabspyAfvAfQfwB/C4yHKAaeAXhzEmDXwJPCmi/AT4whizn93qpoGvihjgB+DbUyOSXpE0XYRmZF1S27mxJAVkd683xd+S3s9bG0mDsrvX62ZP0keyj3n5kRSU9Ns1yjckvVeQPCfEbdnda/IK4mNJ30h6q2DxmRDPSbon6WvZ57xC+UfSY0n3JeX9N+ftFnKClAGtwCB2C+fD7mxzOQJWgZ+B74AJY8z+s+b+F1Wz/4LgQEFsAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Nordstrom",
+  "domain": "nordstrom.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAASFBMVEUAAAAQEBD///+wsLAMDAwfHx+EhIRvb29MTEz39/c2Njbu7u4pKSnj4+O8vLwVFRXKysqgoKB5eXlbW1u2trba2tpAQEBgYGB6WKHhAAAAgUlEQVQ4jc3TyRKDMAwDUKE4hRDWluX//7QdZqCXYF3RJZ7JO/ggI1rlxCJkKvX9LPC6pncIJcD6nAJZBPwokBoBmFoBmDsB2EcPLAO5jg4INpGTOQDjSg7mAMT+9ywOQJePZe8B2iwAtiQAGgWwK4C6COb5KsS/PE9r9Q2QUef/BenUA2PTq5/4AAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Nordstrom Rack",
+  "domain": "nordstromrack.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAALVBMVEUyf+////+Zv/dln/NMj/Hm7/3M3/tZl/J/r/Wzz/lyp/S/1/qMt/bz9/4/h/A4bmFvAAAAf0lEQVQ4jdXSSw6AIAwEUGgBAT/3P64mRlpgFJc6qya8hBZqzF/iqM3iKsC2TxwBm0fAj4CdEPDBl5oRIEPvAbxCAdykAgzBlTWpC1qQiKvTHkTm7QmcLRIGQaYMN1OEUmcMZlUPXnLGIKImNFATYWAEyF7K0h4fIJtbL+6XswNSigMTt5gpMgAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Publix",
+  "domain": "publix.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAQlBMVEVHcEwviQ8wiw8viA4viA8viA8viA8viQ4viQ8viA////8jhAALfgB2qmyty6jz+PLT49BCkDBTmESVvI2JtYCMt4OHvZCHAAAACnRSTlMA5yX/pezKFJNSd3SUBAAAAQpJREFUOI2Fk1sWgyAMRNEoglAeWve/1QKWJCA9nS+PuWZiHkKQtJIrwCqVFgNtCzAtWx9X0Em1n099HGBiSeZnOGvG78dxgJpjkP/r8qzPGGtNV+nGw2cIwUVCsgn9v732W87WV0sCKO72qoBE6i/mf5WQcz7nqC6aSrQhBV42lZkfKqCErECs5samHO8vIcXKHY7y2jjyWLHGAsQHAC1wJ85FnAg0Ft4kWTLLFpIDu3/Hw/FGSPzNG6iK1VlhozjgD5yGxlZnwF+5i94ZmhYNqwBp1hH4vBca9w1Ap40WZggotnKlyA6YmqU9zvMyLYCLX9Y+N7GN49r/PBzNkOHpzfxC/x1v1vD8P3FyExG88Cy6AAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Ray-Ban",
+  "domain": "ray-ban.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAdVBMVEXsHiTrAADsGyHrChT////rAA7sFh3/+fn96uvvU1bsFBv2m5770tP4t7ntLDLtLzT5vL7vRUnwTVH+9fX1kpTyZGj3rK7wWVztIynzgYP0iIr83t/2oKH3srPuPEH2pKb72NntNjr6ysvycHLvSE31lZfzfH9njJVvAAABD0lEQVQ4jeWRyXKDMBBENTNaQEJYICyzCTA2+f9PDAZXFsfl3JO5aOnXXaoWY/93UL/WRXF8SYBxKoifsXjfyFMGmX0AkCg/0I6IEOqkoc1zN6Go26zrbL2dhetjFDcTK4fthmjkypX11NIG2MQACo1m7s83gBrFTZGUYMwOODdfYEwqPvmrXJMGPxWQ+hLmk2QoBbg+9cF0SVY3hzUBiwW1TP3QjgJlXsQQY6XmeEyl3J+N67ICzsIp75clvFnHF9BafusuVaPOusB9C0TKwkNJ+sL5YIybjKuISXfGBwCHkXvb6BzCCnz08zWi9KNKehKxoqf/I68zE73Vwi7PgbVtRBIM8/q5/gn+ov/ZeQcRVg7JTgox3AAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Sunglass Hut",
+  "domain": "sunglasshut.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAASFBMVEX///8AAAAaGRji4uL7+/vt7e3o6OjOzs7U1NSysrLHx8esrKvc3Nz29vbz8/PBwMBnZmaOjY24uLiCgYGdnZyura0wLy6ampllH02GAAAAfUlEQVQ4je2QQQ4CMQhFobSFFlpsndH739RpYnTnypiYzFtACJ8PAeDkn4jOH/s9IF7eJckzrylORxgYAorxTEXdRZkmSzWaXmjQIbguQQXdctHqwlr36bWQaLFtORgi3iASUEw97Z4sU6Peeo4Z8tpm495eB1P88gtOfsgDh5wDu+/BvvQAAAAASUVORK5CYII="
+ },
+ {
+  "name": "Target",
+  "domain": "target.com",
+  "aliases": [
+   "Target.com"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACBElEQVRYhc2X4W3CMBCFP6IOkBFggyB5AJigdAJgg24AbJANKBPQDegAkeoNYISM0B++QJTcJYYi4EkISM7vns/n83nAlSggBTL5pPK4BDzgXfgdjUGk0yGwAN7FcRc8sAO+HZz+JUBmuwI+I3RqyIFNV1RMAQVMgD2XMN+KEvhw8KO9TAznC+BwB+cIx0E4W2hFQAy3keRevvvyosLSwZcpQMJ+6CA4cUkwX39RBBEzYE5IWgvT+nKcBUjCHbHDvnGw7iCui1kTkldDCYyqxKznwMpwXorqKOcAYjtFz/5qZwESAdnnR4NvamVwH3qWdOTgVEVgZhhtLOcFZAUs5KMmoYzdGNwzuETglzbJycFIc0zYJU17T8hyr4w50k5M72Cc1Gp7EzvD+cGwzwj7PYqLEME0McgAvpVnW7qLU4peQzQugMwUYOzzmIKTNaOgLUtdgDYjbUBstbNsNc5UPQseiQS9WMTOwEJsBMvEIjbWMUaEN/JHtTUFoBenJd0tVyk2MVxBgLv0c03Mmw9kZlPD3hPKdhQX0j++yZ8d7TANC1g3DyFxMG5sy1bYK8jJOFRe7eBVDiPpXnPDcC9EtzjfG6/zqmO+qiGRgb19/zUNyeu0ZDWiBc9qSm8UEYuWc1OAiJjwrIsJnNupEfbuiEFOSDjVOVx3Oa0S7HGXU0PMXa/nf7VPriUMEUfkAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Ulta Beauty",
+  "domain": "ulta.com",
+  "aliases": [
+   "Ulta"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAQlBMVEVHcEzyaxzyaxz////yaxzyaxzyaxzyaxzyaxzyaxzyZAHyaBDxXgD4t531jmH839X0f0f2nnr3rI7+8Ov5wav6zLy+/yPcAAAACnRSTlMA6v//T8rsE5SlBDbs2AAAARRJREFUOI2Nk9m2gyAMRSVxwDBUUP//Vy8BKkKlvecJVjZJyDAMRaOcZoB5kuPwoGWFm9altUtoJOvnorUDiJuTBRQF3azhrmC52Z3xxhRCWWNcIQTQiYi7vgDyiCeBuPKjowaUQzwoZ7pABl41ECNyEP4/mQawiJ6BNQDwDYBQ3+/AmEr4AWyIjlJBpycAGFB8mIa56yEC8wA9wEYAfgPdEDaHeEyyAFP/mwmQ/UJtKhUqldo37Q7NyjmmZvELxDIw+sz4mtsNmoHj7YK2NA6p3THNGAONJqUUafYHKcU8ctEpp3E4a/0rnCw7ENfQMhF9ZO1bCXARpN25R+tptars78UJ0ZOiWdTb92P1/rG8rMf1/wNTPxGHR0NMYgAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Under Armour",
+  "domain": "underarmour.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACW0lEQVRYhe3WXWjNYRwH8M+Og1mcsiTaWIvlLeQlEoVSciEvhVxwx4W4c+NS7YY7tyiJC4Xiyg2uvKSQ1mZrRjJbk1YyzWyMi+c5dnb2P1vnzJ3zradOz//3/J7f2/f7HMooo4zxkcL0SZ6tGM8onbCXwXpsQwOacA7DRQYwF40xgBY8RCt+JAWQwgrsw3asw6z47VeRF2cxDVuxGL/xCU9wH3fRnTVcjQt4Hw3z17UYYLFYiPYEf0N4gdOYk8YBnDJBr0pA9sJ8pLEWdXiewgOhPP8ahQLIogktKTzCzXEMSyk/oaKFzvbjMj5nN2pwR/IMPEZ1gcDScSVdtBm9Cf4GcBaVjLCgS5iDHhxBVY6jNTiE10LvamJ2/QKlKjAjOhxEh1DeowmBd+N8zH6AsYNXhV04IVBoStz/Gm1bcRvNAmv6YvbVAt3W4SBmx4Aq4/lvuIWLeCZHU/KFqF+gSDs2xcwI4jSMj0JLXkXb7JB14kP8vRP1eX77YlVa5AlabgXSOCzwc2XOt2FcRZsgVhmhVb0Cp8VM58XMu/AGewQ1zWJIYFxjTGIUpuEMvhg7NG1CeQktyaAWS7EqBtuA+UILs4HvN1Kl3NWB3fkBHI9lSmLBTclvxkSox7sCPjuEFkthCU5iZgFHA4p/iAglHyzwbZEw6DNS2IvlJVwwWezA2pRArZdKy7JUDAgK/FcJF+AY7hk7C9eVJse1wgDn+urBFaHqGUaGqxOXcAMbsQFbBBX8qbSXsgLf8VYQn6fC/4FmhWdjFKqwzGhNKAZVQiJ1mFrC+TLK+E/wB3Rtpq1/uZ1UAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Victoria’s Secret",
+  "domain": "victoriassecret.com",
+  "aliases": [
+   "Victoria's Secret"
+  ],
+  "logo": "data:image/png;base64,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"
+ },
+ {
+  "name": "VIPOutlet",
+  "domain": "vipoutlet.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAeFBMVEX///8ti/Avkfksh+ktiu0vj/Xr9P7u9PsogN0pg+MujfT4+/5Ck+/N4fisyO20ze9ZmuFjn+QLedu40/OCsOwggONFkeZKl+vH3PcZgultqO17s/Q2kPGEsOaIte0betiUu+tXoPTY6PuUvfNlo+2ixe9zqOdFkuB8SR4IAAAA/0lEQVQ4jb2S3XaDIBCExQX5MdqGBHVrm1gTk/d/wy7R5KTIIVfteoXzHZgZyLJ/HylfAPXbC+B9m9ZLa9PAzrpdEtg7t0/pRaN1WySADgGwSwAfDjj2CQCAM/YZ/pVfx6NSSmu46cYIYxjjAO5wr7X2hAdIFyKfAYT6yf3WLboROQ0ReP6Vphys84AxXqc9cCgDJ1WLnC8b5OZ7XCcoer5YEKaPltXNHuhjVbSEkz/jNniK6bKde2CcQxt7VyPFANxsEDhgxGN2cBoofHGmC3OxM+im9UThy0k73az1StlmMd81Vq1zDPbycCYvdgr18lo/L6dr2LQMfI8h8IfzA75GDP/C3qhbAAAAAElFTkSuQmCC"
+ },
+ {
+  "name": "Walmart",
+  "domain": "walmart.com",
+  "aliases": [
+   "Walmart.com"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADqUlEQVRYhe2XT0xcVRTGf+e+GRRkoYCo0HmPaIwuiHWhC1sZwNI0aUyrVevKpJJgu7dJXVjFuOjCP2vbhXVpqKE2RheVOMyQ2mgw0YaFLmr6BhiHv5q0gDDMOy5m6PDmvUF8abqxZ/Vy7ne+73v3vnvufXAnIoaO2a9ppmNG086cpp3+qDwSSfz7HU2sx3LAXeVUgbXlhPTNzvxXLhPFAOvmwU3iAHHi9W1RqKIZWPt7IZgszN8+A4uz86gWKwlVlnKzt8yAjrQ36wR1tYrkMEVgs+Ci7Ge1Fl7HiWuq495/NaApYppxzlEXm2PRyeuoPbCF+elNlqZrgXQs8TrLTh5LFzVjf65DWDUNgP0CyMsgAnIfxpzRtH1BU20tIdyTFRWdCgiPtDdr2hlGrU9Bmkqc5lXanIO1DRgaAjJiDmDFr2jG3lM18nsFw1Wf+KjTSzz2CyIvBvhUG2sb8FaGgSuBIuQhkIuadt5XLdd43meo5oFZlLMAOojRMftdDN8i0h4iPoEsn/cxBzAT1DFvH8GY48CjISQfSbd7vPRYqhdBATRtn0LMW8EX0KvgfciNybPVH2tgF0gna9KTPcN31x5H9SXQS1WIJ24+CbohXj1WFr4M3ivk3cckOflJ2E7ZVivW0cTTiDkGdOB5J6R3cjwUl2p/Eiv2ATDJevG0PDf1w3b4/9+xvSVIJZ7CmGMIHYiekK7sT+G48hIIWbR4WpJTP0Y2oIMY9jgHUd4EdpUaCYCOSNLdG1qTdr5GZH8loZfx9GN6ssMieGE1gV2gQ9Rpxh6gt+NXVIZBdlfEgU19QhXZ2IrljL+HiDyDZc4x5vymafuofuM7wksQn3jq/kZMwyWkejsBqIdyiqT7jgiephKdWOYiiIVV2Ce7p38uzZp9EpWTIFaQQiewlnbJs/PXw2fA1B+qIf4Hovuk23375lQac6TUIWmlGOsHkEE86cq+h8deVIMHlEgn2uBrz6YKsBTy4l/B6k7pyo5UjTxcwfCIj6bHTVFY34nqeapD/Rp+A0X3AugXoIrqX+C9Id3ZA5LMzwWIILHJ+I7qQembXpBu9xBS7AddLHF6Q+TdL324EGI01dbCSu76lpeMjJMrLwGoLki3G3Zkl4bHiZO3G+X57J8Bo7WKtgodwuIBZxXZ+NBUueHWb2W4VkS7Eza1tlTEAUS4p601ClU0A3V3NweT8ZpLcOsNrBVnwDfdBQorudtmQPqmF/C8AWAWdB7haJS/ojsB8A+C3mktDFwh6gAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "Winn-Dixie",
+  "domain": "winndixie.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,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"
+ },
+ {
+  "name": "Zenni",
+  "domain": "zennioptical.com",
+  "aliases": [],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEy23ugANTq75O4JQEUIQEUAO0AJQEUIQEUJQEW/6PNVe4EpVFp4nqWOtb4AKi9jiZCp0dobSlAALjM5Ymjt7fD2AAAACnRSTlMA////dP//+DrMBuyk1QAAAO1JREFUOI2Fk+HWgyAIhgOCljZz1f1f6zB1+cV38v3FwWfjqWQYNOM8sck0j0POyx7WvDrnmXg6Z9b5z8A4zM/APBR/wZTSbcqpKMjxTintVG5VogDeETkvqV6DlgHvAAG99/P/IwF8drZAbsrhAGgTC9ByNhEAnK8DWoeIRQAorGyB3MToWoEWOB9LFhUss/4CnHv4UYGI/A/AN4H7U/AlkH9/RDFAK4DgLbBfAmtwFmgEdBYZAL0KQBbYFL0Dok1wh9RZFgBHRQDD9ekvYFs05Q2lcvldmLoyomFbT/1L27323cXpr153eTvr/wVgHRZ7qZiD/wAAAABJRU5ErkJggg=="
+ },
+ {
+  "name": "7NOW",
+  "domain": "7-eleven.com",
+  "aliases": [
+   "7-Eleven"
+  ],
+  "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAADFBMVEUAclH////wCBL1ehSbtEi5AAAAM0lEQVQYlWNgIAYwwgFMgBkEGJmYUASAfBQBEB8hAARgPpoAwlCiHIKmg7AAAwNQgGgLAFVnAIygJYz5AAAAAElFTkSuQmCC"
+ }
+];
+ const brandKey = name => normalize(name).replace(/’/g,"'");
+ const brandByName = new Map(brands.flatMap(brand => [brand.name,...brand.aliases].map(name => [brandKey(name),brand])));
+ // O Juno substitui estes dados a cada edição. expiresAt deve ser ISO com fuso quando houver horário confirmado.
+ const offers = [
+  {novo:true,category:'Supermercado',store:'Publix',value:'Compre 1, leve 2',description:'Queijo ralado Publix 6–8 oz por US$ 3,29 no novo encarte (sai US$ 1,65 cada).',how:'Preço do encarte — na Flórida é true BOGO: leve os 2 itens',channel:'Loja física',validDate:'2026-12-02',rules:'Novo encarte: 27/11 a 02/12',url:'https://www.publix.com/savings/weekly-ad',label:'Ver encarte'},
+  {novo:true,category:'Supermercado',store:'Publix',value:'US$ 10 de desconto',description:'Em US$ 35+ de produtos P&G selecionados (Tide, Bounty, Charmin, Crest, Dawn, Febreze, Gain).',how:'Clipar o cupom digital no app Club Publix antes da compra',channel:'Loja física e app',validDate:'2026-12-02',rules:'Club Publix (cadastro grátis)',url:'https://www.publix.com/savings/weekly-ad',label:'Ver encarte'},
+  {category:'Supermercado',store:'Walmart',value:'Até 65% de desconto',description:'Black Friday: flash deals em casa, roupas e eletrônicos; VIZIO 50" Mini LED 4K por US$ 198.',how:'Desconto já está no preço (Rollback)',channel:'Online e loja física',validDate:'2026-11-29',rules:'Walmart+ tem acesso antecipado e frete grátis sem mínimo',url:'https://www.walmart.com/shop/deals/black-friday?facet=fulfillment_method%3AShipping',label:'Ver ofertas'},
+  {category:'Supermercado',store:'Walmart',value:'Ceia por US$ 35',description:'Cesta de Thanksgiving para 10 pessoas.',how:'Montar a cesta da ceia no Walmart.com ou na loja',channel:'Online e loja física',validDate:'2026-12-24',url:'https://www.walmart.com/shop/deals/black-friday?facet=fulfillment_method%3AShipping',label:'Ver ofertas'},
+  {category:'Supermercado',store:'Target',value:'Até 50% de desconto',description:'Black Friday: presentes, Beats, Bose, Dyson, brinquedos e cozinha; Deal of the Day diário.',how:'Preço promocional; cupons digitais no Target Circle',channel:'Online e loja física',validDate:'2026-11-29',rules:'Target Circle (grátis); Circle Card dá mais 5%',url:'https://www.target.com/s/todays deals',label:'Ver ofertas'},
+  {category:'Supermercado',store:'ALDI',value:'Ceia por menos de US$ 39',description:'Ceia completa de Thanksgiving para 10 pessoas, com peru de 16 lbs.',how:'Sem código — preço na loja',channel:'Loja física',validDate:'2026-11-25',rules:'Último dia 25/11; sem membership',url:'https://www.aldi.us/store/aldi/pages/weekly-specials',label:'Ver ofertas da semana'},
+  {category:'Supermercado',store:'Kroger',value:'Leite US$ 2,49 · Stove Top US$ 1,48',description:'Encarte da semana com Weekly Digital Deals e Mega Event (US$ 1 de desconto por item em 5+ participantes).',how:'Clipar os cupons digitais na conta Kroger antes de comprar',channel:'Loja física e app',validDate:'2026-11-26',rules:'Digitais podem ser usados até 5x numa compra',url:'https://www.kroger.com/i/ways-to-shop/mobile-app?ds_rl=1281641',label:'Ver cupons digitais'},
+  {category:'Supermercado',store:'Winn-Dixie',value:'BOGOs do encarte',description:'Encarte promocional de Thanksgiving e Black Friday com BOGOs e preços especiais.',how:'Confira os cupons digitais no app myWinn-Dixie antes da compra',channel:'Loja física e app',validDate:'2026-12-02',url:'https://www.winndixie.com',label:'Ir à loja'},
+  {novo:true,category:'Restaurantes',store:'7NOW',value:'US$ 20 de desconto',description:'Em pedidos de US$ 30+ no delivery ou retirada (Thanksgiving).',code:'THANKFUL',channel:'App 7NOW',validDate:'2026-11-26',rules:'Só em 26/11; lojas participantes (7-Eleven, Speedway, Stripes)',url:'https://www.7-eleven.com',label:'Ir à loja'},
+  {novo:true,category:'Restaurantes',store:'7NOW',value:'Pizza grande grátis',description:'Em pedidos de delivery de US$ 30+ (Black Friday).',code:'BLKFRI',channel:'App 7NOW',validDate:'2026-11-27',rules:'Só em 27/11; lojas participantes',url:'https://www.7-eleven.com',label:'Ir à loja'},
+  {novo:true,category:'Restaurantes',store:'7NOW',value:'US$ 25 de desconto',description:'Em pedidos de delivery de US$ 50+ (Cyber Monday).',code:'LOADUP',channel:'App 7NOW',validDate:'2026-11-30',rules:'Só em 30/11; lojas participantes',url:'https://www.7-eleven.com',label:'Ir à loja'},
+  {novo:true,category:'Restaurantes',store:'Casey’s',value:'Pizza de frigideira por US$ 12',description:'Qualquer pizza de frigideira (pan pizza) pelo app.',code:'HOLIDAY',channel:'App e online',validDate:'2026-11-27',rules:'De 25 a 27/11, pelo app',url:'https://www.caseys.com/rewards',label:'Ver no Casey’s Rewards'},
+  {category:'Restaurantes',store:'Chipotle',value:'Entrega por US$ 0',description:'Taxa de entrega zero em pedidos de US$ 10+.',code:'CYBER26',channel:'Site e app',validDate:'2026-11-30',rules:'De 27 a 30/11',url:'https://www.chipotle.com',label:'Ir à loja'},
+  {category:'Restaurantes',store:'Fazoli’s',value:'Pizza inteira grátis',description:'Na compra de um Family Meal.',code:'THANKS26',channel:'Loja e online',validDate:'2026-12-01',rules:'De 25/11 a 01/12',url:'https://www.fazolis.com',label:'Ir à loja'},
+  {category:'Restaurantes',store:'Fazoli’s',value:'Compre 1, leve 2',description:'Fettuccine Alfredo: compre um e leve outro grátis.',code:'SHOP26',channel:'Loja e online',validDate:'2026-12-01',rules:'De 27/11 a 01/12',url:'https://www.fazolis.com',label:'Ir à loja'},
+  {category:'Restaurantes',store:'Benihana',value:'US$ 50 de desconto',description:'Em catering de US$ 175+.',code:'HIBACHI50',channel:'Checkout online',validDate:'2026-11-30',url:'https://www.benihana.com',label:'Ir à loja'},
+  {category:'Restaurantes',store:'Moe’s',value:'US$ 50 de desconto',description:'Em catering de US$ 250+ (e US$ 100 de desconto em US$ 500+ com BLACKFRIDAY100).',code:'BLACKFRIDAY50',channel:'Online e app',validDate:'2026-12-01',rules:'Pedidos de 27/11 a 01/12',url:'https://www.moes.com',label:'Ir à loja'},
+  {category:'Restaurantes',store:'Burger King',value:'Item grátis',description:'Membros Royal Perks escolhem 1 item grátis (Cheeseburger, Original Chicken Sandwich ou Croissan’wich).',how:'Ser membro Royal Perks e comprar US$ 5+',channel:'App e loja',validDate:'2026-11-30',rules:'Royal Perks (grátis); de 27 a 30/11',url:'https://www.bk.com',label:'Ir à loja'},
+  {category:'Roupas',store:'Nike',value:'Extra 25% de desconto',description:'Em estilos selecionados de Black Friday; a Fall Sale tem até extra 40% aplicado no carrinho.',how:'Desconto no site; membros têm frete grátis em US$ 50+',channel:'Online',validDate:'2026-11-29',url:'https://www.nike.com',label:'Ir à loja'},
+  {category:'Roupas',store:'adidas',value:'Extra 15% de desconto',description:'Sobre a Black Friday com até 60% de desconto (ex.: Galaxy 7 por ~US$ 28 combinando).',code:'DN15',channel:'Online',validDate:'2026-11-28',rules:'Código de agregador (DealNews) — testar no checkout; adiClub (grátis) tem frete grátis',url:'https://www.adidas.com',label:'Ir à loja'},
+  {category:'Roupas',store:'Macy’s',value:'Até 80% de desconto',description:'Black Friday em roupas, sapatos, eletroportáteis, móveis e malas.',how:'Preço de Black Friday; frete grátis em US$ 39+ para membros Star Rewards',channel:'Online e loja física',validDate:'2026-11-28',url:'https://www.macys.com/customer-service/articles/macys-offers-discounts-rewards',label:'Ver ofertas'},
+  {category:'Roupas',store:'Nordstrom',value:'Até 60% de desconto',description:'Estilos selecionados em promoção.',how:'Preço promocional',channel:'Online e loja física',validDate:'2026-12-01',url:'https://www.nordstrom.com',label:'Ir à loja'},
+  {category:'Roupas',store:'Kohl’s',value:'Extra 20% de desconto',description:'Sobre os deals de Black Friday (até 50% de desconto).',how:'Desconto aplicado no pedido',channel:'Online',validDate:'2026-11-28',url:'https://www.kohls.com/sale-event/todays-deals.jsp',label:'Ver ofertas do dia'},
+  {category:'Acessórios',store:'Sunglass Hut',value:'Até 50% de desconto',description:'Black Friday Week em todo o site; até 25% em óculos com IA (Ray-Ban Meta e Oakley Meta).',how:'Preço marcado no site',channel:'Online',validDate:'2026-11-30',rules:'Exclui marcas de luxo selecionadas (Chanel, Prada, Maui Jim)',url:'https://www.sunglasshut.com',label:'Ir à loja'},
+  {category:'Acessórios',store:'Ray-Ban',value:'30% de desconto',description:'Em óculos customizados no site oficial.',how:'Desconto automático, sem código',channel:'Online',url:'https://www.ray-ban.com',label:'Ir à loja'},
+  {category:'Acessórios',store:'Nordstrom Rack',value:'Até 75–90% de desconto',description:'Clearance de Black Friday com mais de 15.000 itens; óculos Cole Haan polarizados ~US$ 25.',how:'Preço de clearance',channel:'Online e loja física',rules:'Frete grátis em US$ 89+',url:'https://www.nordstromrack.com',label:'Ir à loja'},
+  {category:'Acessórios',store:'Zenni',value:'Até 30% de desconto',description:'Óculos online: 20% em US$ 99+, 25% em US$ 150+, 30% em US$ 215+.',code:'BFS',channel:'Online',validDate:'2026-11-29',url:'https://www.zennioptical.com',label:'Ir à loja'},
+  {category:'Acessórios',store:'Under Armour',value:'Boné por ~US$ 5,92',description:'Boné UA Blitzing 3.0 combinando os dois códigos no carrinho.',code:'BLACKFRIDAY + EXTRA10',channel:'Online',rules:'Códigos de agregador (DealNews) — testar no checkout',url:'https://www.underarmour.com',label:'Ir à loja'},
+  {category:'Eletrônicos e casa',store:'Best Buy',value:'Doorbusters da Black Friday',description:'TCL 65" por US$ 229,99; fone Sony WH-1000XM5 com cancelamento de ruído por US$ 169,99; MacBook Air 13" por US$ 1.049.',how:'Doorbusters da Black Friday — confira na página do evento ou direto nos produtos abaixo',channel:'Online e loja física',validDate:'2026-11-28',url:'https://www.bestbuy.com/black-friday',label:'Ver ofertas da Black Friday',links:[{text:'TCL 65" S4CF 4K — US$ 229,99',url:'https://www.bestbuy.com/product/tcl-65-s4cf-series-4k-uhd-hdr-smart-tv-with-fire-tv-2026/J36QYTHZVP/sku/6687112'},{text:'Sony WH-1000XM5 — US$ 169,99',url:'https://www.bestbuy.com/product/sony-wh-1000xm5-wireless-noise-cancelling-over-the-ear-headphones-black/J7XSRH5CXG/sku/6505727'},{text:'MacBook Air 13" M5 — US$ 1.049',url:'https://www.bestbuy.com/product/apple-macbook-air-13-inch-laptop-m5-chip-with-10-core-cpu-and-8-core-gpu-16gb-memory-512gb-ssd-midnight/JJGCQLKXL7/sku/6397846'}]},
+  {category:'Eletrônicos e casa',store:'Home Depot',value:'Até 45% de desconto',description:'Black Friday em ferramentas selecionadas e eletrodomésticos.',how:'Preço promocional',channel:'Online e loja física',validDate:'2026-12-02',url:'https://www.homedepot.com',label:'Ir à loja'},
+  {category:'Eletrônicos e casa',store:'CVS Photo',value:'50% de desconto',description:'Em produtos de foto: livros, cartões e calendários (Cyber Week).',code:'50PHOTO',channel:'Online',validDate:'2026-12-12',url:'https://www.cvs.com',label:'Ir à loja'},
+  {category:'Online',store:'eBay',value:'Extra 20% de desconto',description:'Na Early Black Friday Sale, nos anúncios elegíveis.',code:'CYBERFINDS20',channel:'Online',validDate:'2026-12-01',rules:'Um cupom por pedido; só anúncios elegíveis',url:'https://www.ebay.com/deals',label:'Ver deals'},
+  {category:'Online',store:'eBay · adidas',value:'Extra 50% de desconto',description:'Na loja oficial da adidas no eBay (tênis, roupas e acessórios).',code:'EXTRA50SALE',channel:'Online',validDate:'2026-11-27',rules:'Desconto máximo de US$ 1.000',url:'https://www.ebay.com/deals',label:'Ver deals'},
+  {category:'Online',store:'eBay · VIPOutlet',value:'Extra 8% de desconto',description:'No clearance do VIPOutlet (eletrônicos, casa e relógios, até 70% de desconto).',code:'VIPNOVTAKE8',channel:'Online',validDate:'2026-12-02',rules:'Desconto máximo de US$ 100; frete grátis',url:'https://www.ebay.com/deals',label:'Ver deals'},
+  {category:'Online',store:'eBay',value:'Até 20% de desconto',description:'Em moda e acessórios de luxo selecionados.',code:'SAVELUXE',channel:'Online',validDate:'2026-11-28',rules:'Código de agregador — testar no checkout',url:'https://www.ebay.com/deals',label:'Ver deals'},
+  {category:'Online',store:'Amazon',value:'Até 60% de desconto',description:'Black Friday Week: Big Deals, Lightning Deals e cupons clipáveis na página do produto.',how:'Clipar os cupons verdes na página Coupons antes de ir ao carrinho',channel:'Online',validDate:'2026-11-30',rules:'Prime tem preços exclusivos; sem Prime, frete grátis em US$ 35+',url:'https://www.amazon.com/coupons',label:'Ver cupons clipáveis'},
+  {category:'Beleza',store:'Ulta Beauty',value:'Até 30% de desconto',description:'Marcas selecionadas de skincare e cabelo; compre 2, leve 1 em linhas participantes.',how:'Preço promocional e ofertas da loja',channel:'Online e loja física',url:'https://www.ulta.com/promotion/coupon',label:'Ver cupons da loja'},
+  {category:'Achados Penny',store:'Home Depot',value:'Possível achado de US$ 0,01',description:'Vaso sanitário Glacier Bay dual-flush — relato da comunidade com recibo confirmado em 16/11.',sku:'215583',channel:'Loja física',rules:'Relato da comunidade — confirmar na sua loja: escaneie no self-checkout (186 relatos em 35 estados)',url:'https://www.pennyrecon.com/',label:'Consultar comunidade'},
+  {category:'Achados Penny',store:'Home Depot',value:'Possível achado de US$ 0,01',description:'Luminária de trabalho Husky 800 lúmens com tripé — relato da comunidade.',sku:'1012388248',channel:'Loja física',rules:'Relato da comunidade — confirmar na sua loja: escaneie no self-checkout (122 relatos em 28 estados)',url:'https://www.pennyrecon.com/',label:'Consultar comunidade'},
+  {category:'Achados Penny',store:'Dollar General',value:'Possível penny (lista de 24/11)',description:'Tylenol infantil Cold+Flu sabor uva — item da lista penny da semana.',how:'UPC 300450304148 — escanear no app DG na loja; se mostrar US$ 0,00/US$ 0,01, é penny',channel:'Loja física',rules:'Relato da comunidade — confirmar na sua loja; listas novas saem às terças',url:'https://www.dollargeneral.com',label:'Ir à loja'}
+ ];
+ const cfg = {order:[31,32,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,33,34,35,36,37,38,39]};
+ let lang = 'pt';
+ let selected = 'Todas';
+ const UI = {
+  pt:{edition:'Quarta-feira, 25 de novembro de 2026 · Black Friday',title:'Cupons em destaque',intro:'Confira o destaque da edição e explore os demais descontos.',lead:'Destaque da edição',feature:'Extra 20% de desconto no eBay',detail:'eBay · código CYBERFINDS20 até 01/12',queroTitle:'📲 Receba os Cupons no seu WhatsApp',queroText:'Toda segunda, quarta e sexta, a edição nova chega direto no seu WhatsApp — com os Achados Penny primeiro. É grátis.',queroBtn:'QUERO RECEBER OS CUPONS',searchLabel:'Buscar ofertas',searchPlaceholder:'Loja, oferta, código ou SKU',all:'Todas',heading:'Ofertas da edição',countOne:'oferta',countMany:'ofertas',noResults:'Nenhuma oferta encontrada. Experimente outra categoria ou termo.',noBrands:'Nenhuma marca neste segmento.',brandsAll:'Marcas e lojas da edição',brandsIn:'Marcas em ',novo:'NOVO',codeLabel:'Código',copyCode:'Copiar código',copySku:'Copiar sku',copiedFlash:'✓ Copiado!',copiedStatus:'Copiado!',copyManual:'Selecione e copie manualmente: ',howPrefix:'Como resgatar: ',howFallback:'Consulte a oferta para resgatar',validUntil:'Válido até ',expires48:'Vence em até 48h',expired:'Expirada',myList:'Minha lista',myListEmpty:'Sua lista está vazia — toque em + Minha lista nas ofertas que quiser guardar.',copyMyList:'Copiar minha lista',clear:'Limpar',addMine:'+ Minha lista',inMine:'✓ Na minha lista',join:'Receber no WhatsApp',shareBtn:'Compartilhar no WhatsApp',copyLink:'Copiar link',invite:'Cupons do Dia · ofertas dos EUA em português. ',notice:'Ofertas verificadas nas fontes oficiais e comunitárias indicadas; códigos de agregador devem ser testados no checkout. Edições às segundas, quartas e sextas.'},
+  es:{edition:'Miércoles, 25 de noviembre de 2026 · Black Friday',title:'Cupones destacados',intro:'Mira el destacado de la edición y explora los demás descuentos.',lead:'Destacado de la edición',feature:'20% de descuento extra en eBay',detail:'eBay · código CYBERFINDS20 hasta el 01/12',queroTitle:'📲 Recibe los Cupones en tu WhatsApp',queroText:'Cada lunes, miércoles y viernes, la nueva edición llega directo a tu WhatsApp — con los Hallazgos Penny primero. Es gratis.',queroBtn:'QUIERO RECIBIR LOS CUPONES',searchLabel:'Buscar ofertas',searchPlaceholder:'Tienda, oferta, código o SKU',all:'Todas',heading:'Ofertas de la edición',countOne:'oferta',countMany:'ofertas',noResults:'No se encontraron ofertas. Prueba con otra categoría o término de búsqueda.',noBrands:'Ninguna marca en este segmento.',brandsAll:'Marcas y tiendas de la edición',brandsIn:'Marcas en ',novo:'NUEVO',codeLabel:'Código',copyCode:'Copiar código',copySku:'Copiar SKU',copiedFlash:'✓ ¡Copiado!',copiedStatus:'¡Copiado!',copyManual:'Selecciona y copia manualmente: ',howPrefix:'Cómo canjear: ',howFallback:'Consulta la oferta para canjear',validUntil:'Válido hasta el ',expires48:'Vence en 48 h o menos',expired:'Expirada',myList:'Mi lista',myListEmpty:'Tu lista está vacía — toca + Mi lista en las ofertas que quieras guardar.',copyMyList:'Copiar mi lista',clear:'Borrar',addMine:'+ Mi lista',inMine:'✓ En mi lista',join:'Recibir por WhatsApp',shareBtn:'Compartir por WhatsApp',copyLink:'Copiar enlace',invite:'Cupons do Dia · ofertas de EE. UU. en español. ',notice:'Ofertas verificadas en las fuentes oficiales y comunitarias indicadas; los códigos de agregador deben probarse al pagar. Ediciones los lunes, miércoles y viernes.'},
+  en:{edition:'Wednesday, November 25, 2026 · Black Friday',title:'Featured coupons',intro:'Check out the highlight of this edition and explore the other discounts.',lead:'Edition highlight',feature:'Extra 20% off at eBay',detail:'eBay · code CYBERFINDS20 until 01/12',queroTitle:'📲 Get the Coupons on your WhatsApp',queroText:"Every Monday, Wednesday and Friday, the new edition arrives straight to your WhatsApp — with the Penny Finds first. It's free.",queroBtn:'I WANT THE COUPONS',searchLabel:'Search deals',searchPlaceholder:'Store, deal, code or SKU',all:'All',heading:'Deals in this edition',countOne:'deal',countMany:'deals',noResults:'No deals found. Try another category or search term.',noBrands:'No brands in this segment.',brandsAll:'Brands & stores in this edition',brandsIn:'Brands in ',novo:'NEW',codeLabel:'Code',copyCode:'Copy code',copySku:'Copy SKU',copiedFlash:'✓ Copied!',copiedStatus:'Copied!',copyManual:'Select and copy it manually: ',howPrefix:'How to redeem: ',howFallback:'See the offer for how to redeem',validUntil:'Valid until ',expires48:'Expires within 48h',expired:'Expired',myList:'My list',myListEmpty:'Your list is empty — tap + My list on the deals you want to save.',copyMyList:'Copy my list',clear:'Clear',addMine:'+ My list',inMine:'✓ In my list',join:'Get it on WhatsApp',shareBtn:'Share on WhatsApp',copyLink:'Copy link',invite:'Cupons do Dia · U.S. deals in English. ',notice:'Deals verified against the official and community sources shown; aggregator codes should be tested at checkout. New editions on Mondays, Wednesdays and Fridays.'}
+ };
+ const CATS = {'Supermercado':['Supermercado','Supermercado','Grocery'],'Restaurantes':['Restaurantes','Restaurantes','Restaurants'],'Roupas':['Roupas','Ropa','Clothing'],'Acessórios':['Acessórios','Accesorios','Accessories'],'Eletrônicos e casa':['Eletrônicos e casa','Electrónica y hogar','Electronics & home'],'Online':['Online','Online','Online'],'Beleza':['Beleza','Belleza','Beauty'],'Achados Penny':['Achados Penny','Hallazgos Penny','Penny finds']};
+ const CHANNELS = {'Loja física':['Loja física','Tienda física','In store'],'Loja física e app':['Loja física e app','Tienda física y app','In store & app'],'Online e loja física':['Online e loja física','En línea y tienda física','Online & in store'],'Online':['Online','En línea','Online'],'App 7NOW':['App 7NOW','App 7NOW','App 7NOW'],'App e online':['App e online','App y en línea','App & online'],'Site e app':['Site e app','Sitio web y app','Website & app'],'Checkout online':['Checkout online','Pago en línea','Online checkout'],'Loja e online':['Loja e online','Tienda y en línea','In store & online'],'App e loja':['App e loja','App y tienda','App & store']};
+ const LABELS = {'Ver encarte':['Ver encarte','Ver el folleto','View the ad'],'Ver ofertas':['Ver ofertas','Ver ofertas','View deals'],'Ver ofertas da semana':['Ver ofertas da semana','Ver ofertas de la semana',"View this week's deals"],'Ver cupons digitais':['Ver cupons digitais','Ver cupones digitales','View digital coupons'],'Ir à loja':['Ir à loja','Ir a la tienda','Go to the store'],'Ver no Casey’s Rewards':['Ver no Casey’s Rewards','Ver en Casey’s Rewards','View at Casey’s Rewards'],'Ver deals':['Ver deals','Ver ofertas','View deals'],'Ver ofertas do dia':['Ver ofertas do dia','Ver ofertas del día',"View today's deals"],'Ver ofertas da Black Friday':['Ver ofertas da Black Friday','Ver ofertas del Black Friday','View Black Friday deals'],'Ver cupons clipáveis':['Ver cupons clipáveis','Ver cupones para recortar','View clippable coupons'],'Ver cupons da loja':['Ver cupons da loja','Ver cupones de la tienda','View store coupons'],'Consultar comunidade':['Consultar comunidade','Consultar la comunidad','Check the community']};
+ // Traduções [es,en] de v(alor), d(escrição), h(ow) e r(egras), na mesma ordem do array offers. Lojas, códigos, SKUs, preços, datas e links nunca mudam.
+ const TR = [
+  {v:['Compra 1, lleva 2','Buy 1, get 1 free'],d:['Queso rallado Publix de 6–8 oz por US$ 3,29 en el nuevo folleto (queda en US$ 1,65 cada uno).','Publix shredded cheese 6–8 oz for US$ 3,29 in the new ad (works out to US$ 1,65 each).'],h:['Precio del folleto — en Florida es BOGO real: llévate los 2 artículos','Ad price — in Florida it is true BOGO: take both items'],r:['Nuevo folleto: 27/11 a 02/12','New ad: 27/11 to 02/12']},
+  {v:['US$ 10 de descuento','US$ 10 off'],d:['En US$ 35+ en productos P&G seleccionados (Tide, Bounty, Charmin, Crest, Dawn, Febreze, Gain).','On US$ 35+ of select P&G products (Tide, Bounty, Charmin, Crest, Dawn, Febreze, Gain).'],h:['Recorta el cupón digital en la app Club Publix antes de comprar','Clip the digital coupon in the Club Publix app before you shop'],r:['Club Publix (registro gratuito)','Club Publix (free sign-up)']},
+  {v:['Hasta 65% de descuento','Up to 65% off'],d:['Black Friday: ofertas relámpago en hogar, ropa y electrónica; VIZIO 50" Mini LED 4K por US$ 198.','Black Friday: flash deals on home, clothing and electronics; VIZIO 50" Mini LED 4K for US$ 198.'],h:['El descuento ya está en el precio (Rollback)','Discount is already in the price (Rollback)'],r:['Walmart+ tiene acceso anticipado y envío gratis sin mínimo','Walmart+ gets early access and free shipping with no minimum']},
+  {v:['Cena por US$ 35','Holiday meal for US$ 35'],d:['Canasta de Thanksgiving para 10 personas.','Thanksgiving basket for 10 people.'],h:['Arma la canasta de la cena en Walmart.com o en la tienda','Build the meal basket at Walmart.com or in store']},
+  {v:['Hasta 50% de descuento','Up to 50% off'],d:['Black Friday: regalos, Beats, Bose, Dyson, juguetes y cocina; Deal of the Day todos los días.','Black Friday: gifts, Beats, Bose, Dyson, toys and kitchen; a new Deal of the Day daily.'],h:['Precio promocional; cupones digitales en Target Circle','Promo price; digital coupons in Target Circle'],r:['Target Circle (gratis); la Circle Card da un 5% más','Target Circle (free); Circle Card takes an extra 5% off']},
+  {v:['Cena por menos de US$ 39','Holiday meal for under US$ 39'],d:['Cena completa de Thanksgiving para 10 personas, con un pavo de 16 lbs.','Full Thanksgiving dinner for 10 people, with a 16 lb turkey.'],h:['Sin código — precio en la tienda','No code needed — in-store price'],r:['Último día 25/11; sin membresía','Last day 25/11; no membership']},
+  {v:['Leche US$ 2,49 · Stove Top US$ 1,48','Milk US$ 2,49 · Stove Top US$ 1,48'],d:['Folleto de la semana con Weekly Digital Deals y Mega Event (US$ 1 de descuento por artículo con 5+ participantes).','Weekly ad with Weekly Digital Deals and Mega Event (US$ 1 off per item on 5+ participating items).'],h:['Recorta los cupones digitales en tu cuenta de Kroger antes de comprar','Clip the digital coupons in your Kroger account before you shop'],r:['Los cupones digitales se pueden usar hasta 5 veces en una compra','Digital coupons can be used up to 5 times in one transaction']},
+  {v:['BOGOs del folleto','Weekly ad BOGOs'],d:['Folleto promocional de Thanksgiving y Black Friday con BOGOs y precios especiales.','Thanksgiving and Black Friday promo ad with BOGOs and special prices.'],h:['Revisa los cupones digitales en la app myWinn-Dixie antes de comprar','Check the digital coupons in the myWinn-Dixie app before you shop']},
+  {v:['US$ 20 de descuento','US$ 20 off'],d:['En pedidos de US$ 30+ a domicilio o para recoger (Thanksgiving).','On delivery or pickup orders of US$ 30+ (Thanksgiving).'],r:['Solo el 26/11; tiendas participantes (7-Eleven, Speedway, Stripes)','On 26/11 only; participating stores (7-Eleven, Speedway, Stripes)']},
+  {v:['Pizza grande gratis','Free large pizza'],d:['En pedidos a domicilio de US$ 30+ (Black Friday).','On delivery orders of US$ 30+ (Black Friday).'],r:['Solo el 27/11; tiendas participantes','On 27/11 only; participating stores']},
+  {v:['US$ 25 de descuento','US$ 25 off'],d:['En pedidos a domicilio de US$ 50+ (Cyber Monday).','On delivery orders of US$ 50+ (Cyber Monday).'],r:['Solo el 30/11; tiendas participantes','On 30/11 only; participating stores']},
+  {v:['Pizza de sartén por US$ 12','Skillet pizza for US$ 12'],d:['Cualquier pizza de sartén (pan pizza) desde la app.','Any skillet (pan) pizza ordered through the app.'],r:['Del 25 al 27/11, desde la app','From 25 to 27/11, through the app']},
+  {v:['Entrega por US$ 0','US$ 0 delivery'],d:['Tarifa de entrega cero en pedidos de US$ 10+.','Zero delivery fee on orders of US$ 10+.'],r:['Del 27 al 30/11','From 27 to 30/11']},
+  {v:['Pizza entera gratis','Free whole pizza'],d:['Con la compra de un Family Meal.','With the purchase of a Family Meal.'],r:['Del 25/11 al 01/12','From 25/11 to 01/12']},
+  {v:['Compra 1, lleva 2','Buy 1, get 1 free'],d:['Fettuccine Alfredo: compra uno y llévate otro gratis.','Fettuccine Alfredo: buy one and get another one free.'],r:['Del 27/11 al 01/12','From 27/11 to 01/12']},
+  {v:['US$ 50 de descuento','US$ 50 off'],d:['En pedidos de catering de US$ 175+.','On catering orders of US$ 175+.']},
+  {v:['US$ 50 de descuento','US$ 50 off'],d:['En pedidos de catering de US$ 250+ (y US$ 100 de descuento en US$ 500+ con BLACKFRIDAY100).','On catering orders of US$ 250+ (and US$ 100 off US$ 500+ with BLACKFRIDAY100).'],r:['Pedidos del 27/11 al 01/12','Orders from 27/11 to 01/12']},
+  {v:['Artículo gratis','Free item'],d:['Los miembros de Royal Perks eligen 1 artículo gratis (Cheeseburger, Original Chicken Sandwich o Croissan’wich).','Royal Perks members choose 1 free item (Cheeseburger, Original Chicken Sandwich or Croissan’wich).'],h:['Ser miembro de Royal Perks y comprar US$ 5+','Be a Royal Perks member and spend US$ 5+'],r:['Royal Perks (gratis); del 27 al 30/11','Royal Perks (free); from 27 to 30/11']},
+  {v:['25% de descuento extra','Extra 25% off'],d:['En estilos seleccionados de Black Friday; la Fall Sale tiene hasta un 40% extra aplicado en el carrito.','On select Black Friday styles; the Fall Sale takes up to an extra 40% off in the cart.'],h:['Descuento en el sitio; los miembros tienen envío gratis en compras de US$ 50+','Discount on the site; members get free shipping on US$ 50+']},
+  {v:['15% de descuento extra','Extra 15% off'],d:['Sobre el Black Friday con hasta 60% de descuento (ej.: Galaxy 7 por ~US$ 28 combinando).','On top of Black Friday with up to 60% off (e.g., Galaxy 7 for ~US$ 28 combined).'],r:['Código de agregador (DealNews) — pruébalo al pagar; adiClub (gratis) tiene envío gratis','Aggregator code (DealNews) — test it at checkout; adiClub (free) gets free shipping']},
+  {v:['Hasta 80% de descuento','Up to 80% off'],d:['Black Friday en ropa, zapatos, electrodomésticos pequeños, muebles y maletas.','Black Friday on clothing, shoes, small appliances, furniture and luggage.'],h:['Precio de Black Friday; envío gratis en US$ 39+ para miembros de Star Rewards','Black Friday price; free shipping on US$ 39+ for Star Rewards members']},
+  {v:['Hasta 60% de descuento','Up to 60% off'],d:['Estilos seleccionados en oferta.','Select styles on sale.'],h:['Precio promocional','Promo price']},
+  {v:['20% de descuento extra','Extra 20% off'],d:['Sobre las ofertas de Black Friday (hasta 50% de descuento).','On top of Black Friday deals (up to 50% off).'],h:['Descuento aplicado en el pedido','Discount applied to your order']},
+  {v:['Hasta 50% de descuento','Up to 50% off'],d:['Black Friday Week en todo el sitio; hasta 25% en gafas con IA (Ray-Ban Meta y Oakley Meta).','Black Friday Week across the whole site; up to 25% off AI glasses (Ray-Ban Meta and Oakley Meta).'],h:['Precio marcado en el sitio','Price as marked on the site'],r:['Excluye marcas de lujo seleccionadas (Chanel, Prada, Maui Jim)','Excludes select luxury brands (Chanel, Prada, Maui Jim)']},
+  {v:['30% de descuento','30% off'],d:['En gafas personalizadas en el sitio oficial.','On custom eyewear on the official site.'],h:['Descuento automático, sin código','Automatic discount, no code needed']},
+  {v:['Hasta 75–90% de descuento','Up to 75–90% off'],d:['Liquidación de Black Friday con más de 15.000 artículos; gafas Cole Haan polarizadas ~US$ 25.','Black Friday clearance with over 15,000 items; Cole Haan polarized sunglasses ~US$ 25.'],h:['Precio de liquidación','Clearance price'],r:['Envío gratis en US$ 89+','Free shipping on US$ 89+']},
+  {v:['Hasta 30% de descuento','Up to 30% off'],d:['Gafas en línea: 20% en US$ 99+, 25% en US$ 150+, 30% en US$ 215+.','Eyewear online: 20% off US$ 99+, 25% off US$ 150+, 30% off US$ 215+.']},
+  {v:['Gorra por ~US$ 5,92','Cap for ~US$ 5,92'],d:['Gorra UA Blitzing 3.0 combinando los dos códigos en el carrito.','UA Blitzing 3.0 cap by stacking both codes in the cart.'],r:['Códigos de agregador (DealNews) — pruébalos al pagar','Aggregator codes (DealNews) — test them at checkout']},
+  {v:['Doorbusters del Black Friday','Black Friday Doorbusters'],d:['TCL 65" por US$ 229,99; audífonos Sony WH-1000XM5 con cancelación de ruido por US$ 169,99; MacBook Air 13" por US$ 1.049.','TCL 65" for US$ 229,99; Sony WH-1000XM5 noise-cancelling headphones for US$ 169,99; MacBook Air 13" for US$ 1.049.'],h:['Doorbusters del Black Friday — revisa la página del evento o ve directo a los productos abajo','Black Friday Doorbusters — check the event page or go straight to the products below']},
+  {v:['Hasta 45% de descuento','Up to 45% off'],d:['Black Friday en herramientas seleccionadas y electrodomésticos.','Black Friday on select tools and appliances.'],h:['Precio promocional','Promo price']},
+  {v:['50% de descuento','50% off'],d:['En productos de foto: libros, tarjetas y calendarios (Cyber Week).','On photo products: books, cards and calendars (Cyber Week).']},
+  {v:['20% de descuento extra','Extra 20% off'],d:['En la Early Black Friday Sale, en los anuncios elegibles.','In the Early Black Friday Sale, on eligible listings.'],r:['Un cupón por pedido; solo anuncios elegibles','One coupon per order; eligible listings only']},
+  {v:['50% de descuento extra','Extra 50% off'],d:['En la tienda oficial de adidas en eBay (tenis, ropa y accesorios).','At the official adidas store on eBay (sneakers, clothing and accessories).'],r:['Descuento máximo de US$ 1.000','Maximum discount US$ 1.000']},
+  {v:['8% de descuento extra','Extra 8% off'],d:['En la liquidación de VIPOutlet (electrónica, hogar y relojes, hasta 70% de descuento).','In the VIPOutlet clearance (electronics, home and watches, up to 70% off).'],r:['Descuento máximo de US$ 100; envío gratis','Maximum discount US$ 100; free shipping']},
+  {v:['Hasta 20% de descuento','Up to 20% off'],d:['En moda y accesorios de lujo seleccionados.','On select luxury fashion and accessories.'],r:['Código de agregador — pruébalo al pagar','Aggregator code — test it at checkout']},
+  {v:['Hasta 60% de descuento','Up to 60% off'],d:['Black Friday Week: Big Deals, Lightning Deals y cupones para recortar en la página del producto.','Black Friday Week: Big Deals, Lightning Deals and clippable coupons on the product page.'],h:['Recorta los cupones verdes en la página Coupons antes de ir al carrito','Clip the green coupons on the Coupons page before heading to the cart'],r:['Prime tiene precios exclusivos; sin Prime, envío gratis en US$ 35+','Prime gets exclusive prices; without Prime, free shipping on US$ 35+']},
+  {v:['Hasta 30% de descuento','Up to 30% off'],d:['Marcas seleccionadas de skincare y cabello; compra 2, lleva 1 en líneas participantes.','Select skincare and hair brands; buy 2, get 1 free on participating lines.'],h:['Precio promocional y ofertas de la tienda','Promo prices and store offers']},
+  {v:['Posible hallazgo de US$ 0,01','Possible US$ 0,01 find'],d:['Inodoro Glacier Bay de doble descarga — reporte de la comunidad con recibo confirmado el 16/11.','Glacier Bay dual-flush toilet — community report with a confirmed receipt on 16/11.'],r:['Reporte de la comunidad — confírmalo en tu tienda: escanéalo en el autopago (186 reportes en 35 estados)','Community report — confirm at your store: scan it at self-checkout (186 reports in 35 states)']},
+  {v:['Posible hallazgo de US$ 0,01','Possible US$ 0,01 find'],d:['Lámpara de trabajo Husky de 800 lúmenes con trípode — reporte de la comunidad.','Husky 800-lumen work light with tripod — community report.'],r:['Reporte de la comunidad — confírmalo en tu tienda: escanéalo en el autopago (122 reportes en 28 estados)','Community report — confirm at your store: scan it at self-checkout (122 reports in 28 states)']},
+  {v:['Posible penny (lista del 24/11)','Possible penny item (list of 24/11)'],d:['Tylenol infantil Cold+Flu sabor uva — artículo de la lista penny de la semana.',"Children's Tylenol Cold+Flu, grape flavor — item on this week's penny list."],h:['UPC 300450304148 — escanea en la app de DG en la tienda; si muestra US$ 0,00/US$ 0,01, es penny','UPC 300450304148 — scan it in the DG app in store; if it shows US$ 0,00/US$ 0,01, it is a penny item'],r:['Reporte de la comunidad — confírmalo en tu tienda; las listas nuevas salen los martes','Community report — confirm at your store; new lists come out on Tuesdays']}
+ ];
+ offers.forEach((offer, index) => offer._i = index);
+ const PT_FIELD = {v:'value',d:'description',h:'how',r:'rules'};
+ function tx(offer, field) {
+  const pt = offer[PT_FIELD[field]];
+  if (lang === 'pt' || !pt) return pt;
+  const entry = TR[offer._i];
+  const translated = entry && entry[field] ? entry[field][lang === 'es' ? 0 : 1] : '';
+  return translated || pt;
+ }
+ const catName = category => { const entry = CATS[category]; return entry ? entry[lang === 'es' ? 1 : lang === 'en' ? 2 : 0] : category; };
+ const chanName = channel => { const entry = CHANNELS[channel]; return entry ? entry[lang === 'es' ? 1 : lang === 'en' ? 2 : 0] : channel; };
+ const labelText = label => { const entry = LABELS[label]; return entry ? entry[lang === 'es' ? 1 : lang === 'en' ? 2 : 0] : label; };
+ function howText(offer) {
+  const identifier = offer.code || offer.sku;
+  const identifierLabel = offer.sku ? 'SKU' : UI[lang].codeLabel;
+  return identifier ? identifierLabel + ': ' + identifier : (offer.how ? UI[lang].howPrefix + tx(offer,'h') : UI[lang].howFallback);
+ }
+ const mine = new Map();
+ let mineOpen = false;
+ function toggleMine(offer) {
+  const key = offer.store + '|' + offer.value;
+  if (mine.has(key)) mine.delete(key);
+  else mine.set(key, offer);
+  renderMine();
+ }
+ function mineText() {
+  return [...mine.values()].map(offer => offer.store + ' · ' + tx(offer,'v') + ' · ' + howText(offer)).join('\n');
+ }
+ function renderMine() {
+  get('mylist-toggle').textContent = UI[lang].myList + ' (' + mine.size + ')';
+  get('mylist-toggle').setAttribute('aria-expanded', String(mineOpen));
+  get('mylist-panel').hidden = !mineOpen;
+  get('mylist-items').replaceChildren(...[...mine.values()].map(offer => node('li', offer.store + ' · ' + tx(offer,'v') + ' · ' + howText(offer))));
+  get('mylist-empty').hidden = mine.size > 0;
+ }
+ const formatDate = date => date ? date.slice(8,10) + '/' + date.slice(5,7) : '';
+ function expiry(offer, now = Date.now()) {
+  const exact = offer.expiresAt ? Date.parse(offer.expiresAt) : NaN;
+  if (Number.isFinite(exact)) {
+   const remaining = exact - now;
+   if (remaining <= 0) return {label:UI[lang].expired,expired:true};
+   if (remaining <= 48 * 3600000) return {label:UI[lang].expires48,expired:false};
+  }
+  if (offer.validDate) return {label:UI[lang].validUntil + formatDate(offer.validDate),expired:false};
+  return {label:'',expired:false};
+ }
+ function node(tag, text, cls) {
+  const el = document.createElement(tag);
+  if (text) el.textContent = text;
+  if (cls) el.className = cls;
+  return el;
+ }
+ function brandLogo(brand) {
+  if (!brand.logo) return null;
+  const tile = node('span','','brand-logo');
+  const logo = node('img');
+  logo.src = brand.logo;
+  logo.alt = '';
+  logo.width = 25;
+  logo.height = 25;
+  logo.decoding = 'async';
+  tile.append(logo);
+  return tile;
+ }
+ function brandRow(store) {
+  const row = node('div','','brand-row');
+  const logos = node('span','','brand-icons');
+  for(const label of store.split('·')) {
+   const brand = brandByName.get(brandKey(label));
+   const tile = brand ? brandLogo(brand) : null;
+   if(tile) logos.append(tile);
+  }
+  if(logos.children.length) row.append(logos);
+  row.append(node('h3',store));
+  return row;
+ }
+ function addWhatsAppIcon(anchor) {
+  // The fixed icon is bundled locally and does not use data from an offer.
+  anchor.insertAdjacentHTML('afterbegin',whatsappIcon);
+  return anchor;
+ }
+ function link(text, href, cls) {
+  const el = node('a',text,cls);
+  el.href = href;
+  el.target = '_blank';
+  el.rel = 'noopener noreferrer';
+  return el;
+ }
+ function flashCopied(control) {
+  if (!control) return;
+  if (control._copyTimer) clearTimeout(control._copyTimer);
+  if (!control._copyOriginal) control._copyOriginal = control.textContent;
+  control.textContent = UI[lang].copiedFlash;
+  control.classList.add('copied-flash');
+  control.setAttribute('aria-live','polite');
+  control._copyTimer = setTimeout(() => {
+   control.textContent = control._copyOriginal;
+   control.classList.remove('copied-flash');
+   control._copyOriginal = null;
+   control._copyTimer = null;
+  }, 2000);
+ }
+ async function copy(text, control) {
+  let success = false;
+  try { await navigator.clipboard.writeText(text); success = true; } catch {}
+  if (!success) {
+   const field = node('textarea');
+   field.value = text;
+   field.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+   root.append(field);
+   field.select();
+   try { success = document.execCommand('copy') === true; } catch {}
+   field.remove();
+  }
+  get('status').textContent = success ? UI[lang].copiedStatus : UI[lang].copyManual + text;
+  if (success) flashCopied(control);
+  return success;
+ }
+ function card(offer) {
+  const deal = node('article','','deal');
+  const head = node('div','','deal-head');
+  const catLine = node('div','','category-line');
+  catLine.append(node('p',catName(offer.category),'category'));
+  if (offer.novo) catLine.append(node('span',UI[lang].novo,'novo'));
+  head.append(catLine,brandRow(offer.store),node('p',tx(offer,'v'),'value'));
+  const expiryLabel = expiry(offer).label;
+  const meta = node('div','','meta');
+  for(const item of [chanName(offer.channel),expiryLabel]) if(item) meta.append(node('span',item));
+  const identifier = offer.code || offer.sku;
+  const how = howText(offer);
+  const actions = node('div','','actions');
+  if(identifier) {
+   const copyButton = node('button',offer.sku ? UI[lang].copySku : UI[lang].copyCode,'secondary');
+   copyButton.type = 'button';
+   copyButton.onclick = async () => { await copy(identifier, copyButton); copyButton.focus(); };
+   actions.append(copyButton);
+  }
+  const mineKey = offer.store + '|' + offer.value;
+  const mineButton = node('button',mine.has(mineKey) ? UI[lang].inMine : UI[lang].addMine,'secondary');
+  mineButton.type = 'button';
+  mineButton.onclick = () => { toggleMine(offer); mineButton.textContent = mine.has(mineKey) ? UI[lang].inMine : UI[lang].addMine; };
+  actions.append(mineButton);
+  const productLines = (offer.links || []).map(item => item.text + ': ' + item.url);
+  const shareMessage = ['Cupons do Dia',offer.store + ' · ' + tx(offer,'v'),how,chanName(offer.channel),offer.validDate ? UI[lang].validUntil + formatDate(offer.validDate) : '',tx(offer,'r'),offer.url,...productLines].filter(Boolean).join('\n');
+  actions.append(link(labelText(offer.label),offer.url,'primary'),addWhatsAppIcon(link('WhatsApp',whatsapp(shareMessage),'secondary wa')));
+  deal.append(head,node('p',tx(offer,'d')));
+  if (offer.links && offer.links.length) {
+   const linksBox = node('div','','deal-links');
+   for (const item of offer.links) {
+    const productLink = link(item.text,item.url,'deal-link');
+    const arrow = node('span','→','deal-link-arrow');
+    arrow.setAttribute('aria-hidden','true');
+    productLink.append(arrow);
+    linksBox.append(productLink);
+   }
+   deal.append(linksBox);
+  }
+  deal.append(meta,node('p',how,identifier ? 'code' : 'source'));
+  if(offer.rules) deal.append(node('p',tx(offer,'r'),'restrictions'));
+  deal.append(actions);
+  return deal;
+ }
+ function visibleRows() {
+  const query = normalize(get('search').value);
+  return cfg.order.map(index => offers[index]).filter(offer => {
+   if (expiry(offer).expired || (selected !== 'Todas' && selected !== offer.category)) return false;
+   const tr = TR[offer._i] || {};
+   const trText = ['v','d','h','r'].flatMap(field => tr[field] || []).join(' ');
+   return normalize([offer.store,offer.category,catName(offer.category),offer.value,offer.description,trText,offer.code,offer.sku,...(offer.links || []).map(item => item.text)].join(' ')).includes(query);
+  });
+ }
+ function renderBrands(rows) {
+  const seen = new Map();
+  for(const offer of rows) {
+   for(const label of offer.store.split('·')) {
+    const brand = brandByName.get(brandKey(label));
+    if (brand && !seen.has(brand.name)) seen.set(brand.name, brand);
+   }
+  }
+  const list = [...seen.values()];
+  const entries = list.map(brand => {
+   const entry = link(brand.name,'https://'+brand.domain,'brand-item');
+   const tile = brandLogo(brand);
+   if (tile) entry.prepend(tile);
+   return entry;
+  });
+  if (!entries.length) entries.push(node('p',UI[lang].noBrands));
+  get('brands').replaceChildren(...entries);
+  const base = selected === 'Todas' ? UI[lang].brandsAll : UI[lang].brandsIn + catName(selected);
+  get('brands-summary').textContent = base + ' (' + list.length + ')';
+ }
+ function render() {
+  get('section').textContent = UI[lang].heading;
+  const rows = visibleRows();
+  get('cards').replaceChildren(...rows.map(card));
+  if(!rows.length) get('cards').append(node('p',UI[lang].noResults));
+  get('count').textContent = rows.length + ' ' + (rows.length === 1 ? UI[lang].countOne : UI[lang].countMany);
+  for(const button of get('filters').children) button.setAttribute('aria-pressed',String(button.dataset.cat===selected));
+  renderBrands(rows);
+ }
+ function buildFilters() {
+  const buttons = ['Todas',...new Set(offers.map(offer=>offer.category))].map(name => {
+   const button = node('button',name === 'Todas' ? UI[lang].all : catName(name));
+   button.type = 'button';
+   button.dataset.cat = name;
+   button.setAttribute('aria-pressed',String(name===selected));
+   button.onclick = () => { selected = name; render(); };
+   return button;
+  });
+  get('filters').replaceChildren(...buttons);
+ }
+ function setAnchorLabel(anchor, text) {
+  const textNode = [...anchor.childNodes].find(child => child.nodeType === 3);
+  if (textNode) textNode.textContent = text;
+  else anchor.append(document.createTextNode(text));
+ }
+ function applyLang() {
+  const t = UI[lang];
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+  for(const button of root.querySelectorAll('[data-lang]')) button.setAttribute('aria-pressed',String(button.dataset.lang===lang));
+  get('edition').textContent = t.edition;
+  get('title').textContent = t.title;
+  get('intro').textContent = t.intro;
+  get('lead').textContent = t.lead;
+  get('feature').textContent = t.feature;
+  get('feature-detail').textContent = t.detail;
+  get('quero-title').textContent = t.queroTitle;
+  get('quero-text').textContent = t.queroText;
+  setAnchorLabel(get('quero'), t.queroBtn);
+  get('search-label').textContent = t.searchLabel;
+  get('search').placeholder = t.searchPlaceholder;
+  get('mylist-empty').textContent = t.myListEmpty;
+  get('mylist-copy').textContent = t.copyMyList;
+  get('mylist-clear').textContent = t.clear;
+  setAnchorLabel(get('join'), t.join);
+  setAnchorLabel(get('share'), t.shareBtn);
+  get('share').href = whatsapp(t.invite + pageUrl);
+  get('copy-link').textContent = t.copyLink;
+  get('notice').textContent = t.notice;
+  buildFilters();
+  renderMine();
+  render();
+ }
+ for(const button of root.querySelectorAll('[data-lang]')) button.onclick = () => { lang = button.dataset.lang; applyLang(); };
+ get('search').addEventListener('input',render);
+ addWhatsAppIcon(get('join')).href = joinUrl;
+ addWhatsAppIcon(get('quero')).href = joinUrl;
+ addWhatsAppIcon(get('share'));
+ get('mylist-toggle').onclick = () => { mineOpen = !mineOpen; renderMine(); };
+ get('mylist-copy').onclick = (event) => { if (mine.size) copy(mineText(), event.currentTarget); else get('status').textContent = UI[lang].myListEmpty; };
+ get('mylist-clear').onclick = () => { mine.clear(); render(); renderMine(); };
+ get('copy-link').onclick = (event) => copy(pageUrl, event.currentTarget);
+ applyLang();
+})();
+</script>
+</body>
+</html>
