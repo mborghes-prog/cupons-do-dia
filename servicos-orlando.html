@@ -49,6 +49,7 @@
   .lang-btn:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--yellow-dark);outline-offset:2px}
 
   h1{font-size:clamp(26px,6vw,36px);line-height:1.15;margin:26px 0 8px;font-weight:900;letter-spacing:-.01em}
+  .edition{margin:0 0 6px;font-size:14px;font-weight:700;color:var(--muted)}
   .intro{margin:0 0 18px;color:var(--muted);font-size:16.5px;max-width:62ch}
 
   /* QUERO bar */
@@ -124,6 +125,7 @@
 
 <main class="wrap">
   <h1 data-i18n="h1">Serviços com desconto em Orlando</h1>
+  <p class="edition" data-i18n="edition">Edição de sexta-feira, 27 de novembro de 2026</p>
   <p class="intro" data-i18n="intro">Empresas da Central Florida com oferta ativa para a comunidade brasileira — página atualizada a cada edição (seg, qua e sex).</p>
 
   <section class="quero" aria-label="WhatsApp">
@@ -156,13 +158,31 @@ var OFFERS = [
     id: "watigo-diagnostico",
     patrocinado: true,
     empresa: "Watigo",
-    canal: "Online",
-    localidade: "Orlando, FL · Central Florida",
-    validDate: "2026-12-26",
     validLabel: "26/12/2026",
     codigo: "DIVULGA-CUPONS",
-    checkedLabel: "25/11/2026",
+    checkedLabel: "27/11/2026",
+    sourceKind: "partner",
     link: "https://cupons.watigo.app/?oferta=watigo-diagnostico"
+  },
+  {
+    id: "gracie-barra-free-week",
+    patrocinado: false,
+    empresa: "Gracie Barra Orlando",
+    validLabel: null,
+    codigo: null,
+    checkedLabel: "27/11/2026",
+    sourceKind: "official",
+    link: "https://cupons.watigo.app/?oferta=gracie-barra-free-week"
+  },
+  {
+    id: "petsmart-grooming-20",
+    patrocinado: false,
+    empresa: "PetSmart Grooming",
+    validLabel: null,
+    codigo: null,
+    checkedLabel: "27/11/2026",
+    sourceKind: "official",
+    link: "https://cupons.watigo.app/?oferta=petsmart-grooming-20"
   }
 ];
 
@@ -171,22 +191,20 @@ var I18N = {
     htmlLang: "pt-BR",
     brandSub: "Cupons do Dia",
     h1: "Serviços com desconto em Orlando",
+    edition: "Edição de sexta-feira, 27 de novembro de 2026",
     intro: "Empresas da Central Florida com oferta ativa para a comunidade brasileira — página atualizada a cada edição (seg, qua e sex).",
     queroText: "📲 Receba os Cupons no seu WhatsApp",
     queroBtn: "QUERO RECEBER OS CUPONS",
     sponsored: "Patrocinado",
-    benefit: "Divulgue sua oferta para brasileiros na Central Florida",
-    description: "O Watigo cria a página do seu cupom e divulga a campanha no site e no WhatsApp.",
     howTitle: "Como usar",
-    how: "Toque em 'Quero divulgar minha empresa': o WhatsApp abre com a mensagem da campanha já preenchida. É só enviar — sem formulário.",
     validUntil: "Válido até",
     rulesLabel: "Regras:",
-    rules: "Para empresas da Central Florida · Campanha piloto de 30 dias por US$ 99 · Página do cupom + divulgação no site e no WhatsApp · Atendimento em português",
     codeLabel: "Código",
     copyBtn: "Copiar",
     copied: "Copiado!",
     copyFail: "Não deu pra copiar automaticamente — o código está selecionado, é só copiar.",
-    source: "Parceiro · conferido em",
+    sourcePartner: "Parceiro · conferido em",
+    sourceOfficial: "Fonte oficial · conferido em",
     viewOffer: "Ver oferta",
     emptyText: "Nenhum serviço com oferta vigente em Orlando no momento — esta página é atualizada a cada edição.",
     emptyBtn: "Ver todos os Cupons do Dia",
@@ -194,28 +212,52 @@ var I18N = {
     footFixedTitle: "Páginas fixas",
     footPublix: "Ofertas do Publix",
     footBeleza: "Cupons de beleza nos EUA",
-    footInvite: "Tem uma empresa na Central Florida? Divulgue sua oferta"
+    footInvite: "Tem uma empresa na Central Florida? Divulgue sua oferta",
+    offers: {
+      "watigo-diagnostico": {
+        canal: "Online",
+        localidade: "Orlando, FL · Central Florida",
+        benefit: "Divulgue sua oferta para brasileiros na Central Florida",
+        description: "O Watigo cria a página do seu cupom e divulga a campanha no site e no WhatsApp.",
+        how: "Toque em 'Ver oferta': a página da oferta abre com o botão da campanha, que leva ao WhatsApp com a mensagem já preenchida. É só enviar — sem formulário.",
+        rules: "Para empresas da Central Florida · Campanha piloto de 30 dias por US$ 99 · Página do cupom + divulgação no site e no WhatsApp · Atendimento em português"
+      },
+      "gracie-barra-free-week": {
+        canal: "Presencial",
+        localidade: "Orlando · Hunter's Creek · North Orlando",
+        benefit: "Semana de teste grátis de jiu-jitsu",
+        description: "Uma semana de aulas de jiu-jitsu sem custo para conhecer a Gracie Barra nas unidades de Orlando, Hunter's Creek e North Orlando.",
+        how: "Toque em 'Ver oferta' para abrir a página completa da oferta e ver como agendar a sua semana de teste.",
+        rules: null
+      },
+      "petsmart-grooming-20": {
+        canal: "Presencial",
+        localidade: "Orlando, FL",
+        benefit: "20% OFF no primeiro banho e tosa",
+        description: "Novos clientes ganham 20% de desconto no primeiro serviço de banho e tosa no salão PetSmart Grooming.",
+        how: "Toque em 'Ver oferta' para abrir a página completa da oferta e ver os detalhes e as condições do desconto.",
+        rules: null
+      }
+    }
   },
   es: {
     htmlLang: "es",
     brandSub: "Cupones del Día",
     h1: "Servicios con descuento en Orlando",
+    edition: "Edición del viernes 27 de noviembre de 2026",
     intro: "Empresas de Florida Central con una oferta activa para la comunidad brasileña — página actualizada en cada edición (lun, mié y vie).",
     queroText: "📲 Recibe los Cupones en tu WhatsApp",
     queroBtn: "QUIERO RECIBIR LOS CUPONES",
     sponsored: "Patrocinado",
-    benefit: "Promociona tu oferta para brasileños en Florida Central",
-    description: "Watigo crea la página de tu cupón y promociona la campaña en el sitio web y por WhatsApp.",
     howTitle: "Cómo usar",
-    how: "Toca «Quiero promocionar mi empresa»: WhatsApp se abre con el mensaje de la campaña ya completado. Solo tienes que enviarlo, sin formularios.",
     validUntil: "Válido hasta el",
     rulesLabel: "Reglas:",
-    rules: "Para empresas de Florida Central · Campaña piloto de 30 días por US$ 99 · Página del cupón + promoción en el sitio web y por WhatsApp · Atención en portugués",
     codeLabel: "Código",
     copyBtn: "Copiar",
     copied: "¡Copiado!",
     copyFail: "No se pudo copiar automáticamente — el código está seleccionado, solo cópialo.",
-    source: "Socio · verificado el",
+    sourcePartner: "Socio · verificado el",
+    sourceOfficial: "Fuente oficial · verificado el",
     viewOffer: "Ver oferta",
     emptyText: "Ningún servicio con oferta vigente en Orlando en este momento — esta página se actualiza en cada edición.",
     emptyBtn: "Ver todos los Cupones del Día",
@@ -223,28 +265,52 @@ var I18N = {
     footFixedTitle: "Páginas fijas",
     footPublix: "Ofertas de Publix",
     footBeleza: "Cupones de belleza en EE. UU.",
-    footInvite: "¿Tienes una empresa en Florida Central? Promociona tu oferta"
+    footInvite: "¿Tienes una empresa en Florida Central? Promociona tu oferta",
+    offers: {
+      "watigo-diagnostico": {
+        canal: "Online",
+        localidade: "Orlando, FL · Florida Central",
+        benefit: "Promociona tu oferta para brasileños en Florida Central",
+        description: "Watigo crea la página de tu cupón y promociona la campaña en el sitio web y por WhatsApp.",
+        how: "Toca «Ver oferta»: se abre la página de la oferta con el botón de la campaña, que lleva a WhatsApp con el mensaje ya completado. Solo tienes que enviarlo, sin formularios.",
+        rules: "Para empresas de Florida Central · Campaña piloto de 30 días por US$ 99 · Página del cupón + promoción en el sitio web y por WhatsApp · Atención en portugués"
+      },
+      "gracie-barra-free-week": {
+        canal: "Presencial",
+        localidade: "Orlando · Hunter's Creek · North Orlando",
+        benefit: "Semana de prueba gratis de jiu-jitsu",
+        description: "Una semana de clases de jiu-jitsu sin costo para conocer Gracie Barra en las sedes de Orlando, Hunter's Creek y North Orlando.",
+        how: "Toca «Ver oferta» para abrir la página completa de la oferta y ver cómo agendar tu semana de prueba.",
+        rules: null
+      },
+      "petsmart-grooming-20": {
+        canal: "Presencial",
+        localidade: "Orlando, FL",
+        benefit: "20% OFF en el primer baño y corte",
+        description: "Los nuevos clientes obtienen un 20% de descuento en el primer servicio de baño y corte en el salón PetSmart Grooming.",
+        how: "Toca «Ver oferta» para abrir la página completa de la oferta y ver los detalles y las condiciones del descuento.",
+        rules: null
+      }
+    }
   },
   en: {
     htmlLang: "en",
     brandSub: "Coupons of the Day",
     h1: "Discounted services in Orlando",
+    edition: "Friday edition, November 27, 2026",
     intro: "Central Florida businesses with an active offer for the Brazilian community — page updated with each edition (Mon, Wed & Fri).",
     queroText: "📲 Get the Coupons on your WhatsApp",
     queroBtn: "I WANT THE COUPONS",
     sponsored: "Sponsored",
-    benefit: "Promote your offer to Brazilians in Central Florida",
-    description: "Watigo creates your coupon page and promotes the campaign on the website and on WhatsApp.",
     howTitle: "How to use",
-    how: "Tap 'I want to promote my business': WhatsApp opens with the campaign message already filled in. Just send it — no form.",
     validUntil: "Valid until",
     rulesLabel: "Terms:",
-    rules: "For Central Florida businesses · 30-day pilot campaign for US$ 99 · Coupon page + promotion on the website and on WhatsApp · Support in Portuguese",
     codeLabel: "Code",
     copyBtn: "Copy",
     copied: "Copied!",
     copyFail: "Couldn't copy automatically — the code is selected, just copy it.",
-    source: "Partner · checked on",
+    sourcePartner: "Partner · checked on",
+    sourceOfficial: "Official source · checked on",
     viewOffer: "View offer",
     emptyText: "No service with an active offer in Orlando right now — this page is updated with each edition.",
     emptyBtn: "See all Coupons of the Day",
@@ -252,7 +318,33 @@ var I18N = {
     footFixedTitle: "Fixed pages",
     footPublix: "Publix deals",
     footBeleza: "Beauty coupons in the USA",
-    footInvite: "Have a business in Central Florida? Promote your offer"
+    footInvite: "Have a business in Central Florida? Promote your offer",
+    offers: {
+      "watigo-diagnostico": {
+        canal: "Online",
+        localidade: "Orlando, FL · Central Florida",
+        benefit: "Promote your offer to Brazilians in Central Florida",
+        description: "Watigo creates your coupon page and promotes the campaign on the website and on WhatsApp.",
+        how: "Tap 'View offer': the offer page opens with the campaign button, which takes you to WhatsApp with the message already filled in. Just send it — no form.",
+        rules: "For Central Florida businesses · 30-day pilot campaign for US$ 99 · Coupon page + promotion on the website and on WhatsApp · Support in Portuguese"
+      },
+      "gracie-barra-free-week": {
+        canal: "In person",
+        localidade: "Orlando · Hunter's Creek · North Orlando",
+        benefit: "Free trial week of jiu-jitsu",
+        description: "A free week of jiu-jitsu classes to try Gracie Barra at the Orlando, Hunter's Creek and North Orlando locations.",
+        how: "Tap 'View offer' to open the full offer page and see how to book your trial week.",
+        rules: null
+      },
+      "petsmart-grooming-20": {
+        canal: "In person",
+        localidade: "Orlando, FL",
+        benefit: "20% OFF your first bath & groom",
+        description: "New clients get 20% off their first bath and grooming service at the PetSmart Grooming salon.",
+        how: "Tap 'View offer' to open the full offer page and see the details and terms of the discount.",
+        rules: null
+      }
+    }
   }
 };
 
@@ -276,13 +368,13 @@ function selectCode(el) {
   } catch (e) { /* código continua visível e selecionável manualmente */ }
 }
 
-function copyCode(code, codeEl, msgEl, btn) {
+function copyCode(offerId, code, codeEl, msgEl, btn) {
   var t = I18N[currentLang];
   function ok() {
     msgEl.textContent = t.copied;
     btn.textContent = t.copied;
     setTimeout(function(){ btn.textContent = t.copyBtn; }, 2200);
-    registrarEvento("copiar_codigo", { oferta_id: "watigo-diagnostico" });
+    registrarEvento("copiar_codigo", { oferta_id: offerId });
   }
   function fail() {
     selectCode(codeEl);
@@ -306,6 +398,8 @@ function renderCards() {
   }
   empty.hidden = true;
   OFFERS.forEach(function(o) {
+    var c = t.offers[o.id];
+    if (!c) return;
     var card = document.createElement("article");
     card.className = "card";
 
@@ -325,17 +419,19 @@ function renderCards() {
 
     var benefit = document.createElement("h2");
     benefit.className = "benefit";
-    benefit.textContent = t.benefit;
+    benefit.textContent = c.benefit;
     card.appendChild(benefit);
 
     var desc = document.createElement("p");
     desc.className = "desc";
-    desc.textContent = t.description;
+    desc.textContent = c.description;
     card.appendChild(desc);
 
     var meta = document.createElement("div");
     meta.className = "meta";
-    [o.canal, o.localidade, t.validUntil + " " + o.validLabel].forEach(function(txt) {
+    var chips = [c.canal, c.localidade];
+    if (o.validLabel) chips.push(t.validUntil + " " + o.validLabel);
+    chips.forEach(function(txt) {
       var chip = document.createElement("span");
       chip.className = "chip";
       chip.textContent = txt;
@@ -348,50 +444,54 @@ function renderCards() {
     var howH = document.createElement("h3");
     howH.textContent = t.howTitle;
     var howP = document.createElement("p");
-    howP.textContent = t.how;
+    howP.textContent = c.how;
     how.appendChild(howH);
     how.appendChild(howP);
     card.appendChild(how);
 
-    var rules = document.createElement("p");
-    rules.className = "rules";
-    var rl = document.createElement("strong");
-    rl.textContent = t.rulesLabel + " ";
-    rules.appendChild(rl);
-    rules.appendChild(document.createTextNode(t.rules));
-    card.appendChild(rules);
+    if (c.rules) {
+      var rules = document.createElement("p");
+      rules.className = "rules";
+      var rl = document.createElement("strong");
+      rl.textContent = t.rulesLabel + " ";
+      rules.appendChild(rl);
+      rules.appendChild(document.createTextNode(c.rules));
+      card.appendChild(rules);
+    }
 
-    var codeRow = document.createElement("div");
-    codeRow.className = "code-row";
-    var codeBox = document.createElement("div");
-    codeBox.className = "code-box";
-    var codeLabel = document.createElement("span");
-    codeLabel.className = "code-label";
-    codeLabel.textContent = t.codeLabel;
-    var codeVal = document.createElement("span");
-    codeVal.className = "code-value";
-    codeVal.textContent = o.codigo;
-    codeBox.appendChild(codeLabel);
-    codeBox.appendChild(codeVal);
-    var copyBtn = document.createElement("button");
-    copyBtn.type = "button";
-    copyBtn.className = "btn btn-copy";
-    copyBtn.textContent = t.copyBtn;
-    codeRow.appendChild(codeBox);
-    codeRow.appendChild(copyBtn);
-    card.appendChild(codeRow);
+    if (o.codigo) {
+      var codeRow = document.createElement("div");
+      codeRow.className = "code-row";
+      var codeBox = document.createElement("div");
+      codeBox.className = "code-box";
+      var codeLabel = document.createElement("span");
+      codeLabel.className = "code-label";
+      codeLabel.textContent = t.codeLabel;
+      var codeVal = document.createElement("span");
+      codeVal.className = "code-value";
+      codeVal.textContent = o.codigo;
+      codeBox.appendChild(codeLabel);
+      codeBox.appendChild(codeVal);
+      var copyBtn = document.createElement("button");
+      copyBtn.type = "button";
+      copyBtn.className = "btn btn-copy";
+      copyBtn.textContent = t.copyBtn;
+      codeRow.appendChild(codeBox);
+      codeRow.appendChild(copyBtn);
+      card.appendChild(codeRow);
 
-    var msg = document.createElement("p");
-    msg.className = "copy-msg";
-    msg.setAttribute("role", "status");
-    card.appendChild(msg);
+      var msg = document.createElement("p");
+      msg.className = "copy-msg";
+      msg.setAttribute("role", "status");
+      card.appendChild(msg);
 
-    copyBtn.addEventListener("click", function(){ copyCode(o.codigo, codeVal, msg, copyBtn); });
-    codeVal.addEventListener("click", function(){ selectCode(codeVal); });
+      copyBtn.addEventListener("click", function(){ copyCode(o.id, o.codigo, codeVal, msg, copyBtn); });
+      codeVal.addEventListener("click", function(){ selectCode(codeVal); });
+    }
 
     var source = document.createElement("p");
     source.className = "source";
-    source.textContent = t.source + " " + o.checkedLabel;
+    source.textContent = (o.sourceKind === "partner" ? t.sourcePartner : t.sourceOfficial) + " " + o.checkedLabel;
     card.appendChild(source);
 
     var cta = document.createElement("a");

@@ -462,19 +462,77 @@
          Nomes de loja, preços, datas e links nunca mudam entre idiomas. */
       var OFFERS = [
         {
-          id: 'ulta-beauty-sale',
+          id: 'ulta-21-days',
           store: 'Ulta Beauty',
           initials: 'UB',
-          novo: false,
+          novo: true,
           benefit: {
-            pt: 'Até 30% de desconto',
-            es: 'Hasta 30% de descuento',
-            en: 'Up to 30% off'
+            pt: '21 Days of Beauty: até 40% OFF',
+            es: '21 Days of Beauty: hasta 40% OFF',
+            en: '21 Days of Beauty: up to 40% off'
           },
           description: {
-            pt: 'Marcas selecionadas de skincare e cabelo; compre 2, leve 1 em linhas participantes.',
-            es: 'Marcas seleccionadas de cuidado de la piel y del cabello; compra 2 y llévate 1 en las líneas participantes.',
-            en: 'Selected skincare and hair brands; buy 2, get 1 on participating lines.'
+            pt: 'O evento 21 Days of Beauty traz ofertas de beleza selecionadas com até 40% de desconto.',
+            es: 'El evento 21 Days of Beauty trae ofertas de belleza seleccionadas con hasta 40% de descuento.',
+            en: 'The 21 Days of Beauty event brings selected beauty deals at up to 40% off.'
+          },
+          howTo: {
+            pt: 'Preço promocional e ofertas da loja',
+            es: 'Precio promocional y ofertas de la tienda',
+            en: 'Promotional price and store offers'
+          },
+          channel: {
+            pt: 'Online e loja física',
+            es: 'En línea y en tienda física',
+            en: 'Online and in-store'
+          },
+          validDate: '2026-12-18',
+          checkedDate: '27/11/2026',
+          url: 'https://www.ulta.com/promotion/coupon'
+        },
+        {
+          id: 'mac-giftsets25',
+          store: 'MAC Cosmetics',
+          initials: 'MAC',
+          novo: true,
+          benefit: {
+            pt: '25% OFF em gift sets',
+            es: '25% OFF en gift sets',
+            en: '25% off gift sets'
+          },
+          description: {
+            pt: 'Kits presenteáveis (gift sets) com 25% de desconto usando o código GIFTSETS25.',
+            es: 'Sets de regalo (gift sets) con 25% de descuento usando el código GIFTSETS25.',
+            en: 'Gift sets at 25% off with code GIFTSETS25.'
+          },
+          howTo: {
+            pt: 'Use o código GIFTSETS25 ao finalizar a compra',
+            es: 'Usa el código GIFTSETS25 al finalizar la compra',
+            en: 'Use code GIFTSETS25 at checkout'
+          },
+          channel: {
+            pt: 'Online',
+            es: 'En línea',
+            en: 'Online'
+          },
+          validDate: null,
+          checkedDate: '27/11/2026',
+          url: 'https://www.maccosmetics.com'
+        },
+        {
+          id: 'sephora-black-friday',
+          store: 'Sephora',
+          initials: 'SE',
+          novo: true,
+          benefit: {
+            pt: 'Black Friday: até 50% OFF',
+            es: 'Black Friday: hasta 50% OFF',
+            en: 'Black Friday: up to 50% off'
+          },
+          description: {
+            pt: 'Seleção de Black Friday em beleza e cosméticos com até 50% de desconto.',
+            es: 'Selección de Black Friday en belleza y cosméticos con hasta 50% de descuento.',
+            en: 'Black Friday selection of beauty and cosmetics at up to 50% off.'
           },
           howTo: {
             pt: 'Preço promocional e ofertas da loja',
@@ -487,8 +545,66 @@
             en: 'Online and in-store'
           },
           validDate: null,
-          checkedDate: '25/11/2026',
-          url: 'https://www.ulta.com/promotion/coupon'
+          checkedDate: '27/11/2026',
+          url: 'https://www.sephora.com/sale'
+        },
+        {
+          id: 'elf-sitewide-40',
+          store: 'e.l.f. Cosmetics',
+          initials: 'ELF',
+          novo: true,
+          benefit: {
+            pt: 'Até 40% OFF em todo o site',
+            es: 'Hasta 40% OFF en todo el sitio',
+            en: 'Up to 40% off sitewide'
+          },
+          description: {
+            pt: 'Até 40% de desconto em todo o site (sitewide) da e.l.f. Cosmetics.',
+            es: 'Hasta 40% de descuento en todo el sitio (sitewide) de e.l.f. Cosmetics.',
+            en: 'Up to 40% off across the entire e.l.f. Cosmetics site (sitewide).'
+          },
+          howTo: {
+            pt: 'Preço promocional no site',
+            es: 'Precio promocional en el sitio',
+            en: 'Promotional price on the site'
+          },
+          channel: {
+            pt: 'Online',
+            es: 'En línea',
+            en: 'Online'
+          },
+          validDate: null,
+          checkedDate: '27/11/2026',
+          url: 'https://www.elfcosmetics.com'
+        },
+        {
+          id: 'benefit-30-sitewide',
+          store: 'Benefit Cosmetics',
+          initials: 'BC',
+          novo: true,
+          benefit: {
+            pt: '30% OFF sitewide + frete grátis em US$ 50+',
+            es: '30% OFF en todo el sitio + envío gratis en US$ 50+',
+            en: '30% off sitewide + free shipping on $50+'
+          },
+          description: {
+            pt: '30% de desconto em todo o site e frete grátis em compras a partir de US$ 50. Os códigos do site não valem em boutiques nem em BrowBars.',
+            es: '30% de descuento en todo el sitio y envío gratis en compras desde US$ 50. Los códigos del sitio no aplican en boutiques ni en BrowBars.',
+            en: '30% off sitewide plus free shipping on orders of $50 or more. Site codes do not apply at boutiques or BrowBars.'
+          },
+          howTo: {
+            pt: 'Preço promocional no site',
+            es: 'Precio promocional en el sitio',
+            en: 'Promotional price on the site'
+          },
+          channel: {
+            pt: 'Online',
+            es: 'En línea',
+            en: 'Online'
+          },
+          validDate: null,
+          checkedDate: '27/11/2026',
+          url: 'https://www.benefitcosmetics.com'
         }
       ];
 
