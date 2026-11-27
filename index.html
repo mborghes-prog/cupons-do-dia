@@ -245,7 +245,8 @@ gtag('config', 'G-E3JN17HCQ4');
  const PRECO_PILOTO_USD = 99;
  // Trava anti-cache: versão desta edição do conteúdo e horário desta publicação (America/New_York, 24h).
  const VERSAO_EDICAO = '2026-11-25';
- const ATUALIZADO_HORA = '21:57';
+ const ATUALIZADO_HORA = '22:20';
+ const ATUALIZADO_EM_ISO = '2026-11-26T22:20:00-05:00';
  const BUSINESS_WA = '14077847055';
  // Alt localizado da arte oficial da campanha "Anuncie sua oferta" (banner embutido na visão Anuncie e na oferta patrocinada).
  const ADV_ART_ALT = {pt:'Divulgue sua oferta para brasileiros na Central Florida',es:'Promociona tu oferta entre los brasileños de Florida Central',en:'Promote your offer to Brazilians in Central Florida'};
@@ -1438,7 +1439,7 @@ gtag('config', 'G-E3JN17HCQ4');
   const lines = [UI[lang].advMsgHead,UI[lang].advNome + ': ' + val('nome'),UI[lang].advEmpresa + ': ' + val('empresa'),UI[lang].advEmail + ': ' + val('email'),UI[lang].advCidade + ': ' + val('cidade'),UI[lang].advSite + ': ' + val('site'),UI[lang].advProduto + ': ' + val('produto'),UI[lang].advOferta + ': ' + val('oferta')];
   window.open('https://wa.me/' + BUSINESS_WA + '?text=' + encodeURIComponent(lines.join('\n')),'_blank','noopener');
  });
- // Trava anti-cache: compara VERSAO_EDICAO com o versao.json publicado; se houver edição mais nova, mostra a faixa de atualização. Falha de rede/arquivo/JSON = silêncio total.
+ // Trava anti-cache: compara VERSAO_EDICAO e ATUALIZADO_EM_ISO com o versao.json publicado; se a edição OU o instante de republicação forem diferentes, mostra a faixa de atualização. Falha de rede/arquivo/JSON = silêncio total.
  let versaoRemota = null;
  const updateBanner = document.getElementById('juno-update-banner');
  function renderUpdateBannerText() {
@@ -1466,9 +1467,10 @@ gtag('config', 'G-E3JN17HCQ4');
    fetch('versao.json?t=' + Date.now(), {cache:'no-store'})
     .then(response => response.json())
     .then(data => {
-     if (!data || !data.versao || data.versao === VERSAO_EDICAO) return;
-     if (new URLSearchParams(location.search).get('v') === data.versao) return;
-     versaoRemota = data.versao;
+     if (!data || !data.versao || !data.atualizado_em) return;
+     if (data.versao === VERSAO_EDICAO && data.atualizado_em === ATUALIZADO_EM_ISO) return;
+     if (new URLSearchParams(location.search).get('v') === data.atualizado_em) return;
+     versaoRemota = data.atualizado_em;
      updateBanner.hidden = false;
      renderUpdateBannerText();
      document.body.style.paddingTop = updateBanner.offsetHeight + 'px';
