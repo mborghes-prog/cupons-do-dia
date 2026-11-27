@@ -147,12 +147,24 @@ gtag('config', 'G-E3JN17HCQ4');
 #juno-studio .badge{display:inline-flex;font-size:11px;font-weight:800;border-radius:6px;padding:3px 8px;background:var(--soft);color:var(--text);white-space:nowrap}
 #juno-studio .badge-expired,#juno-studio .badge-draft{background:#b3261e;color:#fff}
 #juno-studio .badge-starts{background:#ffdb53;color:#251d35}
+#juno-studio .badge-demo{background:#131c32;color:#ffdb53}
+#juno-studio .loc-tbc{font-size:10.5px;font-weight:800;border-radius:6px;padding:2px 7px;background:#f3e2c7;color:#6b4e12;white-space:nowrap}
+#juno-studio .primary[disabled]{opacity:.55;cursor:not-allowed}
+#juno-studio .how-steps{margin:6px 0 6px 18px;padding:0}
+#juno-studio .how-steps li{margin:3px 0}
+#juno-studio .feedback{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+#juno-studio .feedback-note{font-size:12px;color:var(--muted);margin:6px 0 0;flex:1 1 100%}
+#juno-studio .mylist-state{font-weight:700;color:#b3261e}
+#juno-studio .mylist-remove{margin-left:8px;min-height:32px;padding:2px 9px}
+#juno-studio .penny-box{border:1px solid var(--line);border-radius:10px;background:var(--soft);padding:10px 12px;margin:10px 0}
+#juno-studio .penny-box p{margin:3px 0}
 #juno-studio .offer-code{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border:1px dashed var(--line);border-radius:10px;padding:12px;background:var(--soft);margin:10px 0}
 #juno-studio .offer-code .code{font-size:20px}
 #juno-studio .affiliate-note{font-size:12px;color:var(--muted);margin:8px 0 0}
 #juno-studio .suggest{display:grid;gap:8px;margin-top:8px}
 #juno-studio .suggest button{display:flex;justify-content:flex-start;gap:10px;text-align:left;min-height:44px}
 #juno-studio .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+#juno-studio .adv-incl{margin:6px 0 14px;padding-left:20px;display:grid;gap:5px}
 #juno-studio .plan{border:1px solid var(--line);border-radius:var(--round);padding:15px;background:var(--card)}
 #juno-studio .plan h3{margin:0}
 #juno-studio .plan-price{font-size:26px;font-weight:850;margin:4px 0}
@@ -190,8 +202,12 @@ gtag('config', 'G-E3JN17HCQ4');
       <p class="tf-label qf-label" id="juno-qflabel">Busca rápida</p>
       <nav class="filters quick-filters" aria-label="Busca rápida" id="juno-quickfilters"></nav>
       <nav class="filters cat-filters" aria-label="Categorias da edição" id="juno-filters"></nav>
-      <p class="tf-label" id="juno-tflabel">Tipo e alcance</p>
-      <nav class="filters type-filters" aria-label="Tipo e alcance" id="juno-typefilters"></nav>
+      <p class="tf-label" id="juno-tipo-label">Tipo</p>
+      <nav class="filters type-filters" aria-label="Tipo" id="juno-tipofilters"></nav>
+      <p class="tf-label" id="juno-canal-label">Canal</p>
+      <nav class="filters type-filters" aria-label="Canal" id="juno-canalfilters"></nav>
+      <p class="tf-label" id="juno-loc-label">Localização</p>
+      <nav class="filters type-filters" aria-label="Localização" id="juno-locfilters"></nav>
       <div class="mylist-bar">
         <button class="secondary" id="juno-mylist-toggle" type="button" aria-expanded="false">Minha lista (0)</button>
       </div>
@@ -218,6 +234,14 @@ gtag('config', 'G-E3JN17HCQ4');
           <div class="plan"><h3 id="juno-adv-p1t"></h3><p class="plan-price" id="juno-adv-p1p"></p><p id="juno-adv-p1x"></p></div>
           <div class="plan"><h3 id="juno-adv-p2t"></h3><p class="plan-price" id="juno-adv-p2p"></p><p id="juno-adv-p2x"></p></div>
         </div>
+        <h3 id="juno-adv-incl-title">O que está incluído no piloto de US$ 99</h3>
+        <ul class="adv-incl">
+          <li id="juno-adv-inc-1"></li>
+          <li id="juno-adv-inc-2"></li>
+          <li id="juno-adv-inc-3"></li>
+          <li id="juno-adv-inc-4"></li>
+          <li id="juno-adv-inc-5"></li>
+        </ul>
         <h3 id="juno-adv-cta"></h3>
         <form class="adv-form" id="juno-adv-form">
           <label><span id="juno-adv-l-nome"></span><input id="juno-adv-f-nome" type="text" autocomplete="name" required></label>
@@ -253,20 +277,33 @@ gtag('config', 'G-E3JN17HCQ4');
  const PRECO_PILOTO_USD = 99;
  // Trava anti-cache: versão desta edição do conteúdo e horário desta publicação (America/New_York, 24h).
  const VERSAO_EDICAO = '2026-11-25';
- const ATUALIZADO_HORA = '22:26';
- const ATUALIZADO_EM_ISO = '2026-11-26T22:26:00-05:00';
+ const ATUALIZADO_HORA = '22:47';
+ const ATUALIZADO_EM_ISO = '2026-11-26T22:47:00-05:00';
  const BUSINESS_WA = '14077847055';
  // Alt localizado da arte oficial da campanha "Anuncie sua oferta" (banner embutido na visão Anuncie e na oferta patrocinada).
  const ADV_ART_ALT = {pt:'Divulgue sua oferta para brasileiros na Central Florida',es:'Promociona tu oferta entre los brasileños de Florida Central',en:'Promote your offer to Brazilians in Central Florida'};
- // Métricas por oferta: registra apenas localmente, no aparelho do visitante, pronta para a futura integração. Tipos: visita_oferta, copiar_cupom_confirmado, ir_loja, whatsapp_parceiro, agendamento_intencao.
- function registrarEvento(tipo, ofertaId) {
+ // Métricas por oferta (registrarEvento): grava localmente e espelha pro GA4. Todo evento carrega oferta_id; ofertas de campanha (patrocinado:true ou a demonstração) carregam também campanha_id (= o próprio id). Tipos: visita_oferta, visita_whatsapp, copiar_cupom_confirmado (só cópia confirmada), ir_loja, whatsapp_parceiro, agendamento_intencao, funcionou, reportar_problema. Resgate confirmado NÃO é evento de clique — continua sendo conciliação manual por código.
+ function registrarEvento(tipo, ofertaId, extra) {
   try {
    const key = 'cuponsEventos';
    const lista = JSON.parse(localStorage.getItem(key) || '[]');
-   lista.push({tipo:tipo,oferta:ofertaId || null,em:new Date().toISOString()});
+   const registro = {tipo:tipo, oferta:ofertaId || null, em:new Date().toISOString()};
+   let campanhaId = null;
+   try {
+    const ref = (typeof offers !== 'undefined') ? offers.find(o => o.id === ofertaId) : null;
+    if (ref && (ref.patrocinado || ref.demo)) campanhaId = ref.id;
+   } catch {}
+   if (campanhaId) registro.campanha = campanhaId;
+   if (extra) Object.assign(registro, extra);
+   lista.push(registro);
    while (lista.length > 500) lista.shift();
    localStorage.setItem(key, JSON.stringify(lista));
-   if (typeof gtag === 'function') gtag('event', tipo, { oferta_id: ofertaId });
+   if (typeof gtag === 'function') {
+    const params = { oferta_id: ofertaId };
+    if (campanhaId) params.campanha_id = campanhaId;
+    if (extra) Object.assign(params, extra);
+    gtag('event', tipo, params);
+   }
   } catch {}
  }
  const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toLowerCase();
@@ -751,7 +788,8 @@ gtag('config', 'G-E3JN17HCQ4');
   {id:'michael-kors-outlet-black-friday',novo:true,tipo:'produto',category:'Moda e Acessórios',store:'Michael Kors',value:'Até 88% OFF + extra 25% OFF no Outlet',description:'Black Friday no Michael Kors Outlet: itens com até 83–88% OFF e EXTRA 25% OFF já aplicado no preço (price as marked).',how:'Preço como marcado, já com o extra; sem código',channel:'Online',rules:'Loja Outlet da marca · Online',url:'https://www.michaelkors.com/outlet/black-friday-sale',label:'Ver ofertas',links:[{text:'Jet Set Travel Small Signature Logo Camera Crossbody Bag — US$ 36,75 (de US$ 228)',url:'https://www.michaelkors.com/jet-set-travel-small-signature-logo-camera-crossbody-bag/35S6STVC1V.html'},{text:'Nayla Medium Metallic Signature Logo Messenger Bag — US$ 44,99 (de US$ 358)',url:'https://www.michaelkors.com/nayla-medium-metallic-signature-logo-messenger-bag/35S6G5ZM6M.html?dwvar_35S6G5ZM6M_color=0705'},{text:'Jet Set Travel Medium Dome Crossbody Bag — US$ 44,25 (de US$ 258)',url:'https://www.michaelkors.com/jet-set-travel-medium-logo-dome-crossbody-bag/35F1GTVC6B.html?dwvar_35F1GTVC6B_color=VANILLA'}]},
   {id:'coach-outlet-black-friday',novo:true,tipo:'produto',category:'Moda e Acessórios',store:'Coach',value:'Extra 25% OFF nos deals do Coach Outlet',description:'Black Friday Sale do Coach Outlet com extra 25% OFF sobre os deals do outlet.',how:'Extra aplicado sobre o preço do outlet; sem código',channel:'Online',rules:'Coach Outlet · Online',url:'https://www.coach.com/shop/outlet/black-friday-deals/sale',label:'Ver ofertas',links:[{text:'Mini Payton Bag — US$ 129, fica US$ 96,75 com o extra 25%',url:'https://www.coach.com/products/mini-payton-bag/CEL08-SVMPL.html?frp=CEL08+SVMPL'},{text:'Tristan Crossbody Bag 22 in Signature Canvas — US$ 139, fica US$ 104,25',url:'https://www.coach.com/products/tristan-crossbody-bag-22-in-signature-canvas/CES88-SVYZK.html'},{text:'Small Travel Kit in Signature Canvas — US$ 79, fica US$ 59,25',url:'https://www.coach.com/products/small-travel-kit-in-signature-canvas/CAR15-SVYZK.html'}]},
   {id:'pandora-black-friday',novo:true,tipo:'produto',category:'Acessórios',store:'Pandora',value:'Até 50% OFF em joias selecionadas',description:'Black Friday: charms Disney e Marvel com 40% OFF, gift sets e ornamento de Natal com 30% OFF, diamantes lab-grown com 30% OFF e estilos selecionados até 50% OFF (termos oficiais).',how:'Preços como marcados; sem código',channel:'Ambos',validDate:'2026-12-01',rules:'Limite de 5 por SKU por pessoa · Não combinável · Seleção varia por loja',url:'https://us.pandora.net/en/jewelry/black-friday/',label:'Ver ofertas'},
-  {id:'swarovski-black-friday',novo:true,tipo:'produto',category:'Acessórios',store:'Swarovski',value:'Até 40% OFF + extra 20% OFF em 2+ itens',description:'Black Friday e Cyber Monday 2026 no site oficial americano: até 40% OFF em estilos selecionados e, comprando 2 ou mais itens, extra 20% OFF.',how:'Preços como marcados; extra aplicado na compra de 2+ itens',channel:'Online',validDate:'2026-11-30',rules:'Online (swarovski.com) · Termos se aplicam',url:'https://www.swarovski.com/en-US/s-blackfriday',label:'Ver ofertas',links:[{text:'Stilla Attract Stud Earrings — US$ 48 (de US$ 69)',url:'https://www.swarovski.com/en-US/p-M5408436/Stilla-Attract-stud-earrings-Round-cut-White-Rhodium-plated?variantID=5408436'},{text:'Matrix Bracelet — US$ 111 (de US$ 159)',url:'https://www.swarovski.com/en-US/p-M5677813/Matrix-bracelet-Round-cut-White-18K-gold-finish?variantID=5730709'},{text:'Hyperbola Bracelet — US$ 69 (de US$ 99)',url:'https://www.swarovski.com/en-US/p-5524421/Hyperbola-bracelet-Infinity-and-heart-White-Rhodium-plated'}]}
+  {id:'swarovski-black-friday',novo:true,tipo:'produto',category:'Acessórios',store:'Swarovski',value:'Até 40% OFF + extra 20% OFF em 2+ itens',description:'Black Friday e Cyber Monday 2026 no site oficial americano: até 40% OFF em estilos selecionados e, comprando 2 ou mais itens, extra 20% OFF.',how:'Preços como marcados; extra aplicado na compra de 2+ itens',channel:'Online',validDate:'2026-11-30',rules:'Online (swarovski.com) · Termos se aplicam',url:'https://www.swarovski.com/en-US/s-blackfriday',label:'Ver ofertas',links:[{text:'Stilla Attract Stud Earrings — US$ 48 (de US$ 69)',url:'https://www.swarovski.com/en-US/p-M5408436/Stilla-Attract-stud-earrings-Round-cut-White-Rhodium-plated?variantID=5408436'},{text:'Matrix Bracelet — US$ 111 (de US$ 159)',url:'https://www.swarovski.com/en-US/p-M5677813/Matrix-bracelet-Round-cut-White-18K-gold-finish?variantID=5730709'},{text:'Hyperbola Bracelet — US$ 69 (de US$ 99)',url:'https://www.swarovski.com/en-US/p-5524421/Hyperbola-bracelet-Infinity-and-heart-White-Rhodium-plated'}]},
+  {id:'demo-servico-piloto',demo:true,rascunho:true,tipo:'servico',category:'Serviços',store:'Serviço Exemplo Orlando',value:'Lavagem completa de calçada e entrada — piloto de demonstração',description:'Campanha de demonstração do piloto de serviços: serve para validar a página individual, o contato e as métricas. Não é uma oferta real.',how:'Toque no botão de contato: o WhatsApp abre com a mensagem da campanha (código DEMO2026) já preenchida; confira e envie',code:'DEMO2026',channel:'Loja física',city:'Orlando, FL · Central Florida',startsDate:'2026-12-01',validDate:'2026-12-31',rules:'Demonstração — sem venda real · Área atendida: Orlando, FL · Central Florida',url:'https://wa.me/14077847055?text=Ol%C3%A1!%20Vim%20pelo%20Cupons%20do%20Dia%20e%20quero%20saber%20sobre%20o%20servi%C3%A7o%20de%20demonstra%C3%A7%C3%A3o.%20(Campanha%3A%20DEMO2026)',label:'Agendar com a empresa',fonteTipo:'parceiro',verificadoEm:'2026-11-26'}
  ];
  // IDs estáveis das ofertas, na ordem do array offers: nunca mudam, mesmo se o título ou a edição mudar.
  const IDS = ['publix-bogo','publix-pg-10','walmart-black-friday','walmart-ceia-35','target-black-friday','aldi-ceia','kroger-digital-deals','winn-dixie-bogos','7now-thankful','7now-blkfri','7now-loadup','caseys-holiday','chipotle-cyber26','fazolis-thanks26','fazolis-shop26','benihana-hibachi50','moes-blackfriday50','burger-king-royal-perks','nike-extra-25','adidas-dn15','macys-black-friday','nordstrom-sale','kohls-extra-20','sunglass-hut-black-friday','ray-ban-30','nordstrom-rack-clearance','zenni-bfs','under-armour-blitzing','best-buy-black-friday','home-depot-black-friday','cvs-photo-50','ebay-cyberfinds20','ebay-adidas-extra50','ebay-vipoutlet-8','ebay-saveluxe','amazon-black-friday-week','ulta-beauty-sale','home-depot-penny-glacier-bay','home-depot-penny-husky','dollar-general-penny-tylenol','sephora-sale','old-navy-black-friday','dsw-bfdeals','lowes-appliance-deals','costco-warehouse-savings','jcpenney-giftfans','walgreens-mywalgreens','watigo-diagnostico'];
@@ -764,19 +802,23 @@ gtag('config', 'G-E3JN17HCQ4');
   if (!offer.id) offer.id = IDS[index];
   if (!offer.tipo) offer.tipo = 'produto';
   if (!offer.alcance) offer.alcance = alcanceDoCanal(offer.channel);
+  if (!offer.fonteTipo) offer.fonteTipo = offer.category === 'Achados Penny' ? 'comunidade' : (offer.patrocinado ? 'parceiro' : ((offer.rules || '').toLowerCase().includes('agregador') ? 'agregador' : (offer.fonte || 'oficial')));
+  if (!offer.verificadoEm) offer.verificadoEm = '2026-11-25';
  });
  const offerById = new Map(offers.map(offer => [offer.id, offer]));
  const cfg = {order:[31,32,47,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,33,34,35,36,37,38,39,40,41,42,43,44,45,46,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69]};
  let lang = 'pt';
  let selected = 'Todas';
- let typeFilter = '';
+ let filterTipo = '';
+ let filterCanal = '';
+ let filterLoc = '';
  let quickToday = false;
  let quickCode = false;
  let quickSort = false;
  const UI = {
-  pt:{edition:'Quarta-feira, 25 de novembro de 2026 · Black Friday',updatedSuffix:' · atualizado às ' + ATUALIZADO_HORA,updateBanner:'🆕 Nova edição disponível — toque pra atualizar',title:'Cupons em destaque',intro:'Destaques da edição — toque no cupom e vá direto à loja.',lead:'Destaque da edição',feature:'Extra 20% de desconto no eBay',detail:'eBay · código CYBERFINDS20 até 01/12',storeGo:'Ver na loja',queroTitle:'📲 Receba os Cupons no seu WhatsApp',queroText:'Toda seg, qua e sex, a edição nova no seu WhatsApp. É grátis.',queroBtn:'QUERO RECEBER OS CUPONS',searchLabel:'Buscar ofertas',searchPlaceholder:'Loja, oferta, código ou SKU',all:'Todas',heading:'Ofertas da edição',countOne:'oferta',countMany:'ofertas',brandOne:'marca',brandMany:'marcas',typeLabel:'Tipo e alcance',quickLabel:'Busca rápida',qfToday:'Vence hoje',qfCode:'Com código',qfSort:'Maior desconto',noResults:'Nenhuma oferta encontrada. Experimente outra categoria ou termo.',noBrands:'Nenhuma marca neste segmento.',brandsAll:'Marcas e lojas da edição',brandsIn:'Marcas em ',novo:'NOVO',escolha:'⭐ Escolha da Juno',codeLabel:'Código',copyCode:'Copiar código',copySku:'Copiar sku',copiedFlash:'✓ Copiado!',copiedStatus:'Copiado!',copyManual:'Selecione e copie manualmente: ',howPrefix:'Como resgatar: ',howFallback:'Consulte a oferta para resgatar',validUntil:'Válido até ',expires48:'Vence em até 48h',expired:'Expirada',myList:'Minha lista',myListEmpty:'Sua lista está vazia — toque em + Minha lista nas ofertas que quiser guardar.',copyMyList:'Copiar minha lista',clear:'Limpar',addMine:'+ Minha lista',inMine:'✓ Na minha lista',join:'Receber no WhatsApp',shareBtn:'Compartilhar no WhatsApp',copyLink:'Copiar link',shareNative:'Compartilhar',productsTitle:'Produtos em destaque',invite:'Cupons do Dia · ofertas dos EUA em português. ',notice:'Ofertas verificadas nas fontes oficiais e comunitárias indicadas; códigos de agregador devem ser testados no checkout. Edições às segundas, quartas e sextas.',backOffers:'← Voltar às ofertas',details:'Detalhes',tfProdutos:'Produtos',tfServicos:'Serviços',tfOnline:'Online nos EUA',tfLocal:'Central Florida',emptyServicos:'Nenhum serviço publicado por enquanto. Limpe o filtro para ver as ofertas de produtos da edição.',seeHow:'Veja como resgatar: ',onlineWord:'Online',startsBadge:'Começa em ',expiredBadge:'Oferta expirada',sponsored:'Patrocinado',draftBadge:'RASCUNHO — TESTE',detChannel:'Canal',detStarts:'Início',detValid:'Validade',detRules:'Condições',detMin:'Compra mínima',detWhere:'Onde vale',detSource:'Fonte',srcOficial:'Fonte oficial',srcAgregador:'Código de agregador',srcComunidade:'Relato da comunidade',pennyWarn:'Achado Penny: é um relato da comunidade — confirme o preço e o estoque na unidade antes de sair de casa.',redeemStore:'Ver oferta na loja',redeemCode:'Copiar cupom',redeemService:'Agendar com a empresa',affiliateNote:'Podemos receber comissão se você comprar por este link',suggestTitle:'Ofertas vigentes que podem te interessar',advLink:'Anuncie sua oferta',advTitle:'Anuncie sua oferta',advIntro:'Sua empresa aparece para quem já está procurando cupons na Central Florida e em compras online nos EUA. A busca é gratuita para o consumidor, que compra, paga ou agenda direto com a sua empresa.',advP1t:'Campanha piloto de 30 dias',advP1x:'Inclui a criação da página da sua oferta, um cupom exclusivo, divulgação na edição e um relatório ao final do período. O pagamento é combinado direto com a nossa equipe.',advP2t:'Parceria por resultado',advP2p:'Sob consulta',advP2x:'Comissão ou valor fixo por venda, atendimento concluído ou resgate confirmado — conforme o acordo fechado com a sua empresa.',advCta:'Quero divulgar minha empresa',advNome:'Seu nome',advEmpresa:'Empresa',advEmail:'E-mail comercial',advCidade:'Cidade',advSite:'Site (se tiver)',advProduto:'Produto ou serviço',advOferta:'Oferta proposta',advSend:'Enviar pelo WhatsApp',advHonest:'Ao tocar em enviar, o WhatsApp abre com os seus dados já preenchidos — é só conferir e enviar. Nada fica cadastrado automaticamente.',advMsgHead:'Quero divulgar minha empresa no Cupons do Dia:'},
-  es:{edition:'Miércoles, 25 de noviembre de 2026 · Black Friday',updatedSuffix:' · actualizado a las ' + ATUALIZADO_HORA,updateBanner:'🆕 Nueva edición disponible — toca para actualizar',title:'Cupones destacados',intro:'Destacados de la edición — toca el cupón y ve directo a la tienda.',lead:'Destacado de la edición',feature:'20% de descuento extra en eBay',detail:'eBay · código CYBERFINDS20 hasta el 01/12',storeGo:'Ver en la tienda',queroTitle:'📲 Recibe los Cupones en tu WhatsApp',queroText:'Cada lun, mié y vie, la edición nueva en tu WhatsApp. Es gratis.',queroBtn:'QUIERO RECIBIR LOS CUPONES',searchLabel:'Buscar ofertas',searchPlaceholder:'Tienda, oferta, código o SKU',all:'Todas',heading:'Ofertas de la edición',countOne:'oferta',countMany:'ofertas',brandOne:'marca',brandMany:'marcas',typeLabel:'Tipo y alcance',quickLabel:'Búsqueda rápida',qfToday:'Vence hoy',qfCode:'Con código',qfSort:'Mayor descuento',noResults:'No se encontraron ofertas. Prueba con otra categoría o término de búsqueda.',noBrands:'Ninguna marca en este segmento.',brandsAll:'Marcas y tiendas de la edición',brandsIn:'Marcas en ',novo:'NUEVO',escolha:'⭐ Elección de Juno',codeLabel:'Código',copyCode:'Copiar código',copySku:'Copiar SKU',copiedFlash:'✓ ¡Copiado!',copiedStatus:'¡Copiado!',copyManual:'Selecciona y copia manualmente: ',howPrefix:'Cómo canjear: ',howFallback:'Consulta la oferta para canjear',validUntil:'Válido hasta el ',expires48:'Vence en 48 h o menos',expired:'Expirada',myList:'Mi lista',myListEmpty:'Tu lista está vacía — toca + Mi lista en las ofertas que quieras guardar.',copyMyList:'Copiar mi lista',clear:'Borrar',addMine:'+ Mi lista',inMine:'✓ En mi lista',join:'Recibir por WhatsApp',shareBtn:'Compartir por WhatsApp',copyLink:'Copiar enlace',shareNative:'Compartir',productsTitle:'Productos destacados',invite:'Cupons do Dia · ofertas de EE. UU. en español. ',notice:'Ofertas verificadas en las fuentes oficiales y comunitarias indicadas; los códigos de agregador deben probarse al pagar. Ediciones los lunes, miércoles y viernes.',backOffers:'← Volver a las ofertas',details:'Detalles',tfProdutos:'Productos',tfServicos:'Servicios',tfOnline:'Online en EE. UU.',tfLocal:'Florida Central',emptyServicos:'Todavía no hay servicios publicados. Quita el filtro para ver las ofertas de productos de la edición.',seeHow:'Mira cómo canjear: ',onlineWord:'En línea',startsBadge:'Empieza el ',expiredBadge:'Oferta vencida',sponsored:'Patrocinado',draftBadge:'BORRADOR — PRUEBA',detChannel:'Canal',detStarts:'Inicio',detValid:'Vigencia',detRules:'Condiciones',detMin:'Compra mínima',detWhere:'Dónde aplica',detSource:'Fuente',srcOficial:'Fuente oficial',srcAgregador:'Código de agregador',srcComunidade:'Reporte de la comunidad',pennyWarn:'Hallazgo Penny: es un reporte de la comunidad — confirma el precio y el stock en la tienda antes de salir de casa.',redeemStore:'Ver la oferta en la tienda',redeemCode:'Copiar cupón',redeemService:'Agendar con la empresa',affiliateNote:'Podemos recibir una comisión si compras a través de este enlace',suggestTitle:'Ofertas vigentes que te pueden interesar',advLink:'Anuncia tu oferta',advTitle:'Anuncia tu oferta',advIntro:'Tu empresa aparece ante quienes ya buscan cupones en Florida Central y en compras en línea en EE. UU. La búsqueda es gratis para el consumidor, que compra, paga o agenda directamente con tu empresa.',advP1t:'Campaña piloto de 30 días',advP1x:'Incluye la creación de la página de tu oferta, un cupón exclusivo, difusión en la edición y un informe al final del período. El pago se acuerda directamente con nuestro equipo.',advP2t:'Alianza por resultados',advP2p:'A consultar',advP2x:'Comisión o monto fijo por venta, atención completada o canje confirmado, según el acuerdo cerrado con tu empresa.',advCta:'Quiero promocionar mi empresa',advNome:'Tu nombre',advEmpresa:'Empresa',advEmail:'Correo comercial',advCidade:'Ciudad',advSite:'Sitio web (si tienes)',advProduto:'Producto o servicio',advOferta:'Oferta propuesta',advSend:'Enviar por WhatsApp',advHonest:'Al tocar enviar, WhatsApp se abre con tus datos ya completos — solo tienes que revisarlos y enviar. Nada se registra automáticamente.',advMsgHead:'Quiero promocionar mi empresa en Cupons do Dia:'},
-  en:{edition:'Wednesday, November 25, 2026 · Black Friday',updatedSuffix:' · updated at ' + ATUALIZADO_HORA,updateBanner:'🆕 New edition available — tap to update',title:'Featured coupons',intro:"This edition's highlights — tap a coupon to go straight to the store.",lead:'Edition highlight',feature:'Extra 20% off at eBay',detail:'eBay · code CYBERFINDS20 until 01/12',storeGo:'View at store',queroTitle:'📲 Get the Coupons on your WhatsApp',queroText:"Every Mon, Wed and Fri, the new edition on your WhatsApp. It's free.",queroBtn:'I WANT THE COUPONS',searchLabel:'Search deals',searchPlaceholder:'Store, deal, code or SKU',all:'All',heading:'Deals in this edition',countOne:'deal',countMany:'deals',brandOne:'brand',brandMany:'brands',typeLabel:'Type & reach',quickLabel:'Quick filters',qfToday:'Expires today',qfCode:'With code',qfSort:'Biggest discount',noResults:'No deals found. Try another category or search term.',noBrands:'No brands in this segment.',brandsAll:'Brands & stores in this edition',brandsIn:'Brands in ',novo:'NEW',escolha:"⭐ Juno's pick",codeLabel:'Code',copyCode:'Copy code',copySku:'Copy SKU',copiedFlash:'✓ Copied!',copiedStatus:'Copied!',copyManual:'Select and copy it manually: ',howPrefix:'How to redeem: ',howFallback:'See the offer for how to redeem',validUntil:'Valid until ',expires48:'Expires within 48h',expired:'Expired',myList:'My list',myListEmpty:'Your list is empty — tap + My list on the deals you want to save.',copyMyList:'Copy my list',clear:'Clear',addMine:'+ My list',inMine:'✓ In my list',join:'Get it on WhatsApp',shareBtn:'Share on WhatsApp',copyLink:'Copy link',shareNative:'Share',productsTitle:'Featured products',invite:'Cupons do Dia · U.S. deals in English. ',notice:'Deals verified against the official and community sources shown; aggregator codes should be tested at checkout. New editions on Mondays, Wednesdays and Fridays.',backOffers:'← Back to deals',details:'Details',tfProdutos:'Products',tfServicos:'Services',tfOnline:'Online in the US',tfLocal:'Central Florida',emptyServicos:'No services published yet. Clear the filter to see the product deals in this edition.',seeHow:'See how to redeem: ',onlineWord:'Online',startsBadge:'Starts on ',expiredBadge:'Expired deal',sponsored:'Sponsored',draftBadge:'DRAFT — TEST',detChannel:'Channel',detStarts:'Starts',detValid:'Valid until',detRules:'Terms',detMin:'Minimum purchase',detWhere:'Where it applies',detSource:'Source',srcOficial:'Official source',srcAgregador:'Aggregator code',srcComunidade:'Community report',pennyWarn:'Penny find: this is a community report — confirm the price and stock at the store before you go.',redeemStore:'View deal at the store',redeemCode:'Copy coupon',redeemService:'Book with the business',affiliateNote:'We may earn a commission if you buy through this link',suggestTitle:'Current deals you may like',advLink:'Advertise your deal',advTitle:'Advertise your deal',advIntro:'Your business shows up for people already searching for coupons in Central Florida and for online shopping in the US. Search is free for shoppers, who buy, pay or book directly with your business.',advP1t:'30-day pilot campaign',advP1x:'Includes creating your deal page, an exclusive coupon, promotion in the edition and a report at the end of the period. Payment is arranged directly with our team.',advP2t:'Pay-for-results partnership',advP2p:'On request',advP2x:'A commission or a fixed fee per sale, completed appointment or confirmed redemption — as agreed with your business.',advCta:'I want to promote my business',advNome:'Your name',advEmpresa:'Business',advEmail:'Business email',advCidade:'City',advSite:'Website (if any)',advProduto:'Product or service',advOferta:'Proposed deal',advSend:'Send via WhatsApp',advHonest:'When you tap send, WhatsApp opens with your details already filled in — just review and send. Nothing is registered automatically.',advMsgHead:'I want to promote my business on Cupons do Dia:'}
+  pt:{edition:'Quarta-feira, 25 de novembro de 2026 · Black Friday',updatedSuffix:' · atualizado às ' + ATUALIZADO_HORA,updateBanner:'🆕 Nova edição disponível — toque pra atualizar',title:'Cupons em destaque',intro:'Destaques da edição — toque no cupom e vá direto à loja.',lead:'Destaque da edição',feature:'Extra 20% de desconto no eBay',detail:'eBay · código CYBERFINDS20 até 01/12',storeGo:'Ver na loja',queroTitle:'📲 Receba os Cupons no seu WhatsApp',queroText:'Toda seg, qua e sex, a edição nova no seu WhatsApp. É grátis.',queroBtn:'QUERO RECEBER OS CUPONS',searchLabel:'Buscar ofertas',searchPlaceholder:'Loja, oferta, código ou SKU',all:'Todas',heading:'Ofertas da edição',countOne:'oferta',countMany:'ofertas',brandOne:'marca',brandMany:'marcas',typeLabel:'Tipo e alcance',tipoLabel:'Tipo',canalLabel:'Canal',locLabel:'Localização',allTipo:'Todos',allCanal:'Todos',allLoc:'Todas',canalOnline:'Online',canalPresencial:'Presencial',canalApp:'Somente no app',locCentral:'Central Florida',locOnlineUS:'Online nos EUA',quickLabel:'Busca rápida',qfToday:'Vence hoje',qfCode:'Com código',qfSort:'Maior % anunciado',noResults:'Nenhuma oferta encontrada. Experimente outra categoria ou termo.',noBrands:'Nenhuma marca neste segmento.',brandsAll:'Marcas e lojas da edição',brandsIn:'Marcas em ',novo:'NOVO',escolha:'⭐ Escolha da Juno',codeLabel:'Código',copyCode:'Copiar código',copySku:'Copiar sku',copiedFlash:'✓ Copiado!',copiedStatus:'Copiado!',copyManual:'Selecione e copie manualmente: ',howPrefix:'Como resgatar: ',howFallback:'Consulte a oferta para resgatar',validUntil:'Válido até ',expires48:'Vence em até 48h',expired:'Expirada',myList:'Minha lista',myListEmpty:'Sua lista está vazia — toque em + Minha lista nas ofertas que quiser guardar.',copyMyList:'Copiar minha lista',clear:'Limpar',addMine:'+ Minha lista',inMine:'✓ Na minha lista',join:'Receber no WhatsApp',shareBtn:'Compartilhar no WhatsApp',copyLink:'Copiar link',shareNative:'Compartilhar',productsTitle:'Produtos em destaque',invite:'Cupons do Dia · ofertas dos EUA em português. ',notice:'Ofertas verificadas nas fontes oficiais e comunitárias indicadas; códigos de agregador devem ser testados no checkout. Edições às segundas, quartas e sextas.',backOffers:'← Voltar às ofertas',details:'Detalhes',tfProdutos:'Produtos',tfServicos:'Serviços',tfOnline:'Online nos EUA',tfLocal:'Central Florida',emptyServicos:'Nenhum serviço publicado por enquanto. Limpe o filtro para ver as ofertas de produtos da edição.',seeHow:'Veja como resgatar: ',onlineWord:'Online',startsBadge:'Começa em ',expiredBadge:'Oferta expirada',sponsored:'Patrocinado',draftBadge:'RASCUNHO — TESTE',detChannel:'Canal',detStarts:'Início',detValid:'Validade',detRules:'Condições',detMin:'Compra mínima',detWhere:'Onde vale',detSource:'Fonte',srcOficial:'Fonte oficial',srcAgregador:'Código de agregador',srcComunidade:'Relato da comunidade',srcParceiro:'Parceiro',verifiedOn:'conferido em',howTitle:'Como usar',locTbc:'Localidade a confirmar',saiuEdicao:'Saiu da edição',unavailableTitle:'Oferta indisponível',unavailableText:'Não encontramos esta oferta — ela pode ter saído da edição ou o link pode estar incompleto. Veja as ofertas vigentes abaixo.',seeCurrent:'Ver ofertas vigentes',demoBadge:'DEMONSTRAÇÃO — não é uma oferta real',funcionouBtn:'✅ Funcionou para mim',funcionouThanks:'Obrigado pelo retorno!',funcionouMarked:'✓ Você marcou que funcionou',reportBtn:'⚠️ Reportar problema',feedbackNote:'Cada retorno é uma contribuição sua, registrada junto com esta oferta e a data de hoje. Não exibimos nenhuma contagem pública.',pennyUnit:'Unidade/cidade',pennyReportDate:'Data do relato',pennyAvail:'Disponibilidade a confirmar',reportMsgHead:'Olá! Quero reportar um problema em uma oferta do Cupons do Dia:',removeMine:'Remover',pennyWarn:'Achado Penny: é um relato da comunidade — confirme o preço e o estoque na unidade antes de sair de casa.',redeemStore:'Ver oferta na loja',redeemCode:'Copiar cupom',redeemService:'Agendar com a empresa',affiliateNote:'Podemos receber comissão se você comprar por este link',suggestTitle:'Ofertas vigentes que podem te interessar',advLink:'Anuncie sua oferta',advTitle:'Anuncie sua oferta',advIntro:'Sua empresa aparece para quem já está procurando cupons na Central Florida e em compras online nos EUA. A busca é gratuita para o consumidor, que compra, paga ou agenda direto com a sua empresa.',advP1t:'Campanha piloto de 30 dias',advP1x:'Inclui a criação da página da sua oferta, um cupom exclusivo, divulgação na edição e um relatório ao final do período. O pagamento é combinado direto com a nossa equipe.',advP2t:'Parceria por resultado',advP2p:'Sob consulta',advP2x:'Comissão ou valor fixo por venda, atendimento concluído ou resgate confirmado — conforme o acordo fechado com a sua empresa.',advCta:'Quero divulgar minha empresa',advInclTitle:'O que está incluído no piloto de US$ 99',advInc1:'Criação da oferta junto com a empresa',advInc2:'Página individual da oferta',advInc3:'Código exclusivo da campanha',advInc4:'Divulgação no site e na edição do WhatsApp (seg/qua/sex)',advInc5:'Relatório ao final com visitas, cliques de contato e resgates confirmados medidos separadamente',advNome:'Seu nome',advEmpresa:'Empresa',advEmail:'E-mail comercial',advCidade:'Cidade',advSite:'Site (se tiver)',advProduto:'Produto ou serviço',advOferta:'Oferta proposta',advSend:'Enviar pelo WhatsApp',advHonest:'Ao tocar em enviar, o WhatsApp abre com os seus dados já preenchidos — é só conferir e enviar. Nada fica cadastrado automaticamente.',advMsgHead:'Quero divulgar minha empresa no Cupons do Dia:'},
+  es:{edition:'Miércoles, 25 de noviembre de 2026 · Black Friday',updatedSuffix:' · actualizado a las ' + ATUALIZADO_HORA,updateBanner:'🆕 Nueva edición disponible — toca para actualizar',title:'Cupones destacados',intro:'Destacados de la edición — toca el cupón y ve directo a la tienda.',lead:'Destacado de la edición',feature:'20% de descuento extra en eBay',detail:'eBay · código CYBERFINDS20 hasta el 01/12',storeGo:'Ver en la tienda',queroTitle:'📲 Recibe los Cupones en tu WhatsApp',queroText:'Cada lun, mié y vie, la edición nueva en tu WhatsApp. Es gratis.',queroBtn:'QUIERO RECIBIR LOS CUPONES',searchLabel:'Buscar ofertas',searchPlaceholder:'Tienda, oferta, código o SKU',all:'Todas',heading:'Ofertas de la edición',countOne:'oferta',countMany:'ofertas',brandOne:'marca',brandMany:'marcas',typeLabel:'Tipo y alcance',tipoLabel:'Tipo',canalLabel:'Canal',locLabel:'Ubicación',allTipo:'Todos',allCanal:'Todos',allLoc:'Todas',canalOnline:'En línea',canalPresencial:'Presencial',canalApp:'Solo en la app',locCentral:'Florida Central',locOnlineUS:'Online en EE. UU.',quickLabel:'Búsqueda rápida',qfToday:'Vence hoy',qfCode:'Con código',qfSort:'Mayor % anunciado',noResults:'No se encontraron ofertas. Prueba con otra categoría o término de búsqueda.',noBrands:'Ninguna marca en este segmento.',brandsAll:'Marcas y tiendas de la edición',brandsIn:'Marcas en ',novo:'NUEVO',escolha:'⭐ Elección de Juno',codeLabel:'Código',copyCode:'Copiar código',copySku:'Copiar SKU',copiedFlash:'✓ ¡Copiado!',copiedStatus:'¡Copiado!',copyManual:'Selecciona y copia manualmente: ',howPrefix:'Cómo canjear: ',howFallback:'Consulta la oferta para canjear',validUntil:'Válido hasta el ',expires48:'Vence en 48 h o menos',expired:'Expirada',myList:'Mi lista',myListEmpty:'Tu lista está vacía — toca + Mi lista en las ofertas que quieras guardar.',copyMyList:'Copiar mi lista',clear:'Borrar',addMine:'+ Mi lista',inMine:'✓ En mi lista',join:'Recibir por WhatsApp',shareBtn:'Compartir por WhatsApp',copyLink:'Copiar enlace',shareNative:'Compartir',productsTitle:'Productos destacados',invite:'Cupons do Dia · ofertas de EE. UU. en español. ',notice:'Ofertas verificadas en las fuentes oficiales y comunitarias indicadas; los códigos de agregador deben probarse al pagar. Ediciones los lunes, miércoles y viernes.',backOffers:'← Volver a las ofertas',details:'Detalles',tfProdutos:'Productos',tfServicos:'Servicios',tfOnline:'Online en EE. UU.',tfLocal:'Florida Central',emptyServicos:'Todavía no hay servicios publicados. Quita el filtro para ver las ofertas de productos de la edición.',seeHow:'Mira cómo canjear: ',onlineWord:'En línea',startsBadge:'Empieza el ',expiredBadge:'Oferta vencida',sponsored:'Patrocinado',draftBadge:'BORRADOR — PRUEBA',detChannel:'Canal',detStarts:'Inicio',detValid:'Vigencia',detRules:'Condiciones',detMin:'Compra mínima',detWhere:'Dónde aplica',detSource:'Fuente',srcOficial:'Fuente oficial',srcAgregador:'Código de agregador',srcComunidade:'Reporte de la comunidad',srcParceiro:'Socio',verifiedOn:'verificado el',howTitle:'Cómo usar',locTbc:'Ubicación por confirmar',saiuEdicao:'Salió de la edición',unavailableTitle:'Oferta no disponible',unavailableText:'No encontramos esta oferta — puede haber salido de la edición o el enlace puede estar incompleto. Mira las ofertas vigentes abajo.',seeCurrent:'Ver ofertas vigentes',demoBadge:'DEMOSTRACIÓN — no es una oferta real',funcionouBtn:'✅ Me funcionó',funcionouThanks:'¡Gracias por tu comentario!',funcionouMarked:'✓ Marcaste que te funcionó',reportBtn:'⚠️ Reportar un problema',feedbackNote:'Cada comentario es una contribución tuya, registrada junto con esta oferta y la fecha de hoy. No mostramos ningún conteo público.',pennyUnit:'Tienda/ciudad',pennyReportDate:'Fecha del reporte',pennyAvail:'Disponibilidad por confirmar',reportMsgHead:'¡Hola! Quiero reportar un problema en una oferta de Cupons do Dia:',removeMine:'Quitar',pennyWarn:'Hallazgo Penny: es un reporte de la comunidad — confirma el precio y el stock en la tienda antes de salir de casa.',redeemStore:'Ver la oferta en la tienda',redeemCode:'Copiar cupón',redeemService:'Agendar con la empresa',affiliateNote:'Podemos recibir una comisión si compras a través de este enlace',suggestTitle:'Ofertas vigentes que te pueden interesar',advLink:'Anuncia tu oferta',advTitle:'Anuncia tu oferta',advIntro:'Tu empresa aparece ante quienes ya buscan cupones en Florida Central y en compras en línea en EE. UU. La búsqueda es gratis para el consumidor, que compra, paga o agenda directamente con tu empresa.',advP1t:'Campaña piloto de 30 días',advP1x:'Incluye la creación de la página de tu oferta, un cupón exclusivo, difusión en la edición y un informe al final del período. El pago se acuerda directamente con nuestro equipo.',advP2t:'Alianza por resultados',advP2p:'A consultar',advP2x:'Comisión o monto fijo por venta, atención completada o canje confirmado, según el acuerdo cerrado con tu empresa.',advCta:'Quiero promocionar mi empresa',advInclTitle:'Qué incluye el piloto de US$ 99',advInc1:'Creación de la oferta junto con la empresa',advInc2:'Página individual de la oferta',advInc3:'Código exclusivo de la campaña',advInc4:'Difusión en el sitio y en la edición de WhatsApp (lun/mié/vie)',advInc5:'Informe al final con visitas, clics de contacto y canjes confirmados medidos por separado',advNome:'Tu nombre',advEmpresa:'Empresa',advEmail:'Correo comercial',advCidade:'Ciudad',advSite:'Sitio web (si tienes)',advProduto:'Producto o servicio',advOferta:'Oferta propuesta',advSend:'Enviar por WhatsApp',advHonest:'Al tocar enviar, WhatsApp se abre con tus datos ya completos — solo tienes que revisarlos y enviar. Nada se registra automáticamente.',advMsgHead:'Quiero promocionar mi empresa en Cupons do Dia:'},
+  en:{edition:'Wednesday, November 25, 2026 · Black Friday',updatedSuffix:' · updated at ' + ATUALIZADO_HORA,updateBanner:'🆕 New edition available — tap to update',title:'Featured coupons',intro:"This edition's highlights — tap a coupon to go straight to the store.",lead:'Edition highlight',feature:'Extra 20% off at eBay',detail:'eBay · code CYBERFINDS20 until 01/12',storeGo:'View at store',queroTitle:'📲 Get the Coupons on your WhatsApp',queroText:"Every Mon, Wed and Fri, the new edition on your WhatsApp. It's free.",queroBtn:'I WANT THE COUPONS',searchLabel:'Search deals',searchPlaceholder:'Store, deal, code or SKU',all:'All',heading:'Deals in this edition',countOne:'deal',countMany:'deals',brandOne:'brand',brandMany:'brands',typeLabel:'Type & reach',tipoLabel:'Type',canalLabel:'Channel',locLabel:'Location',allTipo:'All',allCanal:'All',allLoc:'All',canalOnline:'Online',canalPresencial:'In person',canalApp:'App only',locCentral:'Central Florida',locOnlineUS:'Online in the US',quickLabel:'Quick filters',qfToday:'Expires today',qfCode:'With code',qfSort:'Highest advertised %',noResults:'No deals found. Try another category or search term.',noBrands:'No brands in this segment.',brandsAll:'Brands & stores in this edition',brandsIn:'Brands in ',novo:'NEW',escolha:"⭐ Juno's pick",codeLabel:'Code',copyCode:'Copy code',copySku:'Copy SKU',copiedFlash:'✓ Copied!',copiedStatus:'Copied!',copyManual:'Select and copy it manually: ',howPrefix:'How to redeem: ',howFallback:'See the offer for how to redeem',validUntil:'Valid until ',expires48:'Expires within 48h',expired:'Expired',myList:'My list',myListEmpty:'Your list is empty — tap + My list on the deals you want to save.',copyMyList:'Copy my list',clear:'Clear',addMine:'+ My list',inMine:'✓ In my list',join:'Get it on WhatsApp',shareBtn:'Share on WhatsApp',copyLink:'Copy link',shareNative:'Share',productsTitle:'Featured products',invite:'Cupons do Dia · U.S. deals in English. ',notice:'Deals verified against the official and community sources shown; aggregator codes should be tested at checkout. New editions on Mondays, Wednesdays and Fridays.',backOffers:'← Back to deals',details:'Details',tfProdutos:'Products',tfServicos:'Services',tfOnline:'Online in the US',tfLocal:'Central Florida',emptyServicos:'No services published yet. Clear the filter to see the product deals in this edition.',seeHow:'See how to redeem: ',onlineWord:'Online',startsBadge:'Starts on ',expiredBadge:'Expired deal',sponsored:'Sponsored',draftBadge:'DRAFT — TEST',detChannel:'Channel',detStarts:'Starts',detValid:'Valid until',detRules:'Terms',detMin:'Minimum purchase',detWhere:'Where it applies',detSource:'Source',srcOficial:'Official source',srcAgregador:'Aggregator code',srcComunidade:'Community report',srcParceiro:'Partner',verifiedOn:'checked on',howTitle:'How to use',locTbc:'Location to be confirmed',saiuEdicao:'No longer in this edition',unavailableTitle:'Offer unavailable',unavailableText:"We couldn't find this offer — it may have left this edition or the link may be incomplete. See the current deals below.",seeCurrent:'View current deals',demoBadge:'DEMO — not a real offer',funcionouBtn:'✅ It worked for me',funcionouThanks:'Thanks for the feedback!',funcionouMarked:'✓ You marked that it worked',reportBtn:'⚠️ Report a problem',feedbackNote:'Each report is your own contribution, recorded together with this offer and today\'s date. We do not show any public count.',pennyUnit:'Store/city',pennyReportDate:'Report date',pennyAvail:'Availability to be confirmed',reportMsgHead:'Hi! I want to report a problem with a Cupons do Dia offer:',removeMine:'Remove',pennyWarn:'Penny find: this is a community report — confirm the price and stock at the store before you go.',redeemStore:'View deal at the store',redeemCode:'Copy coupon',redeemService:'Book with the business',affiliateNote:'We may earn a commission if you buy through this link',suggestTitle:'Current deals you may like',advLink:'Advertise your deal',advTitle:'Advertise your deal',advIntro:'Your business shows up for people already searching for coupons in Central Florida and for online shopping in the US. Search is free for shoppers, who buy, pay or book directly with your business.',advP1t:'30-day pilot campaign',advP1x:'Includes creating your deal page, an exclusive coupon, promotion in the edition and a report at the end of the period. Payment is arranged directly with our team.',advP2t:'Pay-for-results partnership',advP2p:'On request',advP2x:'A commission or a fixed fee per sale, completed appointment or confirmed redemption — as agreed with your business.',advCta:'I want to promote my business',advInclTitle:"What's included in the US$ 99 pilot",advInc1:'Offer created together with your business',advInc2:'Individual offer page',advInc3:'Exclusive campaign code',advInc4:'Promotion on the site and in the WhatsApp edition (Mon/Wed/Fri)',advInc5:'End-of-pilot report with visits, contact clicks and confirmed redemptions measured separately',advNome:'Your name',advEmpresa:'Business',advEmail:'Business email',advCidade:'City',advSite:'Website (if any)',advProduto:'Product or service',advOferta:'Proposed deal',advSend:'Send via WhatsApp',advHonest:'When you tap send, WhatsApp opens with your details already filled in — just review and send. Nothing is registered automatically.',advMsgHead:'I want to promote my business on Cupons do Dia:'}
  };
  const CATS = {'Supermercado':['Supermercado','Supermercado','Grocery'],'Restaurantes':['Restaurantes','Restaurantes','Restaurants'],'Roupas':['Roupas','Ropa','Clothing'],'Moda e Acessórios':['Moda e Acessórios','Moda y accesorios','Fashion & accessories'],'Acessórios':['Acessórios','Accesorios','Accessories'],'Eletrônicos e casa':['Eletrônicos e casa','Electrónica y hogar','Electronics & home'],'Online':['Online','Online','Online'],'Beleza':['Beleza','Belleza','Beauty'],'Serviços':['Serviços','Servicios','Services'],'Achados Penny':['Achados Penny','Hallazgos Penny','Penny finds'],'Automotivo':['Automotivo','Automotriz','Automotive'],'Casa e Limpeza':['Casa e Limpeza','Hogar y limpieza','Home & cleaning'],'Atrações':['Atrações','Atracciones','Attractions']};
  const CHANNELS = {'Ambos':['Ambos','Ambos','Both'],'Loja física':['Loja física','Tienda física','In store'],'Loja física e app':['Loja física e app','Tienda física y app','In store & app'],'Online e loja física':['Online e loja física','En línea y tienda física','Online & in store'],'Online':['Online','En línea','Online'],'App 7NOW':['App 7NOW','App 7NOW','App 7NOW'],'App e online':['App e online','App y en línea','App & online'],'Site e app':['Site e app','Sitio web y app','Website & app'],'Checkout online':['Checkout online','Pago en línea','Online checkout'],'Loja e online':['Loja e online','Tienda y en línea','In store & online'],'App e loja':['App e loja','App y tienda','App & store']};
@@ -852,7 +894,8 @@ gtag('config', 'G-E3JN17HCQ4');
   {v:['Hasta 88% OFF + 25% OFF extra en el Outlet','Up to 88% OFF + extra 25% OFF at the Outlet'],d:['Black Friday en Michael Kors Outlet: artículos con hasta 83–88% OFF y 25% OFF EXTRA ya aplicado en el precio (price as marked).','Black Friday at Michael Kors Outlet: items up to 83–88% OFF with an EXTRA 25% OFF already applied to the price (price as marked).'],h:['Precio como marcado, ya con el extra; sin código','Price as marked, extra already included; no code needed'],r:['Tienda Outlet de la marca · En línea','The brand\'s Outlet store · Online']},
   {v:['25% OFF extra en las ofertas del Coach Outlet','Extra 25% OFF Coach Outlet deals'],d:['Black Friday Sale del Coach Outlet con 25% OFF extra sobre las ofertas del outlet.','Coach Outlet Black Friday Sale with an extra 25% OFF on outlet deals.'],h:['Extra aplicado sobre el precio del outlet; sin código','Extra applied on top of the outlet price; no code needed'],r:['Coach Outlet · En línea','Coach Outlet · Online']},
   {v:['Hasta 50% OFF en joyas seleccionadas','Up to 50% OFF select jewelry'],d:['Black Friday: charms de Disney y Marvel con 40% OFF, gift sets y adorno navideño con 30% OFF, diamantes lab-grown con 30% OFF y estilos seleccionados hasta 50% OFF (términos oficiales).','Black Friday: Disney and Marvel charms at 40% OFF, gift sets and Christmas ornament at 30% OFF, lab-grown diamonds at 30% OFF and select styles up to 50% OFF (official terms).'],h:['Precios como marcados; sin código','Prices as marked; no code needed'],r:['Límite de 5 por SKU por persona · No combinable · La selección varía por tienda','Limit of 5 per SKU per person · Cannot be combined · Selection varies by store']},
-  {v:['Hasta 40% OFF + 20% OFF extra en 2+ artículos','Up to 40% OFF + extra 20% OFF on 2+ items'],d:['Black Friday y Cyber Monday 2026 en el sitio oficial de EE. UU.: hasta 40% OFF en estilos seleccionados y, comprando 2 o más artículos, 20% OFF extra.','Black Friday and Cyber Monday 2026 on the official US site: up to 40% OFF select styles and, when you buy 2 or more items, an extra 20% OFF.'],h:['Precios como marcados; el extra se aplica al comprar 2+ artículos','Prices as marked; extra applied when buying 2+ items'],r:['En línea (swarovski.com) · Se aplican términos','Online (swarovski.com) · Terms apply']}
+  {v:['Hasta 40% OFF + 20% OFF extra en 2+ artículos','Up to 40% OFF + extra 20% OFF on 2+ items'],d:['Black Friday y Cyber Monday 2026 en el sitio oficial de EE. UU.: hasta 40% OFF en estilos seleccionados y, comprando 2 o más artículos, 20% OFF extra.','Black Friday and Cyber Monday 2026 on the official US site: up to 40% OFF select styles and, when you buy 2 or more items, an extra 20% OFF.'],h:['Precios como marcados; el extra se aplica al comprar 2+ artículos','Prices as marked; extra applied when buying 2+ items'],r:['En línea (swarovski.com) · Se aplican términos','Online (swarovski.com) · Terms apply']},
+   {v:['Lavado completo de acera y entrada — piloto de demostración','Full driveway and walkway wash — demo pilot'],d:['Campaña de demostración del piloto de servicios: sirve para validar la página individual, el contacto y las métricas. No es una oferta real.','Demo campaign for the services pilot: it validates the individual page, the contact flow and the metrics. It is not a real offer.'],h:['Toca el botón de contacto: WhatsApp se abre con el mensaje de la campaña (código DEMO2026) ya completado; revísalo y envíalo','Tap the contact button: WhatsApp opens with the campaign message (code DEMO2026) already filled in; review it and send'],r:['Demostración — sin venta real · Área atendida: Orlando, FL · Florida Central','Demo — no real sale · Service area: Orlando, FL · Central Florida']}
  ];
  offers.forEach((offer, index) => offer._i = index);
  const PT_FIELD = {v:'value',d:'description',h:'how',r:'rules'};
@@ -871,15 +914,37 @@ gtag('config', 'G-E3JN17HCQ4');
   for (const key of Object.keys(CATS)) if (CAT_ICONS[key] && CATS[key].includes(name)) return CAT_ICONS[key];
   return '';
  }
+ function canalSet(offer) {
+  // Canal da oferta como conjunto ('online', 'presencial', 'app'). Regras da especificação: Online casa 'Online' e 'Ambos'; Presencial casa 'Loja física', 'Ambos' e 'Retirada na loja'; App casa 'Somente no app'. Canais compostos do cadastro (ex.: 'Online e loja física', 'Loja física e app') casam com cada parte que os compõe.
+  const ch = offer.channel || '';
+  const s = new Set();
+  if (ch === 'Online') s.add('online');
+  else if (ch === 'Ambos') { s.add('online'); s.add('presencial'); }
+  else if (ch === 'Loja física' || ch === 'Retirada na loja') s.add('presencial');
+  else if (ch === 'Somente no app') s.add('app');
+  else {
+   const n = normalize(ch);
+   if (n.includes('online') || n.includes('site') || n.includes('checkout')) s.add('online');
+   if (n.includes('loja')) s.add('presencial');
+   if (n.includes('app')) s.add('app');
+  }
+  return s;
+ }
+ function hasGeoConfirm(offer) {
+  // Central Florida só entra com confirmação geográfica: campo de cidade/área da oferta ou unidade, cidade ou ZIP da região presente no texto da oferta.
+  if (offer.city) return true;
+  const text = normalize([offer.description || '', offer.how || '', offer.rules || ''].join(' '));
+  return /orlando|central florida|winter park|kissimmee|altamonte springs|sanford|lake mary|maitland|winter garden|ocoee|apopka|clermont|windermere|lake buena vista|celebration|davenport|haines city/.test(text) || /\b(328|327|347)\d\d\b/.test(text);
+ }
  function typeMatches(offer) {
-  if (typeFilter === 'produto') return offer.tipo === 'produto';
-  if (typeFilter === 'servico') return offer.tipo === 'servico';
-  if (typeFilter === 'online') return offer.alcance.includes('online');
-  if (typeFilter === 'local') return offer.alcance.includes('local');
+  if (filterTipo && offer.tipo !== filterTipo) return false;
+  if (filterCanal && !canalSet(offer).has(filterCanal)) return false;
+  if (filterLoc === 'central' && !hasGeoConfirm(offer)) return false;
+  if (filterLoc === 'onlineUS' && !offer.alcance.includes('online')) return false;
   return true;
  }
  function catCount(name) {
-  return offers.filter(offer => !expiry(offer).expired && (name === 'Todas' || offer.category === name) && typeMatches(offer)).length;
+  return offers.filter(offer => !offer.rascunho && !expiry(offer).expired && (name === 'Todas' || offer.category === name) && typeMatches(offer)).length;
  }
  function updateCatCounts() {
   for (const cnt of root.querySelectorAll('.cat-count')) cnt.textContent = '· ' + catCount(cnt.dataset.countFor);
@@ -913,7 +978,7 @@ gtag('config', 'G-E3JN17HCQ4');
   return fromValue !== null ? fromValue : scan(tx(offer,'d'));
  }
  function quickCount(key) {
-  return offers.filter(offer => !expiry(offer).expired && typeMatches(offer) && (key === 'today' ? expiresToday(offer) : hasRealCode(offer))).length;
+  return offers.filter(offer => !offer.rascunho && !expiry(offer).expired && typeMatches(offer) && (key === 'today' ? expiresToday(offer) : hasRealCode(offer))).length;
  }
  function updateQuickCounts() {
   for (const cnt of root.querySelectorAll('.qf-count')) cnt.textContent = '· ' + quickCount(cnt.dataset.qfCount);
@@ -925,28 +990,72 @@ gtag('config', 'G-E3JN17HCQ4');
   const identifierLabel = offer.sku ? 'SKU' : UI[lang].codeLabel;
   return identifier ? identifierLabel + ': ' + identifier : (offer.how ? UI[lang].howPrefix + tx(offer,'h') : UI[lang].howFallback);
  }
+ // Minha lista: a chave é SEMPRE o id permanente da oferta. Persiste no navegador, sem conta, um retrato mínimo {id, store, value, salvoEm} por item; todo acesso ao armazenamento fica em try/catch — se ele estiver indisponível, a lista continua funcionando na sessão. Item cuja oferta saiu da edição continua visível com o retrato salvo e o estado "Saiu da edição"; item vencido mostra "Oferta expirada".
+ const MINE_KEY = 'cuponsMinhaLista';
  const mine = new Map();
  let mineOpen = false;
+ function persistMine() {
+  try { localStorage.setItem(MINE_KEY, JSON.stringify([...mine.values()])); } catch {}
+ }
+ function loadMine() {
+  try {
+   const saved = JSON.parse(localStorage.getItem(MINE_KEY) || '[]');
+   if (Array.isArray(saved)) for (const item of saved) if (item && item.id) mine.set(item.id, {id:item.id, store:item.store || '', value:item.value || '', salvoEm:item.salvoEm || ''});
+  } catch {}
+ }
  function toggleMine(offer) {
-  const key = offer.store + '|' + offer.value;
-  if (mine.has(key)) mine.delete(key);
-  else mine.set(key, offer);
+  if (mine.has(offer.id)) mine.delete(offer.id);
+  else mine.set(offer.id, {id:offer.id, store:offer.store, value:offer.value, salvoEm:new Date().toISOString()});
+  persistMine();
   renderMine();
  }
+ function mineDisplayValue(item) {
+  const offer = offerById.get(item.id);
+  return offer ? tx(offer,'v') : item.value;
+ }
  function mineText() {
-  return [...mine.values()].map(offer => offer.store + ' · ' + tx(offer,'v') + ' · ' + howText(offer)).join('\n');
+  return [...mine.values()].map(item => {
+   const offer = offerById.get(item.id);
+   return item.store + ' · ' + mineDisplayValue(item) + (offer ? ' · ' + howText(offer) : '');
+  }).join('\n');
  }
  function renderMine() {
-  get('mylist-toggle').textContent = UI[lang].myList + ' (' + mine.size + ')';
+  const t = UI[lang];
+  get('mylist-toggle').textContent = t.myList + ' (' + mine.size + ')';
   get('mylist-toggle').setAttribute('aria-expanded', String(mineOpen));
   get('mylist-panel').hidden = !mineOpen;
-  get('mylist-items').replaceChildren(...[...mine.values()].map(offer => node('li', offer.store + ' · ' + tx(offer,'v') + ' · ' + howText(offer))));
+  const items = [...mine.values()].map(item => {
+   const li = node('li');
+   const offer = offerById.get(item.id);
+   let state = '';
+   if (!offer) state = t.saiuEdicao;
+   else if (expiry(offer).expired) state = t.expiredBadge;
+   else if (!started(offer)) state = t.startsBadge + formatFull(offer.startsDate);
+   li.append(document.createTextNode(item.store + ' · ' + mineDisplayValue(item)));
+   if (state) li.append(node('span',' — ' + state,'mylist-state'));
+   const rm = node('button',t.removeMine,'secondary mylist-remove');
+   rm.type = 'button';
+   rm.onclick = () => { mine.delete(item.id); persistMine(); renderMine(); render(); };
+   li.append(rm);
+   return li;
+  });
+  get('mylist-items').replaceChildren(...items);
   get('mylist-empty').hidden = mine.size > 0;
  }
+ loadMine();
+ // Estado local de "funcionou para mim", por id de oferta (sem contagem pública).
+ const FUNC_KEY = 'cuponsFuncionou';
+ const funcionouSet = new Set();
+ function persistFuncionou() {
+  try { localStorage.setItem(FUNC_KEY, JSON.stringify([...funcionouSet])); } catch {}
+ }
+ function loadFuncionou() {
+  try { const s = JSON.parse(localStorage.getItem(FUNC_KEY) || '[]'); if (Array.isArray(s)) for (const id of s) funcionouSet.add(id); } catch {}
+ }
+ loadFuncionou();
  const formatDate = date => date ? date.slice(8,10) + '/' + date.slice(5,7) : '';
  const formatFull = date => date ? date.slice(8,10) + '/' + date.slice(5,7) + '/' + date.slice(0,4) : '';
- const todayStr = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); };
- const started = offer => !offer.startsDate || todayStr() >= offer.startsDate;
+ const started = offer => !offer.startsDate || etDayFmt.format(new Date()) >= offer.startsDate;
  function etEndOfDay(dateStr) {
   // validDate é INCLUSIVO: a oferta vale até 23:59:59.999 daquele dia em America/New_York,
   // independente do fuso de quem está vendo a página.
@@ -1130,6 +1239,7 @@ gtag('config', 'G-E3JN17HCQ4');
   if (offer.novo) catLine.append(node('span',UI[lang].novo,'novo'));
   if (offer.escolha) catLine.append(node('span',UI[lang].escolha,'escolha'));
   if (offer.patrocinado) catLine.append(node('span',UI[lang].sponsored,'patrocinado'));
+  if (canalSet(offer).has('presencial') && !hasGeoConfirm(offer)) catLine.append(node('span',UI[lang].locTbc,'loc-tbc'));
   const openArea = node('div','','deal-open');
   openArea.setAttribute('role','button');
   openArea.setAttribute('tabindex','0');
@@ -1142,6 +1252,9 @@ gtag('config', 'G-E3JN17HCQ4');
   const expiryLabel = expiry(offer).label;
   const meta = node('div','','meta');
   for(const item of [chanName(offer.channel),expiryLabel]) if(item) meta.append(node('span',item));
+  if (!started(offer)) meta.append(node('span',UI[lang].startsBadge + formatFull(offer.startsDate)));
+  if (offer.city) meta.append(node('span',offer.city));
+  meta.append(node('span',fonteLabel(offer) + ' · ' + UI[lang].verifiedOn + ' ' + formatFull(offer.verificadoEm)));
   const identifier = offer.code || offer.sku;
   const how = howText(offer);
   const actions = node('div','','actions');
@@ -1151,14 +1264,20 @@ gtag('config', 'G-E3JN17HCQ4');
    copyButton.onclick = async () => { const ok = await copy(identifier, copyButton); if (ok) registrarEvento('copiar_cupom_confirmado', offer.id); copyButton.focus(); };
    actions.append(copyButton);
   }
-  const mineKey = offer.store + '|' + offer.value;
-  const mineButton = node('button',mine.has(mineKey) ? UI[lang].inMine : UI[lang].addMine,'secondary');
+  const mineButton = node('button',mine.has(offer.id) ? UI[lang].inMine : UI[lang].addMine,'secondary');
   mineButton.type = 'button';
-  mineButton.onclick = () => { toggleMine(offer); mineButton.textContent = mine.has(mineKey) ? UI[lang].inMine : UI[lang].addMine; };
+  mineButton.onclick = () => { toggleMine(offer); mineButton.textContent = mine.has(offer.id) ? UI[lang].inMine : UI[lang].addMine; };
   actions.append(mineButton);
-  const storeLink = link(labelText(offer.label),offer.url,'primary');
-  if (offer.tipo === 'servico') storeLink.onclick = () => { registrarEvento('agendamento_intencao',offer.id); if (offer.url.includes('wa.me')) registrarEvento('whatsapp_parceiro',offer.id); };
-  else storeLink.onclick = () => registrarEvento('ir_loja', offer.id);
+  let storeLink;
+  if (!started(offer)) {
+   storeLink = node('button',UI[lang].startsBadge + formatFull(offer.startsDate),'primary');
+   storeLink.type = 'button';
+   storeLink.disabled = true;
+  } else {
+   storeLink = link(labelText(offer.label),offer.url,'primary');
+   if (offer.tipo === 'servico') storeLink.onclick = () => { registrarEvento('agendamento_intencao',offer.id); if (offer.url.includes('wa.me')) registrarEvento('whatsapp_parceiro',offer.id); };
+   else storeLink.onclick = () => registrarEvento('ir_loja', offer.id);
+  }
   const detailsButton = node('button',UI[lang].details + ' →','secondary');
   detailsButton.type = 'button';
   detailsButton.onclick = () => openOffer(offer.id,true);
@@ -1185,17 +1304,15 @@ gtag('config', 'G-E3JN17HCQ4');
   const query = normalize(get('search').value);
   const rows = cfg.order.map(index => offers[index]).filter(offer => {
    if (expiry(offer).expired || (selected !== 'Todas' && selected !== offer.category)) return false;
-   if (typeFilter === 'produto' && offer.tipo !== 'produto') return false;
-   if (typeFilter === 'servico' && offer.tipo !== 'servico') return false;
-   if (typeFilter === 'online' && !offer.alcance.includes('online')) return false;
-   if (typeFilter === 'local' && !offer.alcance.includes('local')) return false;
+   if (offer.rascunho) return false;
+   if (!typeMatches(offer)) return false;
    if (quickToday && !expiresToday(offer)) return false;
    if (quickCode && !hasRealCode(offer)) return false;
    const tr = TR[offer._i] || {};
    const trText = ['v','d','h','r'].flatMap(field => tr[field] || []).join(' ');
    return normalize([offer.store,offer.category,catName(offer.category),offer.value,offer.description,trText,offer.code,offer.sku,...(offer.links || []).map(item => item.text)].join(' ')).includes(query);
   });
-  // "Maior desconto" ligado: maior % primeiro; empate e ofertas sem % mantêm a ordem da edição (sort estável).
+  // "Maior % anunciado" ligado: maior % primeiro; empate e ofertas sem % mantêm a ordem da edição (sort estável).
   if (quickSort) rows.sort((a,b) => {
    const pa = discountPct(a), pb = discountPct(b);
    return (pb === null ? -1 : pb) - (pa === null ? -1 : pa);
@@ -1233,7 +1350,7 @@ gtag('config', 'G-E3JN17HCQ4');
   iconEl.hidden = !icon;
   const brandCount = renderBrands(rows);
   get('cards').replaceChildren(...rows.map(card));
-  if(!rows.length) get('cards').append(node('p',typeFilter === 'servico' ? t.emptyServicos : t.noResults));
+  if(!rows.length) get('cards').append(node('p',filterTipo === 'servico' ? t.emptyServicos : t.noResults));
   get('count').textContent = rows.length + ' ' + (rows.length === 1 ? t.countOne : t.countMany) + ' · ' + brandCount + ' ' + (brandCount === 1 ? t.brandOne : t.brandMany);
   for(const button of get('filters').children) button.setAttribute('aria-pressed',String(button.dataset.cat===selected));
   updateCatCounts();
@@ -1277,8 +1394,12 @@ gtag('config', 'G-E3JN17HCQ4');
   get('search-label').textContent = t.searchLabel;
   get('qflabel').textContent = t.quickLabel;
   get('quickfilters').setAttribute('aria-label', t.quickLabel);
-  get('tflabel').textContent = t.typeLabel;
-  get('typefilters').setAttribute('aria-label', t.typeLabel);
+  get('tipo-label').textContent = t.tipoLabel;
+  get('tipofilters').setAttribute('aria-label', t.tipoLabel);
+  get('canal-label').textContent = t.canalLabel;
+  get('canalfilters').setAttribute('aria-label', t.canalLabel);
+  get('loc-label').textContent = t.locLabel;
+  get('locfilters').setAttribute('aria-label', t.locLabel);
   get('search').placeholder = t.searchPlaceholder;
   get('mylist-empty').textContent = t.myListEmpty;
   get('mylist-copy').textContent = t.copyMyList;
@@ -1299,6 +1420,12 @@ gtag('config', 'G-E3JN17HCQ4');
   get('adv-p2p').textContent = t.advP2p;
   get('adv-p2x').textContent = t.advP2x;
   get('adv-cta').textContent = t.advCta;
+  get('adv-incl-title').textContent = t.advInclTitle.replace('99', String(PRECO_PILOTO_USD));
+  get('adv-inc-1').textContent = t.advInc1;
+  get('adv-inc-2').textContent = t.advInc2;
+  get('adv-inc-3').textContent = t.advInc3;
+  get('adv-inc-4').textContent = t.advInc4;
+  get('adv-inc-5').textContent = t.advInc5;
   get('adv-l-nome').textContent = t.advNome;
   get('adv-l-empresa').textContent = t.advEmpresa;
   get('adv-l-email').textContent = t.advEmail;
@@ -1312,11 +1439,12 @@ gtag('config', 'G-E3JN17HCQ4');
   setAnchorLabel(get('adv-link-dir'), t.advLink);
   get('adv-back').textContent = t.backOffers;
   buildFilters();
-  buildTypeFilters();
+  buildFacetFilters();
   buildQuickFilters();
   renderMine();
   render();
   if (view === 'offer' && currentOffer) renderOfferView(currentOffer);
+  else if (view === 'offer' && unavailableId) renderUnavailableView(unavailableId);
  }
  for(const button of root.querySelectorAll('[data-lang]')) button.onclick = () => { lang = button.dataset.lang; applyLang(); };
  get('search').addEventListener('input',render);
@@ -1329,7 +1457,7 @@ gtag('config', 'G-E3JN17HCQ4');
  addWhatsAppIcon(get('share'));
  get('mylist-toggle').onclick = () => { mineOpen = !mineOpen; renderMine(); };
  get('mylist-copy').onclick = (event) => { if (mine.size) copy(mineText(), event.currentTarget); else get('status').textContent = UI[lang].myListEmpty; };
- get('mylist-clear').onclick = () => { mine.clear(); render(); renderMine(); };
+ get('mylist-clear').onclick = () => { mine.clear(); persistMine(); render(); renderMine(); };
  get('copy-link').onclick = (event) => copy(pageUrl, event.currentTarget);
  get('share-native').onclick = async (event) => {
   if (navigator.share) {
@@ -1366,23 +1494,34 @@ gtag('config', 'G-E3JN17HCQ4');
   }));
   updateQuickCounts();
  }
- function buildTypeFilters() {
+ function buildFacetFilters() {
   const t = UI[lang];
-  const defs = [['produto',t.tfProdutos],['servico',t.tfServicos],['online',t.tfOnline],['local',t.tfLocal]];
-  get('typefilters').replaceChildren(...defs.map(([key,label]) => {
-   const b = node('button',label);
-   b.type = 'button';
-   b.dataset.tf = key;
-   b.setAttribute('aria-pressed',String(typeFilter === key));
-   b.onclick = () => { typeFilter = typeFilter === key ? '' : key; buildTypeFilters(); render(); };
-   return b;
-  }));
+  const buildRow = (navId, allLabel, defs, current, set) => {
+   const all = node('button',allLabel);
+   all.type = 'button';
+   all.setAttribute('aria-pressed',String(current === ''));
+   all.onclick = () => { set(''); buildFacetFilters(); render(); };
+   const buttons = defs.map(([key,label]) => {
+    const b = node('button',label);
+    b.type = 'button';
+    b.dataset.tf = key;
+    b.setAttribute('aria-pressed',String(current === key));
+    b.onclick = () => { set(current === key ? '' : key); buildFacetFilters(); render(); };
+    return b;
+   });
+   get(navId).replaceChildren(all, ...buttons);
+  };
+  buildRow('tipofilters', t.allTipo, [['produto',t.tfProdutos],['servico',t.tfServicos]], filterTipo, v => { filterTipo = v; });
+  buildRow('canalfilters', t.allCanal, [['online',t.canalOnline],['presencial',t.canalPresencial],['app',t.canalApp]], filterCanal, v => { filterCanal = v; });
+  buildRow('locfilters', t.allLoc, [['central',t.locCentral],['onlineUS',t.locOnlineUS]], filterLoc, v => { filterLoc = v; });
  }
  function fonteTipo(offer) {
-  if (offer.fonte) return offer.fonte;
-  if (offer.category === 'Achados Penny') return 'comunidade';
-  if ((offer.rules || '').toLowerCase().includes('agregador')) return 'agregador';
-  return '';
+  return offer.fonteTipo || offer.fonte || '';
+ }
+ function fonteLabel(offer) {
+  const t = UI[lang];
+  const f = fonteTipo(offer);
+  return f === 'comunidade' ? t.srcComunidade : f === 'agregador' ? t.srcAgregador : f === 'parceiro' ? t.srcParceiro : t.srcOficial;
  }
  let view = 'home';
  let currentOffer = null;
@@ -1393,36 +1532,128 @@ gtag('config', 'G-E3JN17HCQ4');
   get('advertise').hidden = name !== 'advertise';
   window.scrollTo(0,0);
  }
- function openOffer(id, push) {
+ function suggestionsFor(offer, count) {
+  const vigentes = cfg.order.map(i => offers[i]).filter(o => !o.rascunho && !expiry(o).expired && started(o) && (!offer || o.id !== offer.id));
+  if (offer) vigentes.sort((a,b) => Number(b.category === offer.category) - Number(a.category === offer.category));
+  return vigentes.slice(0, count || 4);
+ }
+ let unavailableId = null;
+ function renderUnavailableView(id) {
+  const t = UI[lang];
+  currentOffer = null;
+  unavailableId = id;
+  const wrap = get('offer-view');
+  wrap.replaceChildren();
+  const back = node('button',t.backOffers,'secondary back-btn');
+  back.type = 'button';
+  back.onclick = smartBack;
+  wrap.append(back);
+  wrap.append(node('h2',t.unavailableTitle), node('p',t.unavailableText));
+  const see = node('button',t.seeCurrent,'primary');
+  see.type = 'button';
+  see.onclick = () => { navPushed = false; goHome(); };
+  wrap.append(see);
+  const top = suggestionsFor(null, 4);
+  if (top.length) {
+   wrap.append(node('h3',t.suggestTitle));
+   const sug = node('div','','suggest');
+   for (const o of top) {
+    const b = node('button',o.store + ' · ' + tx(o,'v'),'secondary');
+    b.type = 'button';
+    b.onclick = () => openOffer(o.id,true);
+    sug.append(b);
+   }
+   wrap.append(sug);
+  }
+  showView('offer');
+ }
+ // Navegação com histórico: abrir a visão individual registra ?oferta={id} no histórico (preservando as UTMs do link compartilhado) junto com o estado da lista (segmento, busca, filtros tipo/canal/localização, busca rápida e rolagem); o Voltar do navegador restaura tudo.
+ let navPushed = false;
+ function listSnapshot() {
+  return {selected:selected, search:get('search').value, filterTipo:filterTipo, filterCanal:filterCanal, filterLoc:filterLoc, quickToday:quickToday, quickCode:quickCode, quickSort:quickSort, scrollY:window.scrollY || 0};
+ }
+ function restoreList(snap) {
+  if (!snap) { showView('home'); return; }
+  selected = snap.selected || 'Todas';
+  get('search').value = snap.search || '';
+  filterTipo = snap.filterTipo || '';
+  filterCanal = snap.filterCanal || '';
+  filterLoc = snap.filterLoc || '';
+  quickToday = !!snap.quickToday;
+  quickCode = !!snap.quickCode;
+  quickSort = !!snap.quickSort;
+  buildFilters();
+  buildFacetFilters();
+  buildQuickFilters();
+  showView('home');
+  render();
+  const y = snap.scrollY || 0;
+  requestAnimationFrame(() => window.scrollTo(0, y));
+ }
+ function offerUrl(id) {
+  try {
+   const params = new URLSearchParams(location.search);
+   params.set('oferta', id);
+   return location.pathname + '?' + params.toString();
+  } catch { return '?oferta=' + id; }
+ }
+ function openOffer(id, push, opts) {
+  const snap = push ? listSnapshot() : null;
   const offer = offerById.get(id);
-  if (!offer) return;
+  if (!offer) {
+   renderUnavailableView(id);
+   if (push) { try { history.pushState({view:'offer', id:id, list:snap},'',offerUrl(id)); navPushed = true; } catch {} }
+   return;
+  }
+  unavailableId = null;
   currentOffer = offer;
-  registrarEvento('visita_oferta', offer.id);
+  const fromWhatsApp = !!(opts && opts.fromLink) && new URLSearchParams(location.search).get('utm_source') === 'whatsapp';
+  registrarEvento(fromWhatsApp ? 'visita_whatsapp' : 'visita_oferta', offer.id);
   renderOfferView(offer);
   showView('offer');
-  if (push) { try { history.pushState(null,'','?oferta=' + offer.id); } catch {} }
+  if (push) { try { history.pushState({view:'offer', id:offer.id, list:snap},'',offerUrl(offer.id)); navPushed = true; } catch {} }
  }
  function goHome() {
   currentOffer = null;
+  unavailableId = null;
   showView('home');
-  try { history.replaceState(null,'',location.pathname); } catch {}
+  try { const params = new URLSearchParams(location.search); params.delete('oferta'); const qs = params.toString(); history.replaceState({view:'home'},'',location.pathname + (qs ? '?' + qs : '')); } catch {}
  }
+ function smartBack() {
+  if (navPushed) { try { history.back(); return; } catch {} }
+  goHome();
+ }
+ window.addEventListener('popstate', event => {
+  const state = event.state;
+  navPushed = false;
+  if (state && state.view === 'offer' && state.id) {
+   const offer = offerById.get(state.id);
+   if (offer) { unavailableId = null; currentOffer = offer; renderOfferView(offer); showView('offer'); }
+   else renderUnavailableView(state.id);
+   return;
+  }
+  currentOffer = null;
+  unavailableId = null;
+  restoreList(state && state.list ? state.list : null);
+ });
  function renderOfferView(offer) {
   const t = UI[lang];
   const wrap = get('offer-view');
   wrap.replaceChildren();
   const back = node('button',t.backOffers,'secondary back-btn');
   back.type = 'button';
-  back.onclick = goHome;
+  back.onclick = smartBack;
   wrap.append(back);
   const badges = node('div','','category-line');
   badges.append(node('p',catName(offer.category),'category'));
   if (offer.novo) badges.append(node('span',t.novo,'novo'));
   if (offer.escolha) badges.append(node('span',t.escolha,'escolha'));
   if (offer.patrocinado) badges.append(node('span',t.sponsored,'patrocinado'));
-  if (offer.rascunho) badges.append(node('span',t.draftBadge,'badge badge-draft'));
+  if (offer.demo) badges.append(node('span',t.demoBadge,'badge badge-demo'));
+  if (offer.rascunho && !offer.demo) badges.append(node('span',t.draftBadge,'badge badge-draft'));
   const exp = expiry(offer);
   const notStarted = !started(offer);
+  const isActive = !exp.expired && !notStarted;
   if (exp.expired) badges.append(node('span',t.expiredBadge,'badge badge-expired'));
   if (notStarted) badges.append(node('span',t.startsBadge + formatFull(offer.startsDate),'badge badge-starts'));
   wrap.append(badges,brandRow(offer.store),node('p',tx(offer,'v'),'value'),node('p',tx(offer,'d')));
@@ -1432,11 +1663,10 @@ gtag('config', 'G-E3JN17HCQ4');
   if (offer.validDate) meta.append(node('span',t.detValid + ': ' + formatFull(offer.validDate)));
   else if (exp.label && !exp.expired) meta.append(node('span',exp.label));
   if (offer.city) meta.append(node('span',t.detWhere + ': ' + offer.city + (offer.zip ? ' · ZIP ' + offer.zip : '')));
-  const fonte = fonteTipo(offer);
-  if (fonte) meta.append(node('span',t.detSource + ': ' + (fonte === 'comunidade' ? t.srcComunidade : fonte === 'agregador' ? t.srcAgregador : t.srcOficial)));
+  meta.append(node('span',t.detSource + ': ' + fonteLabel(offer) + ' · ' + t.verifiedOn + ' ' + formatFull(offer.verificadoEm)));
   wrap.append(meta);
   const identifier = offer.code || offer.sku;
-  if (identifier) {
+  if (identifier && !exp.expired) {
    const box = node('div','','offer-code');
    box.append(node('span',(offer.sku ? 'SKU' : t.codeLabel) + ':'));
    box.append(node('span',identifier,'code'));
@@ -1446,12 +1676,38 @@ gtag('config', 'G-E3JN17HCQ4');
    box.append(cp);
    wrap.append(box);
   }
-  if (offer.category === 'Achados Penny') wrap.append(node('p',t.pennyWarn,'notice'));
-  if (offer.how) wrap.append(node('p',t.howPrefix + tx(offer,'h'),'source'));
-  else if (!identifier) wrap.append(node('p',howText(offer),'source'));
+  if (offer.category === 'Achados Penny') {
+   wrap.append(node('p',t.pennyWarn,'notice'));
+   const pb = node('div','','penny-box');
+   const upcMatch = (offer.how || '').match(/UPC\s+(\d+)/i);
+   const idText = offer.sku ? 'SKU ' + offer.sku : (upcMatch ? 'UPC ' + upcMatch[1] : '');
+   if (idText) pb.append(node('p',idText));
+   if (offer.city) pb.append(node('p',t.pennyUnit + ': ' + offer.city));
+   pb.append(node('p',t.pennyReportDate + ': ' + formatFull(offer.verificadoEm)));
+   pb.append(node('p',t.pennyAvail));
+   wrap.append(pb);
+  }
+  if (!exp.expired) {
+   if (offer.how) {
+    wrap.append(node('h3',t.howTitle));
+    const howStr = tx(offer,'h');
+    let steps = howStr.split(';').map(s => s.trim()).filter(Boolean);
+    if (steps.length > 3) {
+     const size = Math.ceil(steps.length / 3);
+     const grouped = [];
+     for (let i = 0; i < steps.length; i += size) grouped.push(steps.slice(i, i + size).join('; '));
+     steps = grouped;
+    }
+    if (steps.length > 1) {
+     const ol = node('ol','','how-steps');
+     for (const s of steps) ol.append(node('li',s));
+     wrap.append(ol);
+    } else wrap.append(node('p',howStr,'source'));
+   } else if (!identifier) wrap.append(node('p',howText(offer),'source'));
+  }
   if (offer.rules) wrap.append(node('p',t.detRules + ': ' + tx(offer,'r'),'restrictions'));
   if (offer.minimo) wrap.append(node('p',t.detMin + ': ' + offer.minimo,'restrictions'));
-  if (offer.links && offer.links.length) {
+  if (!exp.expired && offer.links && offer.links.length) {
    const linksBox = node('div','','deal-links');
    linksBox.append(node('p',t.productsTitle,'deal-links-title'));
    for (const item of offer.links) {
@@ -1464,7 +1720,7 @@ gtag('config', 'G-E3JN17HCQ4');
    }
    wrap.append(linksBox);
   }
-  if (offer.art) {
+  if (!exp.expired && offer.art) {
    const art = node('img','','campaign-art');
    art.src = offer.art;
    art.alt = ADV_ART_ALT[lang];
@@ -1472,35 +1728,66 @@ gtag('config', 'G-E3JN17HCQ4');
    art.height = 1124;
    wrap.append(art);
   }
-  const actions = node('div','','actions');
-  if (offer.tipo === 'servico') {
-   const primary = link(offer.label ? labelText(offer.label) : t.redeemService,offer.url,'primary');
-   primary.onclick = () => { registrarEvento('agendamento_intencao',offer.id); if (offer.url.includes('wa.me')) registrarEvento('whatsapp_parceiro',offer.id); };
-   actions.append(primary);
-  } else if (offer.code) {
-   const primary = node('button',t.redeemCode,'primary');
-   primary.type = 'button';
-   primary.onclick = async () => { const ok = await copy(offer.code,primary); if (ok) registrarEvento('copiar_cupom_confirmado',offer.id); };
-   actions.append(primary);
-   const store = link(t.redeemStore,offer.url,'secondary');
-   store.onclick = () => registrarEvento('ir_loja',offer.id);
-   actions.append(store);
-  } else {
-   const primary = link(t.redeemStore,offer.url,'primary');
-   primary.onclick = () => registrarEvento('ir_loja',offer.id);
-   actions.append(primary);
-  }
-  const mineKey = offer.store + '|' + offer.value;
-  const mineButton = node('button',mine.has(mineKey) ? t.inMine : t.addMine,'secondary');
-  mineButton.type = 'button';
-  mineButton.onclick = () => { toggleMine(offer); mineButton.textContent = mine.has(mineKey) ? t.inMine : t.addMine; };
-  actions.append(mineButton,addWhatsAppIcon(link('WhatsApp',whatsapp(waOfferMessage(offer)),'secondary wa')));
-  wrap.append(actions);
-  if (offer.afiliado) wrap.append(node('p',t.affiliateNote,'affiliate-note'));
   if (exp.expired) {
-   const vigentes = cfg.order.map(i => offers[i]).filter(o => o.id !== offer.id && !o.rascunho && !expiry(o).expired && started(o));
-   vigentes.sort((a,b) => Number(b.category === offer.category) - Number(a.category === offer.category));
-   const top = vigentes.slice(0,4);
+   const see = node('button',t.seeCurrent,'primary');
+   see.type = 'button';
+   see.onclick = () => { navPushed = false; goHome(); };
+   wrap.append(see);
+  } else {
+   const actions = node('div','','actions');
+   if (notStarted) {
+    const primary = node('button',t.startsBadge + formatFull(offer.startsDate),'primary');
+    primary.type = 'button';
+    primary.disabled = true;
+    actions.append(primary);
+   } else if (offer.tipo === 'servico') {
+    const primary = link(offer.label ? labelText(offer.label) : t.redeemService,offer.url,'primary');
+    primary.onclick = () => { registrarEvento('agendamento_intencao',offer.id); if (offer.url.includes('wa.me')) registrarEvento('whatsapp_parceiro',offer.id); };
+    actions.append(primary);
+   } else if (offer.code) {
+    const primary = node('button',t.redeemCode,'primary');
+    primary.type = 'button';
+    primary.onclick = async () => { const ok = await copy(offer.code,primary); if (ok) registrarEvento('copiar_cupom_confirmado',offer.id); };
+    actions.append(primary);
+    const store = link(t.redeemStore,offer.url,'secondary');
+    store.onclick = () => registrarEvento('ir_loja',offer.id);
+    actions.append(store);
+   } else {
+    const primary = link(t.redeemStore,offer.url,'primary');
+    primary.onclick = () => registrarEvento('ir_loja',offer.id);
+    actions.append(primary);
+   }
+   const mineButton = node('button',mine.has(offer.id) ? t.inMine : t.addMine,'secondary');
+   mineButton.type = 'button';
+   mineButton.onclick = () => { toggleMine(offer); mineButton.textContent = mine.has(offer.id) ? t.inMine : t.addMine; };
+   actions.append(mineButton,addWhatsAppIcon(link('WhatsApp',whatsapp(waOfferMessage(offer)),'secondary wa')));
+   wrap.append(actions);
+  }
+  if (offer.afiliado && !exp.expired) wrap.append(node('p',t.affiliateNote,'affiliate-note'));
+  if (isActive) {
+   const fb = node('div','','feedback');
+   const jaMarcou = funcionouSet.has(offer.id);
+   const fBtn = node('button',jaMarcou ? t.funcionouMarked : t.funcionouBtn,'secondary');
+   fBtn.type = 'button';
+   const thanks = node('p','','feedback-note');
+   thanks.hidden = true;
+   fBtn.onclick = () => {
+    if (!funcionouSet.has(offer.id)) {
+     funcionouSet.add(offer.id);
+     persistFuncionou();
+     registrarEvento('funcionou', offer.id, {data: etDayFmt.format(new Date())});
+    }
+    fBtn.textContent = t.funcionouMarked;
+    thanks.textContent = t.funcionouThanks;
+    thanks.hidden = false;
+   };
+   const rBtn = link(t.reportBtn,'https://wa.me/' + BUSINESS_WA + '?text=' + encodeURIComponent(t.reportMsgHead + '\n' + offer.store + ' · ' + tx(offer,'v') + '\nID: ' + offer.id),'secondary');
+   rBtn.onclick = () => registrarEvento('reportar_problema', offer.id, {data: etDayFmt.format(new Date())});
+   fb.append(fBtn, rBtn, node('p',t.feedbackNote,'feedback-note'), thanks);
+   wrap.append(fb);
+  }
+  if (exp.expired) {
+   const top = suggestionsFor(offer, 4);
    if (top.length) {
     wrap.append(node('h3',t.suggestTitle));
     const sug = node('div','','suggest');
@@ -1567,7 +1854,7 @@ gtag('config', 'G-E3JN17HCQ4');
  applyLang();
  startHeroTimer();
  const initialOffer = new URLSearchParams(location.search).get('oferta');
- if (initialOffer) openOffer(initialOffer, false);
+ if (initialOffer) openOffer(initialOffer, false, {fromLink:true});
 })();
 </script>
 </body>
