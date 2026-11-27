@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Serviços com desconto em Orlando — Cupons do Dia</title>
+<meta name="description" content="Serviços locais com desconto para brasileiros na Central Florida, em português." />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3JN17HCQ4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E3JN17HCQ4');
+</script>
+<style>
+  :root{
+    --navy:#1b2a52; --navy-2:#24366b; --yellow:#ffdb53; --yellow-dark:#f5c518;
+    --bg:#f4f6fb; --card:#ffffff; --ink:#1b2a52; --muted:#5a657f; --line:#dde3f0;
+    --green:#1faa55; --green-dark:#178a44; --green-bg:#e7f7ee;
+    --radius:14px;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#10182e; --card:#1a2442; --ink:#eef1fa; --muted:#a7b0c9; --line:#2e3c66; --green-bg:#14301f; }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  a{color:inherit}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 40px}
+
+  /* Masthead */
+  .masthead{background:var(--navy);color:#fff}
+  .masthead-in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;min-height:44px}
+  .ticket{width:44px;height:44px;flex:0 0 44px;background:var(--yellow);border-radius:9px;display:flex;align-items:center;justify-content:center;position:relative;transform:rotate(-4deg)}
+  .ticket::before,.ticket::after{content:"";position:absolute;width:10px;height:10px;background:var(--navy);border-radius:50%;top:50%;margin-top:-5px}
+  .ticket::before{left:-5px}.ticket::after{right:-5px}
+  .ticket span{font-weight:900;font-size:26px;color:var(--navy);line-height:1;font-family:Arial Black,Arial,sans-serif}
+  .brand-name{font-weight:900;font-size:24px;letter-spacing:.14em;line-height:1}
+  .brand-sub{font-size:12.5px;color:var(--yellow);font-weight:700;letter-spacing:.02em;margin-top:3px}
+  .langs{margin-left:auto;display:flex;gap:6px}
+  .lang-btn{appearance:none;border:2px solid transparent;background:rgba(255,255,255,.12);border-radius:10px;font-size:19px;line-height:1;padding:7px 9px;cursor:pointer;min-width:44px;min-height:40px}
+  .lang-btn[aria-pressed="true"]{border-color:var(--yellow);background:rgba(255,255,255,.22)}
+  .lang-btn:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--yellow-dark);outline-offset:2px}
+
+  h1{font-size:clamp(26px,6vw,36px);line-height:1.15;margin:26px 0 8px;font-weight:900;letter-spacing:-.01em}
+  .intro{margin:0 0 18px;color:var(--muted);font-size:16.5px;max-width:62ch}
+
+  /* QUERO bar */
+  .quero{background:var(--green-bg);border:1.5px solid var(--green);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+  .quero p{margin:0;font-weight:800;font-size:16px;flex:1 1 220px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;border-radius:10px;padding:11px 18px;min-height:44px;font-size:15px;border:0;cursor:pointer;text-align:center}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{background:var(--green-dark)}
+  .btn-navy{background:var(--navy);color:#fff}
+  @media (prefers-color-scheme: dark){ .btn-navy{background:var(--yellow);color:var(--navy)} }
+  .btn-outline{background:transparent;border:1.5px solid var(--navy);color:var(--ink)}
+
+  /* Cards */
+  .cards{display:grid;gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 2px 10px rgba(27,42,82,.06)}
+  .card-top{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
+  .company{font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0}
+  .badge-sponsored{background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.03em}
+  .benefit{font-size:22px;line-height:1.25;font-weight:900;margin:8px 0 8px}
+  .desc{margin:0 0 14px;font-size:16px}
+  .meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+  .chip{font-size:13px;font-weight:700;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+  .howto{background:var(--bg);border-radius:10px;padding:12px 14px;margin:0 0 14px}
+  .howto h3{margin:0 0 4px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .howto p{margin:0;font-size:15px}
+  .rules{font-size:14px;color:var(--muted);margin:0 0 14px}
+  .rules strong{color:var(--ink)}
+  .code-row{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:0 0 6px}
+  .code-box{flex:1 1 180px;display:flex;align-items:center;gap:10px;border:2px dashed var(--navy);border-radius:10px;padding:8px 14px;background:var(--card)}
+  @media (prefers-color-scheme: dark){ .code-box{border-color:var(--yellow)} }
+  .code-label{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .code-value{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;font-size:17px;letter-spacing:.04em;user-select:all;-webkit-user-select:all}
+  .btn-copy{background:var(--navy);color:#fff}
+  @media (prefers-color-scheme: dark){ .btn-copy{background:var(--yellow);color:var(--navy)} }
+  .copy-msg{font-size:14px;font-weight:700;color:var(--green-dark);min-height:21px;margin:0 0 10px}
+  @media (prefers-color-scheme: dark){ .copy-msg{color:#5fd68d} }
+  .copy-msg:empty{min-height:0;margin:0}
+  .source{font-size:13px;color:var(--muted);margin:0 0 16px}
+  .card .btn-navy{width:100%;font-size:16px;padding:13px 18px}
+
+  /* Empty state */
+  .empty{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 20px;text-align:center}
+  .empty p{margin:0 0 16px;font-size:16.5px}
+
+  /* Footer */
+  footer{margin-top:34px;border-top:1px solid var(--line);padding-top:20px;display:grid;gap:14px}
+  .foot-back{font-weight:800;text-decoration:none;font-size:16px;display:inline-block;padding:8px 0;min-height:40px}
+  .foot-fixed h2{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .foot-fixed ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px}
+  .foot-fixed a{font-weight:700;display:inline-block;padding:8px 0;min-height:40px}
+  .foot-invite{margin:0;font-size:15.5px}
+  .foot-invite a{font-weight:800}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="brand" href="https://cupons.watigo.app" aria-label="Cupons do Dia">
+      <span class="ticket" aria-hidden="true"><span>J</span></span>
+      <span>
+        <span class="brand-name">JUNO</span>
+        <span class="brand-sub" style="display:block" data-i18n="brandSub">Cupons do Dia</span>
+      </span>
+    </a>
+    <nav class="langs" aria-label="Idioma / Language / Idioma">
+      <button type="button" class="lang-btn" data-lang="pt" aria-pressed="true" aria-label="Português">🇧🇷</button>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español">🇪🇸</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">🇺🇸</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 data-i18n="h1">Serviços com desconto em Orlando</h1>
+  <p class="intro" data-i18n="intro">Empresas da Central Florida com oferta ativa para a comunidade brasileira — página atualizada a cada edição (seg, qua e sex).</p>
+
+  <section class="quero" aria-label="WhatsApp">
+    <p data-i18n="queroText">📲 Receba os Cupons no seu WhatsApp</p>
+    <a class="btn btn-green" href="https://wa.me/14077847055?text=QUERO%20RECEBER%20OS%20CUPONS" target="_blank" rel="noopener" data-i18n="queroBtn">QUERO RECEBER OS CUPONS</a>
+  </section>
+
+  <section id="cards" class="cards" aria-live="polite"></section>
+  <section id="empty" class="empty" hidden>
+    <p data-i18n="emptyText">Nenhum serviço com oferta vigente em Orlando no momento — esta página é atualizada a cada edição.</p>
+    <a class="btn btn-navy" href="https://cupons.watigo.app" data-i18n="emptyBtn">Ver todos os Cupons do Dia</a>
+  </section>
+
+  <footer>
+    <div><a class="foot-back" href="https://cupons.watigo.app" data-i18n="footBack">← Ver todos os Cupons do Dia</a></div>
+    <div class="foot-fixed">
+      <h2 data-i18n="footFixedTitle">Páginas fixas</h2>
+      <ul>
+        <li><a href="https://cupons.watigo.app/publix.html" data-i18n="footPublix">Ofertas do Publix</a></li>
+        <li><a href="https://cupons.watigo.app/beleza.html" data-i18n="footBeleza">Cupons de beleza nos EUA</a></li>
+      </ul>
+    </div>
+    <p class="foot-invite"><a href="https://cupons.watigo.app" data-i18n="footInvite">Tem uma empresa na Central Florida? Divulgue sua oferta</a></p>
+  </footer>
+</main>
+
+<script>
+var OFFERS = [
+  {
+    id: "watigo-diagnostico",
+    patrocinado: true,
+    empresa: "Watigo",
+    canal: "Online",
+    localidade: "Orlando, FL · Central Florida",
+    validDate: "2026-12-26",
+    validLabel: "26/12/2026",
+    codigo: "DIVULGA-CUPONS",
+    checkedLabel: "25/11/2026",
+    link: "https://cupons.watigo.app/?oferta=watigo-diagnostico"
+  }
+];
+
+var I18N = {
+  pt: {
+    htmlLang: "pt-BR",
+    brandSub: "Cupons do Dia",
+    h1: "Serviços com desconto em Orlando",
+    intro: "Empresas da Central Florida com oferta ativa para a comunidade brasileira — página atualizada a cada edição (seg, qua e sex).",
+    queroText: "📲 Receba os Cupons no seu WhatsApp",
+    queroBtn: "QUERO RECEBER OS CUPONS",
+    sponsored: "Patrocinado",
+    benefit: "Divulgue sua oferta para brasileiros na Central Florida",
+    description: "O Watigo cria a página do seu cupom e divulga a campanha no site e no WhatsApp.",
+    howTitle: "Como usar",
+    how: "Toque em 'Quero divulgar minha empresa': o WhatsApp abre com a mensagem da campanha já preenchida. É só enviar — sem formulário.",
+    validUntil: "Válido até",
+    rulesLabel: "Regras:",
+    rules: "Para empresas da Central Florida · Campanha piloto de 30 dias por US$ 99 · Página do cupom + divulgação no site e no WhatsApp · Atendimento em português",
+    codeLabel: "Código",
+    copyBtn: "Copiar",
+    copied: "Copiado!",
+    copyFail: "Não deu pra copiar automaticamente — o código está selecionado, é só copiar.",
+    source: "Parceiro · conferido em",
+    viewOffer: "Ver oferta",
+    emptyText: "Nenhum serviço com oferta vigente em Orlando no momento — esta página é atualizada a cada edição.",
+    emptyBtn: "Ver todos os Cupons do Dia",
+    footBack: "← Ver todos os Cupons do Dia",
+    footFixedTitle: "Páginas fixas",
+    footPublix: "Ofertas do Publix",
+    footBeleza: "Cupons de beleza nos EUA",
+    footInvite: "Tem uma empresa na Central Florida? Divulgue sua oferta"
+  },
+  es: {
+    htmlLang: "es",
+    brandSub: "Cupones del Día",
+    h1: "Servicios con descuento en Orlando",
+    intro: "Empresas de Florida Central con una oferta activa para la comunidad brasileña — página actualizada en cada edición (lun, mié y vie).",
+    queroText: "📲 Recibe los Cupones en tu WhatsApp",
+    queroBtn: "QUIERO RECIBIR LOS CUPONES",
+    sponsored: "Patrocinado",
+    benefit: "Promociona tu oferta para brasileños en Florida Central",
+    description: "Watigo crea la página de tu cupón y promociona la campaña en el sitio web y por WhatsApp.",
+    howTitle: "Cómo usar",
+    how: "Toca «Quiero promocionar mi empresa»: WhatsApp se abre con el mensaje de la campaña ya completado. Solo tienes que enviarlo, sin formularios.",
+    validUntil: "Válido hasta el",
+    rulesLabel: "Reglas:",
+    rules: "Para empresas de Florida Central · Campaña piloto de 30 días por US$ 99 · Página del cupón + promoción en el sitio web y por WhatsApp · Atención en portugués",
+    codeLabel: "Código",
+    copyBtn: "Copiar",
+    copied: "¡Copiado!",
+    copyFail: "No se pudo copiar automáticamente — el código está seleccionado, solo cópialo.",
+    source: "Socio · verificado el",
+    viewOffer: "Ver oferta",
+    emptyText: "Ningún servicio con oferta vigente en Orlando en este momento — esta página se actualiza en cada edición.",
+    emptyBtn: "Ver todos los Cupones del Día",
+    footBack: "← Ver todos los Cupones del Día",
+    footFixedTitle: "Páginas fijas",
+    footPublix: "Ofertas de Publix",
+    footBeleza: "Cupones de belleza en EE. UU.",
+    footInvite: "¿Tienes una empresa en Florida Central? Promociona tu oferta"
+  },
+  en: {
+    htmlLang: "en",
+    brandSub: "Coupons of the Day",
+    h1: "Discounted services in Orlando",
+    intro: "Central Florida businesses with an active offer for the Brazilian community — page updated with each edition (Mon, Wed & Fri).",
+    queroText: "📲 Get the Coupons on your WhatsApp",
+    queroBtn: "I WANT THE COUPONS",
+    sponsored: "Sponsored",
+    benefit: "Promote your offer to Brazilians in Central Florida",
+    description: "Watigo creates your coupon page and promotes the campaign on the website and on WhatsApp.",
+    howTitle: "How to use",
+    how: "Tap 'I want to promote my business': WhatsApp opens with the campaign message already filled in. Just send it — no form.",
+    validUntil: "Valid until",
+    rulesLabel: "Terms:",
+    rules: "For Central Florida businesses · 30-day pilot campaign for US$ 99 · Coupon page + promotion on the website and on WhatsApp · Support in Portuguese",
+    codeLabel: "Code",
+    copyBtn: "Copy",
+    copied: "Copied!",
+    copyFail: "Couldn't copy automatically — the code is selected, just copy it.",
+    source: "Partner · checked on",
+    viewOffer: "View offer",
+    emptyText: "No service with an active offer in Orlando right now — this page is updated with each edition.",
+    emptyBtn: "See all Coupons of the Day",
+    footBack: "← See all Coupons of the Day",
+    footFixedTitle: "Fixed pages",
+    footPublix: "Publix deals",
+    footBeleza: "Beauty coupons in the USA",
+    footInvite: "Have a business in Central Florida? Promote your offer"
+  }
+};
+
+var currentLang = "pt";
+
+function registrarEvento(nome, params) {
+  if (typeof gtag === "function") {
+    var p = params || {};
+    p.idioma = currentLang;
+    gtag("event", nome, p);
+  }
+}
+
+function selectCode(el) {
+  try {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  } catch (e) { /* código continua visível e selecionável manualmente */ }
+}
+
+function copyCode(code, codeEl, msgEl, btn) {
+  var t = I18N[currentLang];
+  function ok() {
+    msgEl.textContent = t.copied;
+    btn.textContent = t.copied;
+    setTimeout(function(){ btn.textContent = t.copyBtn; }, 2200);
+    registrarEvento("copiar_codigo", { oferta_id: "watigo-diagnostico" });
+  }
+  function fail() {
+    selectCode(codeEl);
+    msgEl.textContent = t.copyFail;
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(code).then(ok, fail);
+  } else {
+    fail();
+  }
+}
+
+function renderCards() {
+  var t = I18N[currentLang];
+  var container = document.getElementById("cards");
+  var empty = document.getElementById("empty");
+  container.innerHTML = "";
+  if (!OFFERS.length) {
+    empty.hidden = false;
+    return;
+  }
+  empty.hidden = true;
+  OFFERS.forEach(function(o) {
+    var card = document.createElement("article");
+    card.className = "card";
+
+    var top = document.createElement("div");
+    top.className = "card-top";
+    var comp = document.createElement("p");
+    comp.className = "company";
+    comp.textContent = o.empresa;
+    top.appendChild(comp);
+    if (o.patrocinado) {
+      var badge = document.createElement("span");
+      badge.className = "badge-sponsored";
+      badge.textContent = t.sponsored;
+      top.appendChild(badge);
+    }
+    card.appendChild(top);
+
+    var benefit = document.createElement("h2");
+    benefit.className = "benefit";
+    benefit.textContent = t.benefit;
+    card.appendChild(benefit);
+
+    var desc = document.createElement("p");
+    desc.className = "desc";
+    desc.textContent = t.description;
+    card.appendChild(desc);
+
+    var meta = document.createElement("div");
+    meta.className = "meta";
+    [o.canal, o.localidade, t.validUntil + " " + o.validLabel].forEach(function(txt) {
+      var chip = document.createElement("span");
+      chip.className = "chip";
+      chip.textContent = txt;
+      meta.appendChild(chip);
+    });
+    card.appendChild(meta);
+
+    var how = document.createElement("div");
+    how.className = "howto";
+    var howH = document.createElement("h3");
+    howH.textContent = t.howTitle;
+    var howP = document.createElement("p");
+    howP.textContent = t.how;
+    how.appendChild(howH);
+    how.appendChild(howP);
+    card.appendChild(how);
+
+    var rules = document.createElement("p");
+    rules.className = "rules";
+    var rl = document.createElement("strong");
+    rl.textContent = t.rulesLabel + " ";
+    rules.appendChild(rl);
+    rules.appendChild(document.createTextNode(t.rules));
+    card.appendChild(rules);
+
+    var codeRow = document.createElement("div");
+    codeRow.className = "code-row";
+    var codeBox = document.createElement("div");
+    codeBox.className = "code-box";
+    var codeLabel = document.createElement("span");
+    codeLabel.className = "code-label";
+    codeLabel.textContent = t.codeLabel;
+    var codeVal = document.createElement("span");
+    codeVal.className = "code-value";
+    codeVal.textContent = o.codigo;
+    codeBox.appendChild(codeLabel);
+    codeBox.appendChild(codeVal);
+    var copyBtn = document.createElement("button");
+    copyBtn.type = "button";
+    copyBtn.className = "btn btn-copy";
+    copyBtn.textContent = t.copyBtn;
+    codeRow.appendChild(codeBox);
+    codeRow.appendChild(copyBtn);
+    card.appendChild(codeRow);
+
+    var msg = document.createElement("p");
+    msg.className = "copy-msg";
+    msg.setAttribute("role", "status");
+    card.appendChild(msg);
+
+    copyBtn.addEventListener("click", function(){ copyCode(o.codigo, codeVal, msg, copyBtn); });
+    codeVal.addEventListener("click", function(){ selectCode(codeVal); });
+
+    var source = document.createElement("p");
+    source.className = "source";
+    source.textContent = t.source + " " + o.checkedLabel;
+    card.appendChild(source);
+
+    var cta = document.createElement("a");
+    cta.className = "btn btn-navy";
+    cta.href = o.link;
+    cta.textContent = t.viewOffer;
+    cta.addEventListener("click", function(){ registrarEvento("ver_oferta", { oferta_id: o.id }); });
+    card.appendChild(cta);
+
+    container.appendChild(card);
+  });
+}
+
+function setLang(lang) {
+  if (!I18N[lang]) lang = "pt";
+  currentLang = lang;
+  var t = I18N[lang];
+  document.documentElement.lang = t.htmlLang;
+  var nodes = document.querySelectorAll("[data-i18n]");
+  for (var i = 0; i < nodes.length; i++) {
+    var key = nodes[i].getAttribute("data-i18n");
+    if (t[key]) nodes[i].textContent = t[key];
+  }
+  var btns = document.querySelectorAll(".lang-btn");
+  for (var j = 0; j < btns.length; j++) {
+    btns[j].setAttribute("aria-pressed", btns[j].getAttribute("data-lang") === lang ? "true" : "false");
+  }
+  renderCards();
+}
+
+var langBtns = document.querySelectorAll(".lang-btn");
+for (var k = 0; k < langBtns.length; k++) {
+  langBtns[k].addEventListener("click", function() {
+    setLang(this.getAttribute("data-lang"));
+    registrarEvento("trocar_idioma", {});
+  });
+}
+
+setLang("pt");
+</script>
+</body>
+</html>

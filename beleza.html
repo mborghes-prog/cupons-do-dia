@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="data:," />
+    <title>Cupons de beleza nos EUA — Cupons do Dia</title>
+    <meta name="description" content="Cupons de beleza e cosméticos nos EUA conferidos nas fontes oficiais, em português." />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E3JN17HCQ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-E3JN17HCQ4');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --navy:#1b2a52;
+        --navy-deep:#131f3e;
+        --yellow:#ffdb53;
+        --bg:#f2f4f9;
+        --card:#ffffff;
+        --ink:#1c2438;
+        --muted:#5b6579;
+        --line:#dde2ec;
+        --green:#128c4b;
+        --green-deep:#0d7040;
+        --radius:14px;
+      }
+      *{ box-sizing:border-box; }
+      html{ -webkit-text-size-adjust:100%; }
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size:16px;
+        line-height:1.5;
+      }
+      h1,h2,h3,.brand-name{ font-family:"Archivo", "Inter", system-ui, sans-serif; }
+      a{ color:var(--navy); }
+      button{ font:inherit; cursor:pointer; }
+
+      /* ---------- Masthead ---------- */
+      .masthead{
+        background:var(--navy);
+        color:#fff;
+      }
+      .masthead-in{
+        max-width:880px;
+        margin:0 auto;
+        padding:14px 16px;
+        display:flex;
+        align-items:center;
+        gap:12px;
+      }
+      .brand{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        text-decoration:none;
+        color:#fff;
+        min-height:44px;
+      }
+      .brand-name{
+        font-weight:800;
+        font-size:26px;
+        letter-spacing:.14em;
+        line-height:1;
+      }
+      .brand-sub{
+        display:block;
+        font-family:"Inter", system-ui, sans-serif;
+        font-weight:500;
+        font-size:11.5px;
+        letter-spacing:.08em;
+        text-transform:uppercase;
+        color:var(--yellow);
+        margin-top:3px;
+      }
+      .lang-switch{
+        margin-left:auto;
+        display:flex;
+        gap:6px;
+      }
+      .lang-btn{
+        min-width:44px;
+        min-height:40px;
+        padding:4px 8px;
+        border-radius:10px;
+        border:2px solid transparent;
+        background:rgba(255,255,255,.08);
+        font-size:19px;
+        line-height:1;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .lang-btn[aria-pressed="true"]{
+        border-color:var(--yellow);
+        background:rgba(255,219,83,.16);
+      }
+      .lang-btn:focus-visible{ outline:3px solid var(--yellow); outline-offset:2px; }
+
+      /* ---------- Layout ---------- */
+      .wrap{
+        max-width:880px;
+        margin:0 auto;
+        padding:22px 16px 8px;
+      }
+      h1{
+        margin:0 0 8px;
+        font-size:clamp(28px, 6vw, 38px);
+        font-weight:800;
+        color:var(--navy);
+        line-height:1.15;
+      }
+      .intro{
+        margin:0 0 20px;
+        color:var(--muted);
+        font-size:16.5px;
+        max-width:62ch;
+      }
+
+      /* ---------- QUERO bar ---------- */
+      .quero{
+        background:var(--green);
+        border-radius:var(--radius);
+        padding:14px 16px;
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+        gap:10px 16px;
+        margin-bottom:24px;
+        box-shadow:0 2px 10px rgba(18,140,75,.25);
+      }
+      .quero p{
+        margin:0;
+        color:#fff;
+        font-weight:600;
+        font-size:16.5px;
+        flex:1 1 220px;
+      }
+      .quero-btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        min-height:48px;
+        padding:10px 20px;
+        border-radius:10px;
+        background:var(--yellow);
+        color:var(--navy-deep);
+        font-family:"Archivo", sans-serif;
+        font-weight:800;
+        font-size:15px;
+        letter-spacing:.03em;
+        text-decoration:none;
+        text-align:center;
+      }
+      .quero-btn:hover{ background:#ffd93a; }
+      .quero-btn:focus-visible{ outline:3px solid #fff; outline-offset:2px; }
+
+      /* ---------- Offer cards ---------- */
+      .offers{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:16px;
+      }
+      @media (min-width:680px){
+        .offers{ grid-template-columns:1fr 1fr; }
+      }
+      .card{
+        background:var(--card);
+        border:1px solid var(--line);
+        border-radius:var(--radius);
+        padding:18px;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        box-shadow:0 1px 4px rgba(27,42,82,.06);
+      }
+      .card-top{
+        display:flex;
+        align-items:center;
+        gap:12px;
+      }
+      .seal{
+        flex:0 0 auto;
+        width:52px;
+        height:52px;
+        border-radius:12px;
+        background:var(--navy);
+        color:var(--yellow);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-family:"Archivo", sans-serif;
+        font-weight:800;
+        font-size:19px;
+        letter-spacing:.04em;
+      }
+      .store{
+        margin:0;
+        font-size:20px;
+        font-weight:700;
+        color:var(--navy);
+        line-height:1.2;
+      }
+      .badge-novo{
+        display:inline-block;
+        background:var(--yellow);
+        color:var(--navy-deep);
+        font-family:"Archivo", sans-serif;
+        font-weight:800;
+        font-size:11px;
+        letter-spacing:.08em;
+        padding:3px 8px;
+        border-radius:999px;
+        vertical-align:middle;
+        margin-left:8px;
+      }
+      .benefit{
+        margin:0;
+        font-family:"Archivo", sans-serif;
+        font-size:23px;
+        font-weight:800;
+        color:var(--navy);
+        line-height:1.2;
+      }
+      .desc{ margin:0; color:var(--ink); }
+      .meta{ margin:0; color:var(--muted); font-size:14.5px; }
+      .meta strong{ color:var(--ink); font-weight:600; }
+      .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+      .chip{
+        display:inline-block;
+        background:#eef1f7;
+        color:var(--navy);
+        font-size:13px;
+        font-weight:600;
+        padding:5px 10px;
+        border-radius:999px;
+      }
+      .validity{ margin:0; font-size:14.5px; color:var(--muted); }
+      .source{
+        margin:0;
+        font-size:13px;
+        color:var(--muted);
+        border-top:1px solid var(--line);
+        padding-top:10px;
+      }
+      .card-actions{
+        margin-top:auto;
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+        gap:8px 16px;
+      }
+      .btn-offer{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        min-height:48px;
+        padding:10px 22px;
+        border-radius:10px;
+        background:var(--navy);
+        color:#fff;
+        font-family:"Archivo", sans-serif;
+        font-weight:700;
+        font-size:15.5px;
+        text-decoration:none;
+      }
+      .btn-offer:hover{ background:var(--navy-deep); }
+      .btn-offer:focus-visible{ outline:3px solid var(--yellow); outline-offset:2px; }
+      .store-link{
+        display:inline-flex;
+        align-items:center;
+        min-height:44px;
+        padding:6px 4px;
+        font-size:14.5px;
+        color:var(--muted);
+        text-decoration:underline;
+        text-underline-offset:3px;
+      }
+
+      /* ---------- Empty state ---------- */
+      .empty{
+        background:var(--card);
+        border:1px dashed var(--line);
+        border-radius:var(--radius);
+        padding:28px 20px;
+        text-align:center;
+      }
+      .empty p{ margin:0 0 16px; color:var(--muted); font-size:16.5px; }
+      .btn-all{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        min-height:48px;
+        padding:10px 22px;
+        border-radius:10px;
+        background:var(--navy);
+        color:#fff;
+        font-family:"Archivo", sans-serif;
+        font-weight:700;
+        font-size:15.5px;
+        text-decoration:none;
+      }
+
+      /* ---------- Footer ---------- */
+      footer{
+        max-width:880px;
+        margin:0 auto;
+        padding:26px 16px 40px;
+      }
+      .back-link{
+        display:inline-flex;
+        align-items:center;
+        min-height:44px;
+        padding:6px 0;
+        font-weight:600;
+        font-size:16px;
+        text-decoration:none;
+      }
+      .back-link:hover{ text-decoration:underline; text-underline-offset:3px; }
+      .fixed-pages{
+        margin-top:14px;
+        border-top:1px solid var(--line);
+        padding-top:14px;
+        color:var(--muted);
+        font-size:14.5px;
+      }
+      .fixed-pages .fp-label{ font-weight:600; color:var(--ink); margin-right:6px; }
+      .fixed-pages a{
+        display:inline-block;
+        padding:8px 2px;
+        min-height:36px;
+      }
+      .fixed-pages .sep{ margin:0 6px; color:var(--line); }
+    </style>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-in">
+        <a class="brand" href="https://cupons.watigo.app" aria-label="Juno — Cupons do Dia">
+          <svg width="46" height="34" viewBox="0 0 46 34" aria-hidden="true" focusable="false">
+            <path d="M6 3 h34 a3 3 0 0 1 3 3 v6 a5 5 0 0 0 0 10 v6 a3 3 0 0 1 -3 3 H6 a3 3 0 0 1 -3 -3 v-6 a5 5 0 0 0 0 -10 V6 a3 3 0 0 1 3 -3 z" fill="#ffdb53"/>
+            <text x="23" y="24.5" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="19" fill="#1b2a52">J</text>
+          </svg>
+          <span>
+            <span class="brand-name">JUNO</span>
+            <span class="brand-sub" data-i18n="brandSub">Cupons do Dia</span>
+          </span>
+        </a>
+        <nav class="lang-switch" aria-label="Idioma / Language / Idioma">
+          <button type="button" class="lang-btn" data-lang="pt" aria-pressed="true" aria-label="Português">🇧🇷</button>
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español">🇪🇸</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">🇺🇸</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h1 data-i18n="h1">Cupons de beleza nos EUA</h1>
+      <p class="intro" data-i18n="intro">Beleza e cosméticos com desconto nos EUA, conferidos nas fontes oficiais e atualizados a cada edição (seg, qua e sex).</p>
+
+      <section class="quero" aria-label="WhatsApp">
+        <p data-i18n="queroText">📲 Receba os Cupons no seu WhatsApp</p>
+        <a class="quero-btn" href="https://wa.me/14077847055?text=QUERO%20RECEBER%20OS%20CUPONS" target="_blank" rel="noopener" data-i18n="queroBtn">QUERO RECEBER OS CUPONS</a>
+      </section>
+
+      <section id="offers" class="offers" aria-live="polite"></section>
+      <section id="empty" class="empty" hidden>
+        <p data-i18n="emptyText">Nenhuma oferta vigente de beleza no momento — esta página é atualizada a cada edição.</p>
+        <a class="btn-all" href="https://cupons.watigo.app" data-i18n="seeAll">Ver todos os Cupons do Dia</a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="back-link" href="https://cupons.watigo.app" data-i18n="backAll">← Ver todos os Cupons do Dia</a>
+      <div class="fixed-pages">
+        <span class="fp-label" data-i18n="fixedPages">Páginas fixas</span>
+        <a href="https://cupons.watigo.app/publix.html" data-i18n="publixLink">Ofertas do Publix</a><span class="sep" aria-hidden="true">·</span><a href="https://cupons.watigo.app/servicos-orlando.html" data-i18n="servicesLink">Serviços com desconto em Orlando</a>
+      </div>
+    </footer>
+
+    <script>
+      var I18N = {
+        pt: {
+          htmlLang: 'pt-BR',
+          title: 'Cupons de beleza nos EUA — Cupons do Dia',
+          brandSub: 'Cupons do Dia',
+          h1: 'Cupons de beleza nos EUA',
+          intro: 'Beleza e cosméticos com desconto nos EUA, conferidos nas fontes oficiais e atualizados a cada edição (seg, qua e sex).',
+          queroText: '📲 Receba os Cupons no seu WhatsApp',
+          queroBtn: 'QUERO RECEBER OS CUPONS',
+          howTo: 'Como usar',
+          validUntil: 'Válido até',
+          noValidity: 'validade não informada',
+          source: 'Fonte oficial · conferido em',
+          viewOffer: 'Ver oferta',
+          viewStore: 'ver na loja',
+          novo: 'NOVO',
+          emptyText: 'Nenhuma oferta vigente de beleza no momento — esta página é atualizada a cada edição.',
+          seeAll: 'Ver todos os Cupons do Dia',
+          backAll: '← Ver todos os Cupons do Dia',
+          fixedPages: 'Páginas fixas',
+          publixLink: 'Ofertas do Publix',
+          servicesLink: 'Serviços com desconto em Orlando'
+        },
+        es: {
+          htmlLang: 'es',
+          title: 'Cupones de belleza en EE. UU. — Cupons do Dia',
+          brandSub: 'Cupons do Dia',
+          h1: 'Cupones de belleza en EE. UU.',
+          intro: 'Belleza y cosméticos con descuento en EE. UU., verificados en las fuentes oficiales y actualizados en cada edición (lun, mié y vie).',
+          queroText: '📲 Recibe los Cupones en tu WhatsApp',
+          queroBtn: 'QUIERO RECIBIR LOS CUPONES',
+          howTo: 'Cómo usar',
+          validUntil: 'Válido hasta el',
+          noValidity: 'validez no informada',
+          source: 'Fuente oficial · verificado el',
+          viewOffer: 'Ver oferta',
+          viewStore: 'ver en la tienda',
+          novo: 'NUEVO',
+          emptyText: 'Ninguna oferta de belleza vigente en este momento — esta página se actualiza en cada edición.',
+          seeAll: 'Ver todos los Cupons do Dia',
+          backAll: '← Ver todos los Cupons do Dia',
+          fixedPages: 'Páginas fijas',
+          publixLink: 'Ofertas de Publix',
+          servicesLink: 'Servicios con descuento en Orlando'
+        },
+        en: {
+          htmlLang: 'en',
+          title: 'Beauty coupons in the USA — Cupons do Dia',
+          brandSub: 'Cupons do Dia',
+          h1: 'Beauty coupons in the USA',
+          intro: 'Beauty and cosmetics on sale in the USA, checked against official sources and updated every edition (Mon, Wed and Fri).',
+          queroText: '📲 Get the Coupons on your WhatsApp',
+          queroBtn: 'I WANT TO RECEIVE THE COUPONS',
+          howTo: 'How to use',
+          validUntil: 'Valid until',
+          noValidity: 'end date not provided',
+          source: 'Official source · checked on',
+          viewOffer: 'View offer',
+          viewStore: 'view at the store',
+          novo: 'NEW',
+          emptyText: 'No current beauty offers right now — this page is updated every edition.',
+          seeAll: 'See all Cupons do Dia',
+          backAll: '← See all Cupons do Dia',
+          fixedPages: 'Fixed pages',
+          publixLink: 'Publix offers',
+          servicesLink: 'Discounted services in Orlando'
+        }
+      };
+
+      /* Ofertas vigentes de beleza da edição atual.
+         Nomes de loja, preços, datas e links nunca mudam entre idiomas. */
+      var OFFERS = [
+        {
+          id: 'ulta-beauty-sale',
+          store: 'Ulta Beauty',
+          initials: 'UB',
+          novo: false,
+          benefit: {
+            pt: 'Até 30% de desconto',
+            es: 'Hasta 30% de descuento',
+            en: 'Up to 30% off'
+          },
+          description: {
+            pt: 'Marcas selecionadas de skincare e cabelo; compre 2, leve 1 em linhas participantes.',
+            es: 'Marcas seleccionadas de cuidado de la piel y del cabello; compra 2 y llévate 1 en las líneas participantes.',
+            en: 'Selected skincare and hair brands; buy 2, get 1 on participating lines.'
+          },
+          howTo: {
+            pt: 'Preço promocional e ofertas da loja',
+            es: 'Precio promocional y ofertas de la tienda',
+            en: 'Promotional price and store offers'
+          },
+          channel: {
+            pt: 'Online e loja física',
+            es: 'En línea y en tienda física',
+            en: 'Online and in-store'
+          },
+          validDate: null,
+          checkedDate: '25/11/2026',
+          url: 'https://www.ulta.com/promotion/coupon'
+        }
+      ];
+
+      var currentLang = 'pt';
+
+      function registrarEvento(nome, params) {
+        if (typeof gtag === 'function') {
+          var p = params || {};
+          gtag('event', nome, p);
+        }
+      }
+
+      function formatValidDate(iso) {
+        if (!iso) return null;
+        var parts = iso.split('-');
+        return parts[2] + '/' + parts[1] + '/' + parts[0];
+      }
+
+      function renderOffers() {
+        var t = I18N[currentLang];
+        var container = document.getElementById('offers');
+        var empty = document.getElementById('empty');
+        container.innerHTML = '';
+
+        if (!OFFERS.length) {
+          container.hidden = true;
+          empty.hidden = false;
+          return;
+        }
+        container.hidden = false;
+        empty.hidden = true;
+
+        OFFERS.forEach(function (o) {
+          var card = document.createElement('article');
+          card.className = 'card';
+
+          var top = document.createElement('div');
+          top.className = 'card-top';
+          var seal = document.createElement('div');
+          seal.className = 'seal';
+          seal.setAttribute('aria-hidden', 'true');
+          seal.textContent = o.initials;
+          var store = document.createElement('h2');
+          store.className = 'store';
+          store.textContent = o.store;
+          if (o.novo) {
+            var badge = document.createElement('span');
+            badge.className = 'badge-novo';
+            badge.textContent = t.novo;
+            store.appendChild(badge);
+          }
+          top.appendChild(seal);
+          top.appendChild(store);
+          card.appendChild(top);
+
+          var benefit = document.createElement('p');
+          benefit.className = 'benefit';
+          benefit.textContent = o.benefit[currentLang];
+          card.appendChild(benefit);
+
+          var desc = document.createElement('p');
+          desc.className = 'desc';
+          desc.textContent = o.description[currentLang];
+          card.appendChild(desc);
+
+          var how = document.createElement('p');
+          how.className = 'meta';
+          var howLabel = document.createElement('strong');
+          howLabel.textContent = t.howTo + ': ';
+          how.appendChild(howLabel);
+          how.appendChild(document.createTextNode(o.howTo[currentLang]));
+          card.appendChild(how);
+
+          var chips = document.createElement('div');
+          chips.className = 'chips';
+          var chip = document.createElement('span');
+          chip.className = 'chip';
+          chip.textContent = o.channel[currentLang];
+          chips.appendChild(chip);
+          card.appendChild(chips);
+
+          var validity = document.createElement('p');
+          validity.className = 'validity';
+          var formatted = formatValidDate(o.validDate);
+          validity.textContent = formatted ? (t.validUntil + ' ' + formatted) : t.noValidity;
+          card.appendChild(validity);
+
+          var source = document.createElement('p');
+          source.className = 'source';
+          source.textContent = t.source + ' ' + o.checkedDate;
+          card.appendChild(source);
+
+          var actions = document.createElement('div');
+          actions.className = 'card-actions';
+          var btn = document.createElement('a');
+          btn.className = 'btn-offer';
+          btn.href = 'https://cupons.watigo.app/?oferta=' + o.id;
+          btn.textContent = t.viewOffer;
+          btn.addEventListener('click', function () {
+            registrarEvento('ver_oferta', { oferta_id: o.id });
+          });
+          var storeLink = document.createElement('a');
+          storeLink.className = 'store-link';
+          storeLink.href = o.url;
+          storeLink.target = '_blank';
+          storeLink.rel = 'noopener';
+          storeLink.textContent = t.viewStore;
+          actions.appendChild(btn);
+          actions.appendChild(storeLink);
+          card.appendChild(actions);
+
+          container.appendChild(card);
+        });
+      }
+
+      function setLang(lang) {
+        if (!I18N[lang]) lang = 'pt';
+        currentLang = lang;
+        var t = I18N[lang];
+        document.documentElement.lang = t.htmlLang;
+        document.title = t.title;
+        var nodes = document.querySelectorAll('[data-i18n]');
+        for (var i = 0; i < nodes.length; i++) {
+          var key = nodes[i].getAttribute('data-i18n');
+          if (t[key]) nodes[i].textContent = t[key];
+        }
+        var btns = document.querySelectorAll('.lang-btn');
+        for (var j = 0; j < btns.length; j++) {
+          btns[j].setAttribute('aria-pressed', btns[j].getAttribute('data-lang') === lang ? 'true' : 'false');
+        }
+        renderOffers();
+      }
+
+      var langBtns = document.querySelectorAll('.lang-btn');
+      for (var k = 0; k < langBtns.length; k++) {
+        langBtns[k].addEventListener('click', function () {
+          setLang(this.getAttribute('data-lang'));
+        });
+      }
+
+      setLang('pt');
+    </script>
+  </body>
+</html>

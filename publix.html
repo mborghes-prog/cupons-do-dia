@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Ofertas do Publix — Cupons do Dia</title>
+    <meta name="description" content="Cupons e ofertas do Publix conferidos na fonte oficial, em português." />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E3JN17HCQ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-E3JN17HCQ4');
+    </script>
+    <style>
+      :root{
+        --navy:#1b2a52;
+        --navy-2:#24366b;
+        --yellow:#ffdb53;
+        --yellow-ink:#1b2a52;
+        --bg:#f4f6fb;
+        --card:#ffffff;
+        --ink:#1c2438;
+        --muted:#5a6580;
+        --line:#dde3ef;
+        --green:#128c4b;
+        --green-dark:#0d6e3a;
+        --chip-bg:#eef1f8;
+        --shadow:0 2px 10px rgba(27,42,82,.08), 0 10px 28px rgba(27,42,82,.06);
+        color-scheme: light dark;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#0e1526;
+          --card:#182238;
+          --ink:#eef1f8;
+          --muted:#a7b1c9;
+          --line:#2b3a5e;
+          --chip-bg:#22304f;
+          --shadow:0 2px 10px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.3);
+        }
+      }
+      *{ box-sizing:border-box; }
+      html{ -webkit-text-size-adjust:100%; }
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font-family:"Avenir Next","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+        line-height:1.5;
+      }
+      a{ color:inherit; }
+      button, [role="button"], select, summary, input:not([type="checkbox"],[type="radio"]){ min-height:2.25rem; }
+
+      .wrap{ max-width:880px; margin:0 auto; padding:0 16px 40px; }
+
+      /* ---------- Masthead ---------- */
+      .masthead{
+        background:var(--navy);
+        color:#fff;
+        margin:0 -16px;
+        padding:14px 16px;
+      }
+      .masthead-in{
+        max-width:880px; margin:0 auto;
+        display:flex; align-items:center; gap:12px;
+      }
+      .j-symbol{
+        flex:0 0 auto;
+        width:46px; height:46px;
+        display:grid; place-items:center;
+      }
+      .brand-name{
+        font-weight:800; letter-spacing:.14em; font-size:1.3rem; line-height:1;
+      }
+      .brand-sub{
+        font-size:.78rem; letter-spacing:.06em; color:var(--yellow); font-weight:700;
+        text-transform:uppercase; margin-top:4px;
+      }
+      .lang-switch{
+        margin-left:auto;
+        display:flex; gap:6px;
+      }
+      .lang-btn{
+        min-width:44px; min-height:44px;
+        display:grid; place-items:center;
+        background:rgba(255,255,255,.08);
+        border:2px solid transparent;
+        border-radius:10px;
+        font-size:1.25rem;
+        cursor:pointer;
+        padding:4px 6px;
+        line-height:1;
+      }
+      .lang-btn[aria-pressed="true"]{
+        border-color:var(--yellow);
+        background:rgba(255,219,83,.16);
+      }
+      .lang-btn:focus-visible{ outline:3px solid var(--yellow); outline-offset:2px; }
+
+      /* ---------- Headline ---------- */
+      .page-head{ padding:26px 0 6px; }
+      h1{
+        margin:0 0 8px;
+        font-size:clamp(1.7rem, 5.5vw, 2.3rem);
+        line-height:1.15;
+        color:var(--navy);
+        letter-spacing:-.01em;
+      }
+      @media (prefers-color-scheme: dark){ h1{ color:#fff; } }
+      .intro{ margin:0; color:var(--muted); font-size:1rem; max-width:62ch; }
+
+      /* ---------- QUERO bar ---------- */
+      .quero{
+        margin:20px 0 26px;
+        background:var(--green);
+        color:#fff;
+        border-radius:14px;
+        padding:14px 16px;
+        display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+        box-shadow:var(--shadow);
+      }
+      .quero p{ margin:0; font-weight:700; font-size:1rem; flex:1 1 220px; }
+      .quero a{
+        background:#fff; color:var(--green-dark);
+        font-weight:800; text-decoration:none;
+        padding:11px 18px; border-radius:999px;
+        min-height:44px; display:inline-flex; align-items:center;
+        letter-spacing:.02em; font-size:.92rem;
+        white-space:nowrap;
+      }
+      .quero a:active{ transform:scale(.98); }
+
+      /* ---------- Offer cards ---------- */
+      .grid{
+        display:grid; gap:18px;
+        grid-template-columns:1fr;
+      }
+      @media (min-width:680px){
+        .grid{ grid-template-columns:1fr 1fr; }
+      }
+      .card{
+        background:var(--card);
+        border:1px solid var(--line);
+        border-radius:16px;
+        box-shadow:var(--shadow);
+        padding:18px;
+        display:flex; flex-direction:column; gap:10px;
+      }
+      .card-top{ display:flex; align-items:center; gap:10px; }
+      .store-seal{
+        flex:0 0 auto;
+        width:44px; height:44px; border-radius:12px;
+        background:var(--navy); color:var(--yellow);
+        display:grid; place-items:center;
+        font-weight:800; font-size:1.05rem; letter-spacing:.02em;
+      }
+      .store-name{ font-weight:800; font-size:1.05rem; color:var(--navy); }
+      @media (prefers-color-scheme: dark){ .store-name{ color:#fff; } }
+      .badge-new{
+        margin-left:auto;
+        background:var(--yellow); color:var(--yellow-ink);
+        font-size:.72rem; font-weight:800; letter-spacing:.08em;
+        padding:5px 10px; border-radius:999px;
+      }
+      .benefit{
+        font-size:1.45rem; font-weight:800; line-height:1.2;
+        color:var(--navy); margin:2px 0 0;
+      }
+      @media (prefers-color-scheme: dark){ .benefit{ color:var(--yellow); } }
+      .desc{ margin:0; font-size:.98rem; }
+      .cost-line{
+        margin:0;
+        background:var(--chip-bg);
+        border-radius:10px;
+        padding:9px 12px;
+        font-weight:700; font-size:.93rem;
+      }
+      .howto{ margin:0; font-size:.93rem; color:var(--muted); }
+      .howto strong{ color:var(--ink); }
+      .meta-row{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+      .chip{
+        background:var(--chip-bg); color:var(--ink);
+        font-size:.8rem; font-weight:700;
+        padding:6px 11px; border-radius:999px;
+        display:inline-flex; align-items:center; min-height:32px;
+      }
+      .chip-valid{ background:var(--navy); color:#fff; }
+      .rules{ margin:0; font-size:.86rem; color:var(--muted); }
+      .source{ margin:0; font-size:.8rem; color:var(--muted); }
+      .card-actions{ margin-top:auto; padding-top:6px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+      .btn-main{
+        background:var(--navy); color:#fff;
+        text-decoration:none; font-weight:800;
+        padding:12px 22px; border-radius:12px;
+        min-height:48px; display:inline-flex; align-items:center;
+        font-size:.98rem;
+      }
+      .btn-main:hover{ background:var(--navy-2); }
+      .link-store{
+        color:var(--muted); font-size:.88rem; font-weight:600;
+        padding:10px 4px; min-height:44px; display:inline-flex; align-items:center;
+      }
+
+      /* ---------- Empty state ---------- */
+      .empty{
+        background:var(--card); border:1px dashed var(--line);
+        border-radius:16px; padding:28px 20px; text-align:center;
+      }
+      .empty p{ margin:0 0 16px; color:var(--muted); }
+      .empty a{
+        background:var(--navy); color:#fff; text-decoration:none; font-weight:800;
+        padding:12px 22px; border-radius:12px; min-height:48px; display:inline-flex; align-items:center;
+      }
+      [hidden]{ display:none !important; }
+
+      /* ---------- Footer ---------- */
+      footer{
+        margin-top:36px; padding-top:20px;
+        border-top:1px solid var(--line);
+        display:flex; flex-direction:column; gap:12px;
+      }
+      .back-link{
+        font-weight:800; color:var(--navy); text-decoration:none;
+        min-height:44px; display:inline-flex; align-items:center;
+      }
+      @media (prefers-color-scheme: dark){ .back-link{ color:var(--yellow); } }
+      .fixed-pages{ margin:0; font-size:.9rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; }
+      .fixed-pages strong{ color:var(--ink); }
+      .fixed-pages a{ color:var(--navy); font-weight:600; padding:8px 2px; min-height:36px; display:inline-flex; align-items:center; }
+      @media (prefers-color-scheme: dark){ .fixed-pages a{ color:#cdd8f2; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <header class="masthead">
+        <div class="masthead-in">
+          <span class="j-symbol" aria-hidden="true">
+            <svg width="46" height="46" viewBox="0 0 46 46" role="img" aria-label="Juno">
+              <path d="M6 10 Q6 5 11 5 L35 5 Q40 5 40 10 L40 17 Q36.5 19.2 36.5 23 Q36.5 26.8 40 29 L40 36 Q40 41 35 41 L11 41 Q6 41 6 36 L6 29 Q9.5 26.8 9.5 23 Q9.5 19.2 6 17 Z" fill="#ffdb53"/>
+              <text x="23" y="31" text-anchor="middle" font-family="Avenir Next, Segoe UI, sans-serif" font-size="21" font-weight="800" fill="#1b2a52">J</text>
+            </svg>
+          </span>
+          <div>
+            <div class="brand-name">JUNO</div>
+            <div class="brand-sub" data-i18n="brandSub">Cupons do Dia</div>
+          </div>
+          <nav class="lang-switch" aria-label="Idioma / Language / Idioma">
+            <button type="button" class="lang-btn" data-lang="pt" aria-pressed="true" aria-label="Português">🇧🇷</button>
+            <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español">🇪🇸</button>
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">🇺🇸</button>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-head">
+          <h1 data-i18n="h1">Ofertas do Publix</h1>
+          <p class="intro" data-i18n="intro">Cupons e ofertas do Publix conferidos na fonte oficial, em português — encarte da semana e cupons digitais, atualizados a cada edição (seg, qua e sex).</p>
+        </div>
+
+        <section class="quero" aria-label="WhatsApp">
+          <p data-i18n="queroText">📲 Receba os Cupons no seu WhatsApp</p>
+          <a href="https://wa.me/14077847055?text=QUERO%20RECEBER%20OS%20CUPONS" target="_blank" rel="noopener" data-i18n="queroBtn">QUERO RECEBER OS CUPONS</a>
+        </section>
+
+        <section id="offers" class="grid" aria-live="polite"></section>
+
+        <section id="empty" class="empty" hidden>
+          <p data-i18n="emptyText">Nenhuma oferta vigente do Publix no momento — esta página é atualizada a cada edição.</p>
+          <a href="https://cupons.watigo.app" data-i18n="emptyBtn">Ver todos os Cupons do Dia</a>
+        </section>
+      </main>
+
+      <footer>
+        <a class="back-link" href="https://cupons.watigo.app" data-i18n="backLink">← Ver todos os Cupons do Dia</a>
+        <p class="fixed-pages">
+          <strong data-i18n="fixedPages">Páginas fixas</strong>
+          <a href="https://cupons.watigo.app/beleza.html" data-i18n="linkBeleza">Cupons de beleza nos EUA</a>
+          <a href="https://cupons.watigo.app/servicos-orlando.html" data-i18n="linkServicos">Serviços com desconto em Orlando</a>
+        </p>
+      </footer>
+
+    </div>
+
+    <script>
+      var I18N = {
+        pt: {
+          brandSub: "Cupons do Dia",
+          h1: "Ofertas do Publix",
+          intro: "Cupons e ofertas do Publix conferidos na fonte oficial, em português — encarte da semana e cupons digitais, atualizados a cada edição (seg, qua e sex).",
+          queroText: "📲 Receba os Cupons no seu WhatsApp",
+          queroBtn: "QUERO RECEBER OS CUPONS",
+          badgeNew: "NOVO",
+          howToLabel: "Como usar:",
+          validUntil: "Válido até ",
+          noValidity: "validade não informada",
+          sourceLine: "Fonte oficial · conferido em 25/11/2026",
+          viewDeal: "Ver oferta",
+          viewStore: "ver na loja",
+          emptyText: "Nenhuma oferta vigente do Publix no momento — esta página é atualizada a cada edição.",
+          emptyBtn: "Ver todos os Cupons do Dia",
+          backLink: "← Ver todos os Cupons do Dia",
+          fixedPages: "Páginas fixas",
+          linkBeleza: "Cupons de beleza nos EUA",
+          linkServicos: "Serviços com desconto em Orlando"
+        },
+        es: {
+          brandSub: "Cupones del Día",
+          h1: "Ofertas de Publix",
+          intro: "Cupones y ofertas de Publix verificados en la fuente oficial, en español — folleto de la semana y cupones digitales, actualizados en cada edición (lun, mié y vie).",
+          queroText: "📲 Recibe los Cupones en tu WhatsApp",
+          queroBtn: "QUIERO RECIBIR LOS CUPONES",
+          badgeNew: "NUEVO",
+          howToLabel: "Cómo usar:",
+          validUntil: "Válido hasta el ",
+          noValidity: "validez no informada",
+          sourceLine: "Fuente oficial · verificado el 25/11/2026",
+          viewDeal: "Ver oferta",
+          viewStore: "ver en la tienda",
+          emptyText: "No hay ofertas vigentes de Publix en este momento — esta página se actualiza en cada edición.",
+          emptyBtn: "Ver todos los Cupones del Día",
+          backLink: "← Ver todos los Cupones del Día",
+          fixedPages: "Páginas fijas",
+          linkBeleza: "Cupones de belleza en EE. UU.",
+          linkServicos: "Servicios con descuento en Orlando"
+        },
+        en: {
+          brandSub: "Coupons of the Day",
+          h1: "Publix Deals",
+          intro: "Publix coupons and deals checked against the official source, in English — the weekly flyer and digital coupons, updated with each edition (Mon, Wed and Fri).",
+          queroText: "📲 Get the Coupons on your WhatsApp",
+          queroBtn: "I WANT THE COUPONS",
+          badgeNew: "NEW",
+          howToLabel: "How to use:",
+          validUntil: "Valid until ",
+          noValidity: "expiration date not provided",
+          sourceLine: "Official source · checked on 25/11/2026",
+          viewDeal: "View deal",
+          viewStore: "view at store",
+          emptyText: "No current Publix deals right now — this page is updated with each edition.",
+          emptyBtn: "See all Coupons of the Day",
+          backLink: "← See all Coupons of the Day",
+          fixedPages: "Fixed pages",
+          linkBeleza: "Beauty coupons in the USA",
+          linkServicos: "Discounted services in Orlando"
+        }
+      };
+
+      var OFFERS = [
+        {
+          id: "publix-bogo",
+          novo: true,
+          loja: "Publix",
+          initials: "P",
+          validDate: "2026-12-02",
+          url: "https://www.publix.com/savings/weekly-ad",
+          custo: { qtd: 2, total: 3.29 },
+          i18n: {
+            pt: {
+              beneficio: "Compre 1, leve 2",
+              descricao: "Queijo ralado Publix 6–8 oz por US$ 3,29 no novo encarte (sai US$ 1,65 cada).",
+              comoUsar: "Preço do encarte — na Flórida é true BOGO: leve os 2 itens",
+              canal: "Loja física",
+              regras: "Novo encarte: 27/11 a 02/12",
+              custoLinha: "Leve 2 por US$ 3,29 · aprox. US$ 1,65 por unidade"
+            },
+            es: {
+              beneficio: "Compra 1, lleva 2",
+              descricao: "Queso rallado Publix 6–8 oz por US$ 3,29 en el nuevo folleto (sale a US$ 1,65 cada uno).",
+              comoUsar: "Precio del folleto — en Florida es true BOGO: lleva los 2 artículos",
+              canal: "Tienda física",
+              regras: "Nuevo folleto: 27/11 a 02/12",
+              custoLinha: "Lleva 2 por US$ 3,29 · aprox. US$ 1,65 por unidad"
+            },
+            en: {
+              beneficio: "Buy 1, get 2",
+              descricao: "Publix shredded cheese 6–8 oz for US$ 3.29 in the new flyer (comes out to US$ 1.65 each).",
+              comoUsar: "Flyer price — in Florida it's true BOGO: take both items",
+              canal: "In-store",
+              regras: "New flyer: 27/11 to 02/12",
+              custoLinha: "Get 2 for US$ 3.29 · approx. US$ 1.65 each"
+            }
+          }
+        },
+        {
+          id: "publix-pg-10",
+          novo: true,
+          loja: "Publix",
+          initials: "P",
+          validDate: "2026-12-02",
+          url: "https://www.publix.com/savings/weekly-ad",
+          custo: null,
+          i18n: {
+            pt: {
+              beneficio: "US$ 10 de desconto",
+              descricao: "Em US$ 35+ de produtos P&G selecionados (Tide, Bounty, Charmin, Crest, Dawn, Febreze, Gain).",
+              comoUsar: "Clipar o cupom digital no app Club Publix antes da compra",
+              canal: "Loja física e app",
+              regras: "Club Publix (cadastro grátis)"
+            },
+            es: {
+              beneficio: "US$ 10 de descuento",
+              descricao: "En US$ 35+ de productos P&G seleccionados (Tide, Bounty, Charmin, Crest, Dawn, Febreze, Gain).",
+              comoUsar: "Recorta el cupón digital en la app Club Publix antes de comprar",
+              canal: "Tienda física y app",
+              regras: "Club Publix (registro gratis)"
+            },
+            en: {
+              beneficio: "US$ 10 off",
+              descricao: "On US$ 35+ of select P&G products (Tide, Bounty, Charmin, Crest, Dawn, Febreze, Gain).",
+              comoUsar: "Clip the digital coupon in the Club Publix app before you shop",
+              canal: "In-store and app",
+              regras: "Club Publix (free sign-up)"
+            }
+          }
+        }
+      ];
+
+      var currentLang = "pt";
+
+      function formatDate(iso){
+        if(!iso) return "";
+        var p = iso.split("-");
+        return p[2] + "/" + p[1] + "/" + p[0];
+      }
+
+      function esc(s){
+        return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+      }
+
+      function render(){
+        var t = I18N[currentLang];
+        document.documentElement.lang = currentLang === "pt" ? "pt-BR" : currentLang;
+
+        var nodes = document.querySelectorAll("[data-i18n]");
+        for (var i = 0; i < nodes.length; i++){
+          var key = nodes[i].getAttribute("data-i18n");
+          if (t[key]) nodes[i].textContent = t[key];
+        }
+
+        var btns = document.querySelectorAll(".lang-btn");
+        for (var b = 0; b < btns.length; b++){
+          btns[b].setAttribute("aria-pressed", btns[b].getAttribute("data-lang") === currentLang ? "true" : "false");
+        }
+
+        var grid = document.getElementById("offers");
+        var empty = document.getElementById("empty");
+
+        if (!OFFERS.length){
+          grid.innerHTML = "";
+          grid.hidden = true;
+          empty.hidden = false;
+          return;
+        }
+        grid.hidden = false;
+        empty.hidden = true;
+
+        var html = "";
+        OFFERS.forEach(function(o){
+          var d = o.i18n[currentLang];
+          html += '<article class="card">'
+            + '<div class="card-top">'
+            +   '<span class="store-seal" aria-hidden="true">' + esc(o.initials) + '</span>'
+            +   '<span class="store-name">' + esc(o.loja) + '</span>'
+            +   (o.novo ? '<span class="badge-new">' + esc(t.badgeNew) + '</span>' : '')
+            + '</div>'
+            + '<h2 class="benefit">' + esc(d.beneficio) + '</h2>'
+            + '<p class="desc">' + esc(d.descricao) + '</p>'
+            + (o.custo && d.custoLinha ? '<p class="cost-line">' + esc(d.custoLinha) + '</p>' : '')
+            + '<p class="howto"><strong>' + esc(t.howToLabel) + '</strong> ' + esc(d.comoUsar) + '</p>'
+            + '<div class="meta-row">'
+            +   '<span class="chip">' + esc(d.canal) + '</span>'
+            +   '<span class="chip chip-valid">' + (o.validDate ? esc(t.validUntil + formatDate(o.validDate)) : esc(t.noValidity)) + '</span>'
+            + '</div>'
+            + '<p class="rules">' + esc(d.regras) + '</p>'
+            + '<p class="source">' + esc(t.sourceLine) + '</p>'
+            + '<div class="card-actions">'
+            +   '<a class="btn-main" href="https://cupons.watigo.app/?oferta=' + encodeURIComponent(o.id) + '">' + esc(t.viewDeal) + '</a>'
+            +   '<a class="link-store" href="' + esc(o.url) + '" target="_blank" rel="noopener">' + esc(t.viewStore) + '</a>'
+            + '</div>'
+            + '</article>';
+        });
+        grid.innerHTML = html;
+      }
+
+      var langBtns = document.querySelectorAll(".lang-btn");
+      for (var k = 0; k < langBtns.length; k++){
+        langBtns[k].addEventListener("click", function(){
+          currentLang = this.getAttribute("data-lang");
+          render();
+          if (typeof gtag === "function") gtag("event", "language_switch", { language: currentLang, page: "publix" });
+        });
+      }
+
+      render();
+    </script>
+  </body>
+</html>
